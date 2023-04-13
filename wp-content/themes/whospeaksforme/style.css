@@ -3881,7 +3881,6 @@ table.wp-calendar-table caption {
 	font-family: var(--footer--font-family);
 	font-size: var(--footer--font-size);
 	line-height: var(--global--line-height-body);
-	border-top: 3px solid var(--global--color-border);
 }
 
 .site-footer > .site-info .site-name {
@@ -3898,6 +3897,7 @@ table.wp-calendar-table caption {
 	.site-footer > .site-info {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 	}
 
 	.site-footer > .site-info .site-name {

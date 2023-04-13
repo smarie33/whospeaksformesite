@@ -654,3 +654,29 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 		return __( ', ', 'twentytwentyone' );
 	}
 endif;
+
+//Add options page for footer
+add_action('acf/init', 'my_acf_op_init');
+function my_acf_op_init() {
+
+    // Check function exists.
+    if( function_exists('acf_add_options_page') ) {
+
+        // Register options page.
+        $option_page = acf_add_options_page(array(
+            'page_title'    => __('Footer'),
+            'menu_title'    => __('Footer'),
+            'menu_slug'     => 'footer',
+            'capability'    => 'edit_posts',
+            'icon_url' 		=> 'dashicons-layout',
+            'redirect'      => false
+        ));
+    }
+}
+
+//hide widgets
+add_action( 'admin_init', 'remove_from_admin_menus' );
+function remove_from_admin_menus(){
+ remove_menu_page( 'widgets.php' ); 
+}
+

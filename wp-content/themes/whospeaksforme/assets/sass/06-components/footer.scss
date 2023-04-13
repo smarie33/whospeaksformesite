@@ -24,7 +24,7 @@
 	font-family: var(--footer--font-family);
 	font-size: var(--footer--font-size);
 	line-height: var(--global--line-height-body);
-	border-top: 3px solid var(--global--color-border);
+	// border-top: 3px solid var(--global--color-border);
 
 	.site-name {
 		text-transform: var(--branding--title--text-transform);
@@ -39,6 +39,7 @@
 	@include media(desktop) {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 
 		.site-name {
 			margin-right: calc(0.5 * var(--global--spacing-vertical));
