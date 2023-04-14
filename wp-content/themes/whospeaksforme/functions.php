@@ -465,6 +465,17 @@ function twenty_twenty_one_scripts() {
 		wp_get_theme()->get( 'Version' ),
 		true
 	);
+
+	//Font awesome
+	wp_enqueue_script(
+		'font-awesome',
+		'https://kit.fontawesome.com/d1b5bb5c09.js',
+		array(),
+		wp_get_theme()->get( 'Version' ),
+		true
+	);
+	wp_script_add_data( 'font-awesome','crossorigin', 'anonymous' );
+
 }
 add_action( 'wp_enqueue_scripts', 'twenty_twenty_one_scripts' );
 
@@ -679,4 +690,18 @@ add_action( 'admin_init', 'remove_from_admin_menus' );
 function remove_from_admin_menus(){
  remove_menu_page( 'widgets.php' ); 
 }
+//limit acf color pallete
+add_action( 'acf/input/admin_footer', 'wd_acf_color_palette' );
+function wd_acf_color_palette() { ?>
+<script type="text/javascript">
+(function($) {
+     acf.add_filter('color_picker_args', function( args, $field ){
+          // add the hexadecimal codes here for the colors you want to appear as swatches
+          args.palettes = ['#CA2162', '#262661', '#ffffff', '#000000', '#f45696', '#353584', '#19193f']
+          // return colors
+          return args;
+     });
+})(jQuery);
+</script>
 
+<?php } ?>

@@ -69,7 +69,9 @@ $baseline-unit: 10px;
 	--global--color-gray: #39414d;
 	--global--color-light-gray: #f0f0f0;
 	--global--color-green: #d1e4dd;
-	--global--color-blue: #d1dfe4;
+	--global--color-lt-blue: #353584;
+	--global--color-blue: #262661;
+	--global--color-dk-blue: #19193f;
 	--global--color-purple: #d1d1e4;
 	--global--color-red: #e4d1d1;
 	--global--color-orange: #e4dad1;
@@ -77,11 +79,14 @@ $baseline-unit: 10px;
 	--global--color-white: #fff;
 	--global--color-white-50: rgba(255, 255, 255, 0.5); // Used for disabled buttons
 	--global--color-white-90: rgba(255, 255, 255, 0.9); // Used in form fields.
+	--global--color-pink: #c82262;
+	--global--color-lt-pink: #f45696;
+
 
 	--global--color-primary: var(--global--color-dark-gray); /* Body text color, site title, footer text color. */
 	--global--color-secondary: var(--global--color-gray); /* Headings */
 	--global--color-primary-hover: var(--global--color-primary);
-	--global--color-background: var(--global--color-green); /* Mint, default body background */
+	--global--color-background: var(--global--color-white); /* White, default body background */
 	--global--color-border: var(--global--color-primary); /* Used for borders (separators) */
 
 	/* Spacing */
@@ -89,6 +94,7 @@ $baseline-unit: 10px;
 	--global--spacing-measure: unset; // Use ch units here. ie: 60ch = 60 character max-width
 	--global--spacing-horizontal: #{2.5 * $baseline-unit}; // 25px
 	--global--spacing-vertical: #{3 * $baseline-unit}; // 30px.
+	--global--banner-spacing-vertical: #{10 * $baseline-unit}; // 100px.
 
 	/* Elevation */
 	--global--elevation: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);

@@ -73,3 +73,7 @@ body {
 button {
 	cursor: pointer;
 }
+
+p{
+	margin: var(--global--spacing-unit) 0 0;
+}

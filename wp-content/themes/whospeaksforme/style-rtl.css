@@ -158,7 +158,9 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 	--global--color-gray: #39414d;
 	--global--color-light-gray: #f0f0f0;
 	--global--color-green: #d1e4dd;
-	--global--color-blue: #d1dfe4;
+	--global--color-lt-blue: #353584;
+	--global--color-blue: #262661;
+	--global--color-dk-blue: #19193f;
 	--global--color-purple: #d1d1e4;
 	--global--color-red: #e4d1d1;
 	--global--color-orange: #e4dad1;
@@ -166,10 +168,12 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 	--global--color-white: #fff;
 	--global--color-white-50: rgba(255, 255, 255, 0.5);
 	--global--color-white-90: rgba(255, 255, 255, 0.9);
+	--global--color-pink: #c82262;
+	--global--color-lt-pink: #f45696;
 	--global--color-primary: var(--global--color-dark-gray); /* Body text color, site title, footer text color. */
 	--global--color-secondary: var(--global--color-gray); /* Headings */
 	--global--color-primary-hover: var(--global--color-primary);
-	--global--color-background: var(--global--color-green); /* Mint, default body background */
+	--global--color-background: var(--global--color-white); /* White, default body background */
 	--global--color-border: var(--global--color-primary); /* Used for borders (separators) */
 
 	/* Spacing */
@@ -177,6 +181,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 	--global--spacing-measure: unset;
 	--global--spacing-horizontal: 25px;
 	--global--spacing-vertical: 30px;
+	--global--banner-spacing-vertical: 100px;
 
 	/* Elevation */
 	--global--elevation: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -1018,6 +1023,10 @@ button {
 	cursor: pointer;
 }
 
+p {
+	margin: var(--global--spacing-unit) 0 0;
+}
+
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -1045,6 +1054,15 @@ button {
 }
 
 /* Category 04 can contain any default HTML element. Do not add classes here, just give the elements some basic styles. */
+.acf-full_width_banner {
+	padding: var(--global--banner-spacing-vertical) 0 var(--global--banner-spacing-vertical) 0;
+}
+
+.acf-full_width_banner .button-paragraph {
+	text-align: center;
+	margin-bottom: auto;
+}
+
 blockquote {
 	padding: 0;
 	position: relative;
@@ -1651,15 +1669,19 @@ input[type=reset],
 .wp-block-search .wp-block-search__button,
 .wp-block-button .wp-block-button__link,
 .wp-block-file a.wp-block-file__button {
-	border: var(--button--border-width) solid transparent;
+	border: var(--button--border-width) solid var(--global--color-primary);
 	border-radius: var(--button--border-radius);
 	cursor: pointer;
+	display: inline-block;
 	font-weight: var(--button--font-weight);
 	font-family: var(--button--font-family);
 	font-size: var(--button--font-size);
 	line-height: var(--button--line-height);
 	padding: var(--button--padding-vertical) var(--button--padding-horizontal);
 	text-decoration: none;
+	text-transform: uppercase;
+	transform: translateY(0);
+	transition: 0.3s ease;
 }
 
 .site .button:not(:hover):not(:active):not(.has-text-color),
@@ -1669,7 +1691,7 @@ input[type=reset]:not(:hover):not(:active):not(.has-text-color),
 .wp-block-search .wp-block-search__button:not(:hover):not(:active):not(.has-text-color),
 .wp-block-button .wp-block-button__link:not(:hover):not(:active):not(.has-text-color),
 .wp-block-file a.wp-block-file__button:not(:hover):not(:active):not(.has-text-color) {
-	color: var(--global--color-background);
+	color: var(--global--color-primary);
 }
 
 .has-background .site .button:not(:hover):not(:active):not(.has-text-color),
@@ -1699,7 +1721,7 @@ input[type=reset]:not(:hover):not(:active):not(.has-background),
 .wp-block-search .wp-block-search__button:not(:hover):not(:active):not(.has-background),
 .wp-block-button .wp-block-button__link:not(:hover):not(:active):not(.has-background),
 .wp-block-file a.wp-block-file__button:not(:hover):not(:active):not(.has-background) {
-	background-color: var(--global--color-primary);
+	background-color: transparent;
 }
 
 .has-background .site .button:not(:hover):not(:active):not(.has-background),
@@ -1726,9 +1748,11 @@ input[type=reset]:active,
 .wp-block-button .wp-block-button__link:active,
 .wp-block-file a.wp-block-file__button:hover,
 .wp-block-file a.wp-block-file__button:active {
-	background-color: transparent;
-	border-color: currentColor;
-	color: inherit;
+	background-color: var(--global--color-primary);
+	border-color: var(--global--color-primary);
+	color: var(--global--color-white);
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16), 0 10px 10px rgba(0, 0, 0, 0.23);
+	transform: translateY(-3px);
 }
 
 .site .button:focus,
@@ -1757,6 +1781,16 @@ input[type=reset]:disabled,
 /**
  * Block Options
  */
+.button.no-hover-color {
+	background-color: var(--global--color-pink) !important;
+	color: var(--global--color-white) !important;
+}
+
+.button.no-hover-color:hover {
+	background-color: var(--global--color-pink) !important;
+	color: var(--global--color-white) !important;
+}
+
 .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(:hover):not(:active):not(.has-text-color) {
 	color: var(--global--color-background);
 }

@@ -15,6 +15,14 @@ input[type="reset"],
 /**
  * Block Options
  */
+.button.no-hover-color{
+	background-color: var(--global--color-pink) !important;
+	color: var(--global--color-white) !important;
+	&:hover{
+		background-color: var(--global--color-pink) !important;
+		color: var(--global--color-white) !important;
+	}
+}
 .wp-block-button {
 
 	// Target the default and filled button states.

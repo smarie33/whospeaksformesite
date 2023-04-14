@@ -66,7 +66,9 @@
 	--global--color-gray: #39414d;
 	--global--color-light-gray: #f0f0f0;
 	--global--color-green: #d1e4dd;
-	--global--color-blue: #d1dfe4;
+	--global--color-lt-blue: #353584;
+	--global--color-blue: #262661;
+	--global--color-dk-blue: #19193f;
 	--global--color-purple: #d1d1e4;
 	--global--color-red: #e4d1d1;
 	--global--color-orange: #e4dad1;
@@ -74,10 +76,12 @@
 	--global--color-white: #fff;
 	--global--color-white-50: rgba(255, 255, 255, 0.5);
 	--global--color-white-90: rgba(255, 255, 255, 0.9);
+	--global--color-pink: #c82262;
+	--global--color-lt-pink: #f45696;
 	--global--color-primary: var(--global--color-dark-gray); /* Body text color, site title, footer text color. */
 	--global--color-secondary: var(--global--color-gray); /* Headings */
 	--global--color-primary-hover: var(--global--color-primary);
-	--global--color-background: var(--global--color-green); /* Mint, default body background */
+	--global--color-background: var(--global--color-white); /* White, default body background */
 	--global--color-border: var(--global--color-primary); /* Used for borders (separators) */
 
 	/* Spacing */
@@ -85,6 +89,7 @@
 	--global--spacing-measure: unset;
 	--global--spacing-horizontal: 25px;
 	--global--spacing-vertical: 30px;
+	--global--banner-spacing-vertical: 100px;
 
 	/* Elevation */
 	--global--elevation: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -526,19 +531,23 @@ a:hover {
 }
 
 .wp-block-button__link {
-	border: var(--button--border-width) solid transparent;
+	border: var(--button--border-width) solid var(--global--color-primary);
 	border-radius: var(--button--border-radius);
 	cursor: pointer;
+	display: inline-block;
 	font-weight: var(--button--font-weight);
 	font-family: var(--button--font-family);
 	font-size: var(--button--font-size);
 	line-height: var(--button--line-height);
 	padding: var(--button--padding-vertical) var(--button--padding-horizontal);
 	text-decoration: none;
+	text-transform: uppercase;
+	transform: translateY(0);
+	transition: 0.3s ease;
 }
 
 .wp-block-button__link:not(:hover):not(:active):not(.has-text-color) {
-	color: var(--global--color-background);
+	color: var(--global--color-primary);
 }
 
 .has-background .wp-block-button__link:not(:hover):not(:active):not(.has-text-color) {
@@ -550,7 +559,7 @@ a:hover {
 }
 
 .wp-block-button__link:not(:hover):not(:active):not(.has-background) {
-	background-color: var(--global--color-primary);
+	background-color: transparent;
 }
 
 .has-background .wp-block-button__link:not(:hover):not(:active):not(.has-background) {
@@ -559,9 +568,11 @@ a:hover {
 
 .wp-block-button__link:hover,
 .wp-block-button__link:active {
-	background-color: transparent;
-	border-color: currentColor;
-	color: inherit;
+	background-color: var(--global--color-primary);
+	border-color: var(--global--color-primary);
+	color: var(--global--color-white);
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16), 0 10px 10px rgba(0, 0, 0, 0.23);
+	transform: translateY(-3px);
 }
 
 .wp-block-button__link:focus {
@@ -868,20 +879,24 @@ a:hover {
 }
 
 .wp-block-file .wp-block-file__button {
-	border: var(--button--border-width) solid transparent;
+	border: var(--button--border-width) solid var(--global--color-primary);
 	border-radius: var(--button--border-radius);
 	cursor: pointer;
+	display: inline-block;
 	font-weight: var(--button--font-weight);
 	font-family: var(--button--font-family);
 	font-size: var(--button--font-size);
 	line-height: var(--button--line-height);
 	padding: var(--button--padding-vertical) var(--button--padding-horizontal);
 	text-decoration: none;
+	text-transform: uppercase;
+	transform: translateY(0);
+	transition: 0.3s ease;
 	display: inline-block;
 }
 
 .wp-block-file .wp-block-file__button:not(:hover):not(:active):not(.has-text-color) {
-	color: var(--global--color-background);
+	color: var(--global--color-primary);
 }
 
 .has-background .wp-block-file .wp-block-file__button:not(:hover):not(:active):not(.has-text-color) {
@@ -893,7 +908,7 @@ a:hover {
 }
 
 .wp-block-file .wp-block-file__button:not(:hover):not(:active):not(.has-background) {
-	background-color: var(--global--color-primary);
+	background-color: transparent;
 }
 
 .has-background .wp-block-file .wp-block-file__button:not(:hover):not(:active):not(.has-background) {
@@ -902,9 +917,11 @@ a:hover {
 
 .wp-block-file .wp-block-file__button:hover,
 .wp-block-file .wp-block-file__button:active {
-	background-color: transparent;
-	border-color: currentColor;
-	color: inherit;
+	background-color: var(--global--color-primary);
+	border-color: var(--global--color-primary);
+	color: var(--global--color-white);
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16), 0 10px 10px rgba(0, 0, 0, 0.23);
+	transform: translateY(-3px);
 }
 
 .wp-block-file .wp-block-file__button:focus {
@@ -1804,21 +1821,25 @@ pre.wp-block-preformatted {
 }
 
 .wp-block-search .wp-block-search__button.wp-block-search__button {
-	border: var(--button--border-width) solid transparent;
+	border: var(--button--border-width) solid var(--global--color-primary);
 	border-radius: var(--button--border-radius);
 	cursor: pointer;
+	display: inline-block;
 	font-weight: var(--button--font-weight);
 	font-family: var(--button--font-family);
 	font-size: var(--button--font-size);
 	line-height: var(--button--line-height);
 	padding: var(--button--padding-vertical) var(--button--padding-horizontal);
 	text-decoration: none;
+	text-transform: uppercase;
+	transform: translateY(0);
+	transition: 0.3s ease;
 	box-shadow: none;
 	margin-left: 0;
 }
 
 .wp-block-search .wp-block-search__button.wp-block-search__button:not(:hover):not(:active):not(.has-text-color) {
-	color: var(--global--color-background);
+	color: var(--global--color-primary);
 }
 
 .has-background .wp-block-search .wp-block-search__button.wp-block-search__button:not(:hover):not(:active):not(.has-text-color) {
@@ -1830,7 +1851,7 @@ pre.wp-block-preformatted {
 }
 
 .wp-block-search .wp-block-search__button.wp-block-search__button:not(:hover):not(:active):not(.has-background) {
-	background-color: var(--global--color-primary);
+	background-color: transparent;
 }
 
 .has-background .wp-block-search .wp-block-search__button.wp-block-search__button:not(:hover):not(:active):not(.has-background) {
@@ -1839,9 +1860,11 @@ pre.wp-block-preformatted {
 
 .wp-block-search .wp-block-search__button.wp-block-search__button:hover,
 .wp-block-search .wp-block-search__button.wp-block-search__button:active {
-	background-color: transparent;
-	border-color: currentColor;
-	color: inherit;
+	background-color: var(--global--color-primary);
+	border-color: var(--global--color-primary);
+	color: var(--global--color-white);
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16), 0 10px 10px rgba(0, 0, 0, 0.23);
+	transform: translateY(-3px);
 }
 
 .wp-block-search .wp-block-search__button.wp-block-search__button:focus {
