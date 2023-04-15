@@ -1241,6 +1241,27 @@ p {
 	margin-bottom: auto;
 }
 
+.acf-social_media {
+	width: 100%;
+	display: inline-flex;
+	justify-content: flex-end;
+	align-content: center;
+}
+
+.acf-social_media,
+.acf-social_media h2 {
+	font: 600 9px/16px open-sans, sans-serif;
+}
+
+.acf-social_media h2,
+.acf-social_media a {
+	margin: 0 10px 0 0;
+}
+
+.fa {
+	color: #c82262;
+}
+
 blockquote {
 	padding: 0;
 	position: relative;
@@ -2101,7 +2122,7 @@ a:hover {
  */
 .site .button,
 button {
-	border: 3px solid #28303d;
+	border: 2px solid #28303d;
 	border-radius: 0;
 	cursor: pointer;
 	display: inline-block;
@@ -2117,7 +2138,7 @@ button {
 }
 
 input[type=submit] {
-	border: 3px solid #28303d;
+	border: 2px solid #28303d;
 	border-radius: 0;
 	cursor: pointer;
 	display: inline-block;
@@ -2133,7 +2154,7 @@ input[type=submit] {
 }
 
 input[type=reset] {
-	border: 3px solid #28303d;
+	border: 2px solid #28303d;
 	border-radius: 0;
 	cursor: pointer;
 	display: inline-block;
@@ -2156,7 +2177,7 @@ input[type=reset] {
 .wp-block-search .wp-block-search__button,
 .wp-block-button .wp-block-button__link,
 .wp-block-file a.wp-block-file__button {
-	border: 3px solid #28303d;
+	border: 2px solid #28303d;
 	border-radius: 0;
 	cursor: pointer;
 	font-weight: 500;
@@ -4270,7 +4291,7 @@ pre.wp-block-preformatted {
 	color: #28303d;
 	line-height: 1.7;
 	max-width: inherit;
-	margin-right: -3px;
+	margin-right: -2px;
 	padding: 10px;
 }
 
@@ -6961,7 +6982,7 @@ h1.page-title {
 }
 
 .widget_search > .search-form .search-field {
-	margin-right: -3px;
+	margin-right: -2px;
 	-webkit-appearance: none;
 	margin-bottom: 15px;
 }

@@ -346,7 +346,7 @@ a:hover {
 }
 
 .wp-block-button__link {
-	border: 3px solid #28303d;
+	border: 2px solid #28303d;
 	border-radius: 0;
 	cursor: pointer;
 	display: inline-block;
@@ -813,7 +813,7 @@ a:hover {
 }
 
 .wp-block-file .wp-block-file__button {
-	border: 3px solid #28303d;
+	border: 2px solid #28303d;
 	border-radius: 0;
 	cursor: pointer;
 	font-weight: 500;
@@ -1990,7 +1990,7 @@ pre.wp-block-preformatted {
 	font-size: 1.125rem;
 	line-height: 1.7;
 	max-width: inherit;
-	margin-right: -3px;
+	margin-right: -2px;
 	padding: 10px;
 }
 
@@ -2005,7 +2005,7 @@ pre.wp-block-preformatted {
 }
 
 .wp-block-search .wp-block-search__button.wp-block-search__button {
-	border: 3px solid #28303d;
+	border: 2px solid #28303d;
 	border-radius: 0;
 	cursor: pointer;
 	display: inline-block;

@@ -121,7 +121,7 @@
 	--button--font-size: var(--global--font-size-base);
 	--button--font-weight: 500;
 	--button--line-height: 1.5;
-	--button--border-width: 3px;
+	--button--border-width: 2px;
 	--button--border-radius: 0;
 	--button--padding-vertical: 15px;
 	--button--padding-horizontal: calc(2 * var(--button--padding-vertical));

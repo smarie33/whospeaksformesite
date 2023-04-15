@@ -18,7 +18,20 @@
 
 	<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer alignfull">
+
+		<?php
+		if( have_rows('all_modules', 'option') ):
+
+		    while ( have_rows('all_modules', 'option') ) : the_row();
+
+		    	get_template_part( 'template-parts/acf/acf', get_row_layout(), the_post());
+
+		    endwhile;
+
+		endif;
+		?>
+
 
 		<?php if ( has_nav_menu( 'footer' ) ) : ?>
 			<nav aria-label="<?php esc_attr_e( 'Secondary menu', 'twentytwentyone' ); ?>" class="footer-navigation">

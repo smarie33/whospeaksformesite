@@ -5,3 +5,20 @@
 		margin-bottom: auto;
 	}
 }
+
+.acf-social_media{
+	width: 100%;
+	display: inline-flex;
+	justify-content: flex-end;
+	align-content: center;
+	font: 600 9px / 16px open-sans, sans-serif;
+	h2{
+		font: 600 9px / 16px open-sans, sans-serif;
+		margin: 0 $baseline-unit 0 0;
+	}
+	a{
+		margin: 0 $baseline-unit 0 0;
+	}
+}
+
+.fa {color: var(--global--color-pink)}

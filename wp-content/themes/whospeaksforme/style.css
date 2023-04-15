@@ -213,7 +213,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 	--button--font-size: var(--global--font-size-base);
 	--button--font-weight: 500;
 	--button--line-height: 1.5;
-	--button--border-width: 3px;
+	--button--border-width: 2px;
 	--button--border-radius: 0;
 	--button--padding-vertical: 15px;
 	--button--padding-horizontal: calc(2 * var(--button--padding-vertical));
@@ -1069,6 +1069,27 @@ p {
 .acf-full_width_banner .button-paragraph {
 	text-align: center;
 	margin-bottom: auto;
+}
+
+.acf-social_media {
+	width: 100%;
+	display: inline-flex;
+	justify-content: flex-end;
+	align-content: center;
+	font: 600 9px/16px open-sans, sans-serif;
+}
+
+.acf-social_media h2 {
+	font: 600 9px/16px open-sans, sans-serif;
+	margin: 0 10px 0 0;
+}
+
+.acf-social_media a {
+	margin: 0 10px 0 0;
+}
+
+.fa {
+	color: var(--global--color-pink);
 }
 
 blockquote {
