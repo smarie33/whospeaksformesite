@@ -85,6 +85,9 @@
 	line-height: 1.15;
 	margin-top: 0;
 	margin-bottom: 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
 
 	// Mobile menu closed
 	> .primary-menu-container {
@@ -161,7 +164,7 @@
 
 	@include media(mobile) {
 		position: relative;
-		margin-left: auto;
+		margin-left: 0;
 
 		// Hide Mobile menu on desktop
 		> .primary-menu-container {
@@ -369,6 +372,9 @@
 			// Better align with the site title when the menu wraps.
 			margin-right: calc(0px - var(--primary-nav--padding));
 			margin-left: calc(0px - var(--primary-nav--padding));
+			    display: flex;
+			    align-items: center;
+			    justify-content: center;
 
 			// Top-level Menu Item
 			> ul > .menu-item {

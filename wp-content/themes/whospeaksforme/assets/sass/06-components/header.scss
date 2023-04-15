@@ -1,21 +1,28 @@
 // Site header
 .site-header {
-	@extend %responsive-alignwide-width;
-	display: flex;
-	align-items: flex-start;
-	flex-wrap: wrap;
+	//@extend %responsive-alignwide-width;
+	// display: flex;
+	// align-items: flex-start;
+	// flex-wrap: wrap;
 	row-gap: var(--global--spacing-vertical); // Add space in case the menu wraps below the site branding.
+	//justify-content: center;
+	position: fixed;
+	z-index: 2000;
+	width: 100%;
+	background-color: var(--global--color-black);
 
 	.wp-custom-logo & {
 		align-items: center;
 	}
 
 	@include media(mobile) {
-		padding-top: calc(var(--global--spacing-vertical) / 0.75); // 40px
+		//padding-top: calc(var(--global--spacing-vertical) / 0.75); // 40px
+		padding-top: $baseline-unit;
 	}
 
 	@include media(desktop) {
-		padding-top: calc(2.4 * var(--global--spacing-vertical)); // 60px
+		// padding-top: calc(2.4 * var(--global--spacing-vertical)); // 60px
+		padding-top: $baseline-unit;
 	}
 }
 
@@ -126,7 +133,7 @@
 
 					.site-logo {
 						position: absolute;
-						padding-top: calc(0.5 * var(--global--spacing-vertical));
+						padding-top: $baseline-unit;
 						margin-top: 0;
 						top: var(--global--admin-bar--height);
 

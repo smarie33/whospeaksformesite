@@ -257,9 +257,9 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 	--primary-nav--font-style-sub-menu-mobile: normal;
 	--primary-nav--font-weight: normal;
 	--primary-nav--font-weight-button: 500;
-	--primary-nav--color-link: var(--global--color-primary);
-	--primary-nav--color-link-hover: var(--global--color-primary-hover);
-	--primary-nav--color-text: var(--global--color-primary);
+	--primary-nav--color-link: var(--global--color-white);
+	--primary-nav--color-link-hover: var(--global--color-white);
+	--primary-nav--color-text: var(--global--color-white);
 	--primary-nav--padding: calc(0.66 * var(--global--spacing-unit));
 	--primary-nav--border-color: var(--global--color-primary);
 
@@ -711,7 +711,6 @@ template {
 .comments-pagination,
 .post-navigation,
 .site-footer,
-.site-header,
 .alignwide,
 .wide-max-width {
 	max-width: var(--responsive--alignwide-width);
@@ -788,13 +787,13 @@ template {
 }
 
 .site-header {
-	padding-top: calc(0.75 * var(--global--spacing-vertical));
-	padding-bottom: calc(2 * var(--global--spacing-vertical));
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 @media only screen and (min-width: 482px) {
 
 	.site-header {
-		padding-bottom: calc(3 * var(--global--spacing-vertical));
+		padding-bottom: 10px;
 	}
 }
 
@@ -1771,7 +1770,7 @@ input[type=reset]:active,
 .wp-block-file a.wp-block-file__button:active {
 	background-color: var(--global--color-primary);
 	border-color: var(--global--color-primary);
-	color: var(--global--color-white);
+	color: var(--global--color-pink);
 	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16), 0 10px 10px rgba(0, 0, 0, 0.23);
 	transform: translateY(-3px);
 }
@@ -3718,10 +3717,11 @@ table.wp-calendar-table caption {
 
 /* Category 06 contains all "bigger" components which contain elements of the previous two categories like header, footer, page template, single template, comments section, archives, ... */
 .site-header {
-	display: flex;
-	align-items: flex-start;
-	flex-wrap: wrap;
 	row-gap: var(--global--spacing-vertical);
+	position: fixed;
+	z-index: 2000;
+	width: 100%;
+	background-color: var(--global--color-black);
 }
 
 .wp-custom-logo .site-header {
@@ -3730,13 +3730,13 @@ table.wp-calendar-table caption {
 @media only screen and (min-width: 482px) {
 
 	.site-header {
-		padding-top: calc(var(--global--spacing-vertical) / 0.75);
+		padding-top: 10px;
 	}
 }
 @media only screen and (min-width: 822px) {
 
 	.site-header {
-		padding-top: calc(2.4 * var(--global--spacing-vertical));
+		padding-top: 10px;
 	}
 }
 
@@ -3835,7 +3835,7 @@ table.wp-calendar-table caption {
 
 	.site-header.has-logo:not(.has-title-and-tagline).has-menu .site-logo {
 		position: absolute;
-		padding-top: calc(0.5 * var(--global--spacing-vertical));
+		padding-top: 10px;
 		margin-top: 0;
 		top: var(--global--admin-bar--height);
 	}
@@ -4626,6 +4626,9 @@ h1.page-title {
 	line-height: 1.15;
 	margin-top: 0;
 	margin-bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .primary-navigation > .primary-menu-container {
@@ -4701,7 +4704,7 @@ h1.page-title {
 
 	.primary-navigation {
 		position: relative;
-		margin-right: auto;
+		margin-right: 0;
 	}
 
 	.primary-navigation > .primary-menu-container {
@@ -4889,6 +4892,9 @@ h1.page-title {
 	.primary-navigation .primary-menu-container {
 		margin-left: calc(0px - var(--primary-nav--padding));
 		margin-right: calc(0px - var(--primary-nav--padding));
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.primary-navigation .primary-menu-container > ul > .menu-item {

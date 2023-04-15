@@ -165,9 +165,9 @@
 	--primary-nav--font-style-sub-menu-mobile: normal;
 	--primary-nav--font-weight: normal;
 	--primary-nav--font-weight-button: 500;
-	--primary-nav--color-link: var(--global--color-primary);
-	--primary-nav--color-link-hover: var(--global--color-primary-hover);
-	--primary-nav--color-text: var(--global--color-primary);
+	--primary-nav--color-link: var(--global--color-white);
+	--primary-nav--color-link-hover: var(--global--color-white);
+	--primary-nav--color-text: var(--global--color-white);
 	--primary-nav--padding: calc(0.66 * var(--global--spacing-unit));
 	--primary-nav--border-color: var(--global--color-primary);
 
@@ -570,7 +570,7 @@ a:hover {
 .wp-block-button__link:active {
 	background-color: var(--global--color-primary);
 	border-color: var(--global--color-primary);
-	color: var(--global--color-white);
+	color: var(--global--color-pink);
 	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16), 0 10px 10px rgba(0, 0, 0, 0.23);
 	transform: translateY(-3px);
 }
@@ -919,7 +919,7 @@ a:hover {
 .wp-block-file .wp-block-file__button:active {
 	background-color: var(--global--color-primary);
 	border-color: var(--global--color-primary);
-	color: var(--global--color-white);
+	color: var(--global--color-pink);
 	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16), 0 10px 10px rgba(0, 0, 0, 0.23);
 	transform: translateY(-3px);
 }
@@ -1862,7 +1862,7 @@ pre.wp-block-preformatted {
 .wp-block-search .wp-block-search__button.wp-block-search__button:active {
 	background-color: var(--global--color-primary);
 	border-color: var(--global--color-primary);
-	color: var(--global--color-white);
+	color: var(--global--color-pink);
 	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16), 0 10px 10px rgba(0, 0, 0, 0.23);
 	transform: translateY(-3px);
 }
