@@ -37,9 +37,24 @@
 			opacity: 1;
 		}
 	}
+	@include media(device) {
+		background-color: var(--global--color-black);
+		
+		.primary-navigation{
+			transform: translateY(0);
+		}
+
+		.primary-menu-container > ul > .menu-item{
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
 }
 
 #main-menu-toggle{
+	@include media(device) {
+		display: none;
+	}
 	position: fixed;
 	right: 0;
 	z-index: 2500;
@@ -210,6 +225,7 @@
 					}
 
 					.menu-button-container {
+						display: none;
 						position: relative;
 						padding-top: 0;
 						margin-top: calc(0px - var(--button--padding-vertical) + (0.25 * var(--global--spacing-unit)));

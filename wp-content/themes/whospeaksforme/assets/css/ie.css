@@ -885,8 +885,8 @@ template {
 }
 
 .site-header {
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
 @media only screen and (min-width: 482px) {
 
@@ -4981,12 +4981,33 @@ table.wp-calendar-table caption {
 	transform: translateY(0);
 	opacity: 1;
 }
+@media (hover: none) {
+
+	.site-header {
+		background-color: #000;
+	}
+
+	.site-header .primary-navigation {
+		transform: translateY(0);
+	}
+
+	.site-header .primary-menu-container > ul > .menu-item {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
 
 #main-menu-toggle {
 	position: fixed;
 	right: 0;
 	z-index: 2500;
 	border: none;
+}
+@media (hover: none) {
+
+	#main-menu-toggle {
+		display: none;
+	}
 }
 
 #main-menu-toggle:hover {
@@ -5142,6 +5163,7 @@ table.wp-calendar-table caption {
 	}
 
 	body:not(.primary-navigation-open) .site-header.has-logo.has-title-and-tagline .menu-button-container {
+		display: none;
 		position: relative;
 		padding-top: 0;
 		margin-top: -10px;
@@ -5935,8 +5957,7 @@ h1.page-title {
 	justify-content: space-between;
 	position: absolute;
 	right: 0;
-	padding-top: 15px;
-	padding-bottom: 8px;
+	padding-top: 30px;
 }
 @media only screen and (max-width: 481px) {
 
@@ -5954,6 +5975,15 @@ h1.page-title {
 	background-color: transparent;
 	border: none;
 	color: #fff;
+}
+
+.menu-button-container #primary-mobile-menu:hover {
+	box-shadow: none;
+	transform: translateY(0);
+}
+
+.menu-button-container #primary-mobile-menu:focus {
+	outline: none;
 }
 
 .menu-button-container #primary-mobile-menu .dropdown-icon {
@@ -5980,6 +6010,7 @@ h1.page-title {
 
 .menu-button-container #primary-mobile-menu[aria-expanded*=true] .dropdown-icon.close {
 	display: flex;
+	color: #c82262;
 }
 
 .has-logo.has-title-and-tagline .menu-button-container #primary-mobile-menu[aria-expanded*=true] .dropdown-icon.close {
@@ -5990,7 +6021,7 @@ h1.page-title {
 .primary-navigation-open .menu-button-container {
 	width: 100%;
 	z-index: 500;
-	background-color: #fff;
+	background-color: #000;
 }
 
 .primary-navigation-open .menu-button-container #primary-mobile-menu {
@@ -6043,6 +6074,7 @@ h1.page-title {
 		overflow-x: hidden;
 		overflow-y: auto;
 		border: 2px solid transparent;
+		background-color: #000;
 	}
 
 	.has-logo.has-title-and-tagline .primary-navigation > .primary-menu-container {
@@ -6229,7 +6261,7 @@ h1.page-title {
 		transition: all 0.5s ease;
 	}
 }
-@media only screen and (min-width: 482px) {
+@media only screen and (min-width: 822px) {
 
 	.primary-navigation > div > .menu-wrapper > li > .sub-menu {
 		left: 0;
@@ -6447,6 +6479,13 @@ h1.page-title {
 
 	.primary-navigation .primary-menu-container > ul > .menu-item > a + .sub-menu-toggle {
 		margin-left: -8px;
+	}
+}
+@media (hover: none) {
+
+	.primary-navigation .primary-menu-container > ul > .menu-item {
+		transform: translateY(0);
+		opacity: 1;
 	}
 }
 
