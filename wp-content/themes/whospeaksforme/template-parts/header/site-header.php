@@ -13,6 +13,7 @@ $wrapper_classes .= ( true === get_theme_mod( 'display_title_and_tagline', true 
 $wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
 ?>
 
+<button id="main-menu-toggle">Menu</button>
 <header id="masthead" class="<?php echo esc_attr( $wrapper_classes ); ?>">
 
 	<?php //get_template_part( 'template-parts/header/site-branding' ); ?>

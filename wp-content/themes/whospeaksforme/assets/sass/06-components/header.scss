@@ -1,7 +1,6 @@
 // Site header
-.site-header {
+.site-header { 
 	//@extend %responsive-alignwide-width;
-	// display: flex;
 	// align-items: flex-start;
 	// flex-wrap: wrap;
 	row-gap: var(--global--spacing-vertical); // Add space in case the menu wraps below the site branding.
@@ -9,7 +8,8 @@
 	position: fixed;
 	z-index: 2000;
 	width: 100%;
-	background-color: var(--global--color-black);
+	background-color: transparent;
+	transition: all .5s ease-in-out;
 
 	.wp-custom-logo & {
 		align-items: center;
@@ -24,7 +24,42 @@
 		// padding-top: calc(2.4 * var(--global--spacing-vertical)); // 60px
 		padding-top: $baseline-unit;
 	}
+
+	&.menu-active{
+		background-color: var(--global--color-black);
+
+		.primary-navigation{
+			transform: translateY(0);
+		}
+
+		.primary-menu-container > ul > .menu-item{
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
 }
+
+#main-menu-toggle{
+	position: fixed;
+	right: 0;
+	z-index: 2500;
+	border: none;
+	&:hover{
+		box-shadow: none;
+		background-color: transparent;
+		transform: translateY(0);
+		color: var(--global--color-primary);
+	}
+	&:focus{
+		border: none;
+		outline: none;
+	}
+	&.menu-active{
+		color: var(--global--color-pink);
+	}
+}
+
+
 
 // Site branding
 .site-branding {
