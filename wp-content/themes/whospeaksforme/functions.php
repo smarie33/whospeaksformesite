@@ -705,3 +705,29 @@ function wd_acf_color_palette() { ?>
 </script>
 
 <?php } ?>
+
+<?php
+//add branding colors to wysiwyg pallette
+add_filter('tiny_mce_before_init', 'my_mce4_options');
+function my_mce4_options($init) {
+
+    $custom_colours = '
+        "c82262", "Pink",
+        "f45696", "Light Pink",
+        "262661", "Blue",
+        "353584", "Light Blue",
+        "19193f", "Dark Blue",
+        "FFFFFF", "White",
+        "000000", "Black"
+    ';
+
+    // build colour grid default+custom colors
+    $init['textcolor_map'] = '['.$custom_colours.']';
+
+    // change the number of rows in the grid if the number of colors changes
+    // 8 swatches per row
+    $init['textcolor_rows'] = 1;
+
+    return $init;
+}
+?>

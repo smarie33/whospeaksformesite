@@ -1244,6 +1244,30 @@ p {
 	color: #c82262;
 }
 
+.acf-two_columns,
+.acf-three_columns {
+	display: flex;
+	flex-direction: row;
+}
+@media only screen and (max-width: 821px) {
+
+	.acf-two_columns,
+	.acf-three_columns {
+		flex-direction: column;
+	}
+}
+
+.acf-team_members .member {
+	display: flex;
+	flex-direction: row;
+}
+@media only screen and (max-width: 821px) {
+
+	.acf-team_members .member {
+		flex-direction: column;
+	}
+}
+
 blockquote {
 	padding: 0;
 	position: relative;

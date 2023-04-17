@@ -22,3 +22,21 @@
 }
 
 .fa {color: var(--global--color-pink)}
+
+.acf-two_columns, .acf-three_columns{
+	display: flex;
+	flex-direction: row;
+	@include media(desktop-only){
+		flex-direction: column;
+	}
+}
+
+.acf-team_members{
+	.member{
+		display: flex;
+		flex-direction: row;
+		@include media(desktop-only){
+			flex-direction: column;
+		}
+	}
+}
