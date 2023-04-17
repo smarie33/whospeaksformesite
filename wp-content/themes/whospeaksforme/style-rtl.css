@@ -3845,6 +3845,10 @@ table.wp-calendar-table caption {
 	}
 }
 
+.site-header .primary-menu-container > ul > .menu-item {
+	text-transform: uppercase;
+}
+
 .site-header.menu-active {
 	background-color: var(--global--color-black);
 }
@@ -3856,7 +3860,6 @@ table.wp-calendar-table caption {
 .site-header.menu-active .primary-menu-container > ul > .menu-item {
 	transform: translateY(0);
 	opacity: 1;
-	text-transform: uppercase;
 }
 @media (hover: none) {
 

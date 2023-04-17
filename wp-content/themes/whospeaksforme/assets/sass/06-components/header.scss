@@ -25,6 +25,10 @@
 		padding-top: $baseline-unit;
 	}
 
+	.primary-menu-container > ul > .menu-item{
+		text-transform: uppercase;
+	}
+
 	&.menu-active{
 		background-color: var(--global--color-black);
 
@@ -35,7 +39,6 @@
 		.primary-menu-container > ul > .menu-item{
 			transform: translateY(0);
 			opacity: 1;
-			text-transform: uppercase;
 		}
 	}
 	@include media(device) {
