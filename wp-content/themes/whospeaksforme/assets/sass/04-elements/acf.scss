@@ -23,11 +23,38 @@
 
 .fa {color: var(--global--color-pink)}
 
+.acf-free_form_content{
+	& > div{
+		padding: 0 10%;
+	}
+}
+
 .acf-two_columns, .acf-three_columns{
 	display: flex;
 	flex-direction: row;
+
 	@include media(desktop-only){
 		flex-direction: column;
+	}
+
+	div{
+		display: flex;
+		justify-content: center;
+		@include media(desktop){
+		    align-content: flex-end;
+		    flex-wrap: wrap;
+		}
+	}
+}
+
+.acf-three_columns{
+	div{
+		width: 80%;
+		margin: 0 10%;
+		@include media(desktop){
+			width: 29.5%;
+			margin: 0 2%;
+		}
 	}
 }
 

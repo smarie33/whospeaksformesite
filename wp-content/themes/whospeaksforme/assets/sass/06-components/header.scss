@@ -74,6 +74,13 @@
 	}
 }
 
+#content{
+	padding-top: calc($baseline-unit * 6);
+	@include media(desktop) {
+		padding-top: calc($baseline-unit * 10);
+	}
+}
+
 
 
 // Site branding

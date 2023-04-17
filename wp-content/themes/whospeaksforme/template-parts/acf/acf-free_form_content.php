@@ -12,6 +12,6 @@
 
 ?>
 
-<section class="acf-free_form_content alignfull">
-  <?php the_sub_field('content'); ?>
+<section class="acf-free_form_content alignfull" style="background-color:<?php the_sub_field('background_color'); ?>;">
+  <div>  <?php the_sub_field('content'); ?></div>
 </section>

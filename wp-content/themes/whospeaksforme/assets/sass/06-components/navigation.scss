@@ -8,6 +8,7 @@
 	position: absolute;
 	right: 0;
 	padding-top: var(--global--spacing-vertical);
+	overflow-wrap: initial;
 
 	@include media(mobile-only) {
 		display: flex;

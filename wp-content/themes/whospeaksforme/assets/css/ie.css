@@ -1151,6 +1151,7 @@ h6 {
 	margin: 0;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+	overflow-wrap: anywhere;
 }
 
 /**
@@ -1185,6 +1186,10 @@ body {
 
 p {
 	margin: 20px 0 0;
+}
+
+p a {
+	color: #c82262;
 }
 
 .clear:before,
@@ -1244,6 +1249,10 @@ p {
 	color: #c82262;
 }
 
+.acf-free_form_content > div {
+	padding: 0 10%;
+}
+
 .acf-two_columns,
 .acf-three_columns {
 	display: flex;
@@ -1254,6 +1263,32 @@ p {
 	.acf-two_columns,
 	.acf-three_columns {
 		flex-direction: column;
+	}
+}
+
+.acf-two_columns div,
+.acf-three_columns div {
+	display: flex;
+	justify-content: center;
+}
+@media only screen and (min-width: 822px) {
+
+	.acf-two_columns div,
+	.acf-three_columns div {
+		align-content: flex-end;
+		flex-wrap: wrap;
+	}
+}
+
+.acf-three_columns div {
+	width: 80%;
+	margin: 0 10%;
+}
+@media only screen and (min-width: 822px) {
+
+	.acf-three_columns div {
+		width: 29.5%;
+		margin: 0 2%;
 	}
 }
 
@@ -5050,6 +5085,16 @@ table.wp-calendar-table caption {
 	color: #c82262;
 }
 
+#content {
+	padding-top: 60px;
+}
+@media only screen and (min-width: 822px) {
+
+	#content {
+		padding-top: 100px;
+	}
+}
+
 .site-branding {
 	color: #28303d;
 	margin-right: 140px;
@@ -5212,10 +5257,6 @@ table.wp-calendar-table caption {
 .site-footer {
 	padding-top: 0;
 	padding-bottom: 51px;
-}
-
-.no-widgets .site-footer {
-	margin-top: 180px;
 }
 @media only screen and (max-width: 481px) {
 
@@ -5982,6 +6023,7 @@ h1.page-title {
 	position: absolute;
 	right: 0;
 	padding-top: 30px;
+	overflow-wrap: initial;
 }
 @media only screen and (max-width: 481px) {
 
