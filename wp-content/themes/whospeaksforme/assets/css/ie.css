@@ -1303,6 +1303,50 @@ p a {
 	}
 }
 
+.acf-two_columns .column,
+.acf-team_members .column {
+	width: 80%;
+	margin: 0 10%;
+}
+@media only screen and (min-width: 822px) {
+
+	.acf-two_columns .column,
+	.acf-team_members .column {
+		width: 42%;
+		margin: 0 2%;
+	}
+}
+
+.acf-two_columns .member,
+.acf-team_members .member {
+	padding: 120px 0 100px 0;
+}
+
+.acf-two_columns .member-info,
+.acf-team_members .member-info {
+	padding-bottom: 20px;
+}
+
+.acf-two_columns hr,
+.acf-team_members hr {
+	border: none;
+	height: 10px;
+	width: 100%;
+	height: 50px;
+	margin-top: 0;
+	box-shadow: 0 10px 20px -20px #333;
+	margin: -50px auto 10px;
+}
+
+.acf-two_columns hr:last-of-type,
+.acf-team_members hr:last-of-type {
+	display: none;
+}
+
+.entry-content .acf-team_members img {
+	height: auto !important;
+}
+
 blockquote {
 	padding: 0;
 	position: relative;

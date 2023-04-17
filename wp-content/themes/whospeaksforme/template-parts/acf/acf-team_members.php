@@ -13,20 +13,22 @@
 ?>
 
 <section class="acf-team_members alignfull">
-  <?php $direction = 'row'; ?>
-  <?php $team_members = get_sub_field('team_members'); ?>
+  <?php $direction = 'row-reverse'; ?>
+  <?php $team_members = get_sub_field('team'); ?>
   <?php if( $team_members ): ?>
-    <?php foreach( $team_members as $member ): ?>
-      <?php setup_postdata($member); ?>
+    <?php foreach( $team_members as $post ): ?>
+      <?php setup_postdata($post); ?>
       <div class="member" style="flex-direction:<?php echo $direction ?>">
         <div class="column">
           <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
         </div>
         <div class="column">
           <h2><?php the_title(); ?></h2>
-          <h3><?php the_field('type'); ?>:</h3><span><?php the_field('position') ?></span>
-          <h3>Location:</h3><span><?php the_field('location') ?></span>
-          <?php the_content(); ?>
+          <div class="member-info">
+            <div><b><?php the_field('type'); ?>: </b><?php the_field('position') ?></div>
+            <div><b>Location: </b><?php the_field('location') ?></div>
+            <?php the_content(); ?>
+          </div>
         </div>
       </div>
       <hr>
