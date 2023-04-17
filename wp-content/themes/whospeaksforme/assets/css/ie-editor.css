@@ -2701,6 +2701,7 @@ body {
 }
 
 body {
+	color: #28303d;
 	background-color: #fff;
 	font-size: 1.25rem;
 	font-weight: normal;
@@ -2708,7 +2709,34 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-body,
+body.bgcolor-ffffff {
+	background-color: #fff !important;
+}
+
+body.bgcolor-000000 {
+	background-color: #000 !important;
+}
+
+body.bgcolor-c82262 {
+	background-color: #c82262 !important;
+}
+
+body.bgcolor-f45696 {
+	background-color: #f45696 !important;
+}
+
+body.bgcolor-19193f {
+	background-color: #19193f !important;
+}
+
+body.bgcolor-353584 {
+	background-color: #353584 !important;
+}
+
+body.bgcolor-262661 {
+	background-color: #262661 !important;
+}
+
 .wp-block a {
 	color: #28303d;
 }

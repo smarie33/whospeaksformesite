@@ -479,6 +479,17 @@ function twenty_twenty_one_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'twenty_twenty_one_scripts' );
 
+function acf_scripts() {
+	wp_enqueue_script(
+		'acf-js',
+		get_template_directory_uri() . '/assets/js/acf-scripts.js',
+		array(),
+		wp_get_theme()->get( 'Version' ),
+		true
+	);
+}
+add_action( 'admin_enqueue_scripts', 'acf_scripts' );
+
 /**
  * Enqueue block editor script.
  *
@@ -690,23 +701,7 @@ add_action( 'admin_init', 'remove_from_admin_menus' );
 function remove_from_admin_menus(){
  remove_menu_page( 'widgets.php' ); 
 }
-//limit acf color pallete
-add_action( 'acf/input/admin_footer', 'wd_acf_color_palette' );
-function wd_acf_color_palette() { ?>
-<script type="text/javascript">
-(function($) {
-     acf.add_filter('color_picker_args', function( args, $field ){
-          // add the hexadecimal codes here for the colors you want to appear as swatches
-          args.palettes = ['#CA2162', '#262661', '#ffffff', '#000000', '#f45696', '#353584', '#19193f']
-          // return colors
-          return args;
-     });
-})(jQuery);
-</script>
 
-<?php } ?>
-
-<?php
 //add branding colors to wysiwyg pallette
 add_filter('tiny_mce_before_init', 'my_mce4_options');
 function my_mce4_options($init) {

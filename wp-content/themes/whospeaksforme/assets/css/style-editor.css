@@ -2312,6 +2312,34 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+body.bgcolor-ffffff {
+	background-color: var(--global--color-white) !important;
+}
+
+body.bgcolor-000000 {
+	background-color: var(--global--color-black) !important;
+}
+
+body.bgcolor-c82262 {
+	background-color: var(--global--color-pink) !important;
+}
+
+body.bgcolor-f45696 {
+	background-color: var(--global--color-lt-pink) !important;
+}
+
+body.bgcolor-19193f {
+	background-color: var(--global--color-dk-blue) !important;
+}
+
+body.bgcolor-353584 {
+	background-color: var(--global--color-lt-blue) !important;
+}
+
+body.bgcolor-262661 {
+	background-color: var(--global--color-blue) !important;
+}
+
 .wp-block a {
 	color: var(--wp--style--color--link, var(--global--color-primary));
 }
