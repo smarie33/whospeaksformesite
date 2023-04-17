@@ -1679,7 +1679,7 @@ pre {
  */
 a {
 	cursor: pointer;
-	color: var(--wp--style--color--link, var(--global--color-primary));
+	color: var(--global--color-pink);
 	text-underline-offset: 3px;
 	text-decoration-skip-ink: all;
 }
