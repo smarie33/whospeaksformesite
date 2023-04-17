@@ -1011,23 +1011,25 @@ p a {
     flex-direction: column;
   }
 }
-.acf-two_columns div, .acf-three_columns div {
+.acf-two_columns > div, .acf-three_columns > div {
   display: flex;
-  justify-content: center;
+  justify-content: end;
+  flex-direction: column;
 }
 @media only screen and (min-width: 822px) {
-  .acf-two_columns div, .acf-three_columns div {
-    align-content: flex-end;
+  .acf-two_columns > div, .acf-three_columns > div {
+    align-content: center;
     flex-wrap: wrap;
+    flex-direction: column;
   }
 }
 
-.acf-three_columns div {
+.acf-three_columns > div {
   width: 80%;
   margin: 0 10%;
 }
 @media only screen and (min-width: 822px) {
-  .acf-three_columns div {
+  .acf-three_columns > div {
     width: 29.5%;
     margin: 0 2%;
   }
@@ -3327,6 +3329,7 @@ table.wp-calendar-table caption {
 .site-header.menu-active .primary-menu-container > ul > .menu-item {
   transform: translateY(0);
   opacity: 1;
+  text-transform: uppercase;
 }
 @media (hover: none) {
   .site-header {

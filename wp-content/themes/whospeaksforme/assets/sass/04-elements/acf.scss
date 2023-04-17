@@ -37,18 +37,20 @@
 		flex-direction: column;
 	}
 
-	div{
+	> div{
 		display: flex;
-		justify-content: center;
+		justify-content: end;
+		flex-direction: column;
 		@include media(desktop){
-		    align-content: flex-end;
+		    align-content: center;
 		    flex-wrap: wrap;
+		    flex-direction: column;
 		}
 	}
 }
 
 .acf-three_columns{
-	div{
+	> div{
 		width: 80%;
 		margin: 0 10%;
 		@include media(desktop){
