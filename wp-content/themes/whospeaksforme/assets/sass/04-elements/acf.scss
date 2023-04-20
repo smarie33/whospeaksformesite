@@ -24,38 +24,49 @@
 .fa {color: var(--global--color-pink)}
 
 .acf-free_form_content{
-	&.word-border{
-		.centered{
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
+		&.word-border{
+		.top,.left,.right{
+			display: none;
 		}
-		.words{
-			color: var(--global--color-pink);
-			font-weight: bold;
-			text-align: center;
-			align-self: center;
-		}
-		.top{
-			width:100%;
-			padding: calc($baseline-unit * 9) 0;
-		}
-		.left,.right{
-			align-content: center;
-			display: flex;
-		}
-		.left{
+	}
+	@include media(desktop){
+		&.word-border{
+			.centered{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
 			.words{
-				transform: rotate(-90deg);
-				white-space: nowrap;
+				color: var(--global--color-pink);
+				font-weight: bold;
+				text-align: center;
+				align-self: center;
+			}
+			.top{
+				display: block;
+				width:100%;
+				padding: calc($baseline-unit * 9) 0;
+			}
+			.left,.right{
+				align-content: center;
+				display: flex;
+			}
+			.left{
+				.words{
+					transform: rotate(-90deg);
+					white-space: nowrap;
+				}
+			}
+			.right{
+				.words{
+					transform: rotate(90deg);
+					white-space: nowrap;
+				}
+			}
+			.content{
+				padding: 0;
 			}
 		}
-		.right{
-			.words{
-				transform: rotate(90deg);
-				white-space: nowrap;
-			}
-		};
 	}
 	.content{
 		padding: 0 10%;
