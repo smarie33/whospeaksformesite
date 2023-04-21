@@ -1087,7 +1087,7 @@ p a {
   justify-content: center;
 }
 .acf-team_members .member h2 {
-  font-size: var(--global--font-size-lg);
+  font-size: var(--global--font-size-xl);
   margin-bottom: var(--global--spacing-vertical);
 }
 @media only screen and (max-width: 821px) {
