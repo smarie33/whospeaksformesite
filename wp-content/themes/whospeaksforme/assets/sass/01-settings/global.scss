@@ -6,8 +6,12 @@ $baseline-unit: 10px;
 :root {
 
 	/* Font Family */
-	--global--font-primary: var(--font-headings, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
-	--global--font-secondary: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
+	//--global--font-primary: var(--font-headings, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
+	//--global--font-secondary: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
+	--global--font-primary: calluna, serif;
+	--global--font-secondary: calluna, serif;
+
+
 
 	/* Font Size */
 	--global--font-size-base: 1.25rem; // 20px / 16px
@@ -166,14 +170,14 @@ $baseline-unit: 10px;
 	/* Main navigation */
 	--primary-nav--font-family: var(--global--font-secondary);
 	--primary-nav--font-family-mobile: var(--global--font-primary);
-	--primary-nav--font-size: var(--global--font-size-md);
+	--primary-nav--font-size: var(--global--font-size-xs);
 	--primary-nav--font-size-sub-menu: var(--global--font-size-xs);
-	--primary-nav--font-size-mobile: var(--global--font-size-sm);
-	--primary-nav--font-size-sub-menu-mobile: var(--global--font-size-sm);
+	--primary-nav--font-size-mobile: var(--global--font-size-xs);
+	--primary-nav--font-size-sub-menu-mobile: var(--global--font-size-xs);
 	--primary-nav--font-size-button: var(--global--font-size-xs);
 	--primary-nav--font-style: normal;
 	--primary-nav--font-style-sub-menu-mobile: normal;
-	--primary-nav--font-weight: normal;
+	--primary-nav--font-weight: 700;
 	--primary-nav--font-weight-button: 500;
 	--primary-nav--color-link: var(--global--color-white);
 	--primary-nav--color-link-hover: var(--global--color-white);

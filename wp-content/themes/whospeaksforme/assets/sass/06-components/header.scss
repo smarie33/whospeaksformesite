@@ -8,8 +8,10 @@
 	position: fixed;
 	z-index: 2000;
 	width: 100%;
-	background-color: transparent;
+	background-color: var(--global--color-background);
 	transition: all .5s ease-in-out;
+	height: calc($baseline-unit * 5);
+
 
 	.wp-custom-logo & {
 		align-items: center;
@@ -23,6 +25,7 @@
 	@include media(desktop) {
 		// padding-top: calc(2.4 * var(--global--spacing-vertical)); // 60px
 		padding-top: $baseline-unit;
+		height: auto;
 	}
 
 	.primary-menu-container > ul > .menu-item{
@@ -56,6 +59,9 @@
 }
 
 #main-menu-toggle{
+	font-weight: var(--primary-nav--font-weight);
+	font-size: var(--global--font-size-xs);
+	padding: var(--global--spacing-unit);
 	@include media(device) {
 		display: none;
 	}

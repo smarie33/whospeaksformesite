@@ -111,6 +111,11 @@
 		flex-wrap: wrap;
 		justify-content: center;
 
+		h2{
+			font-size: var(--global--font-size-lg);
+			margin-bottom: var(--global--spacing-vertical);
+		}
+
 		@include media(desktop-only){
 			flex-direction: column;
 		}
