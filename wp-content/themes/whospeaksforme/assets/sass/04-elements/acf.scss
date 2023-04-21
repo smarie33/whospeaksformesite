@@ -28,6 +28,10 @@
 		.top,.left,.right{
 			display: none;
 		}
+		.words{
+			text-transform: uppercase;
+			font-size: var(--global--font-size-xs);
+		}
 	}
 	@include media(desktop){
 		&.word-border{

@@ -1006,6 +1006,10 @@ p a {
 .acf-free_form_content.word-border .top, .acf-free_form_content.word-border .left, .acf-free_form_content.word-border .right {
   display: none;
 }
+.acf-free_form_content.word-border .words {
+  text-transform: uppercase;
+  font-size: var(--global--font-size-xs);
+}
 @media only screen and (min-width: 822px) {
   .acf-free_form_content.word-border .centered {
     display: flex;
