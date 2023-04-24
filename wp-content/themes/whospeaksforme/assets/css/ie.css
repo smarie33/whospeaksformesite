@@ -1319,16 +1319,48 @@ p a {
 	}
 }
 
-.acf-two_columns > div,
-.acf-three_columns > div {
+.acf-two_columns .column,
+.acf-three_columns .column {
+	position: relative;
+}
+
+.acf-two_columns .column img,
+.acf-three_columns .column img,
+.acf-two_columns .column figure,
+.acf-three_columns .column figure {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.acf-two_columns .column figure,
+.acf-three_columns .column figure {
+	margin: auto;
+}
+
+.acf-two_columns .column figure img,
+.acf-three_columns .column figure img {
+	position: relative;
+}
+
+.acf-two_columns .column figure figcaption,
+.acf-three_columns .column figure figcaption {
+	text-align: center;
+}
+
+.acf-two_columns .align-bottom,
+.acf-three_columns .align-bottom {
 	display: flex;
 	justify-content: end;
 	flex-direction: column;
 }
 @media only screen and (min-width: 822px) {
 
-	.acf-two_columns > div,
-	.acf-three_columns > div {
+	.acf-two_columns .align-bottom,
+	.acf-three_columns .align-bottom {
 		align-content: center;
 		flex-wrap: wrap;
 		flex-direction: column;
@@ -1355,8 +1387,14 @@ p a {
 }
 
 .acf-team_members .member h2 {
-	font-size: 1.5rem;
+	font-size: 2.25rem;
 	margin-bottom: 30px;
+}
+@media only screen and (min-width: 652px) {
+
+	.acf-team_members .member h2 {
+		font-size: 2.5rem;
+	}
 }
 @media only screen and (max-width: 821px) {
 

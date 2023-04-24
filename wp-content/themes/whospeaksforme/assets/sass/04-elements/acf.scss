@@ -84,8 +84,34 @@
 	@include media(desktop-only){
 		flex-direction: column;
 	}
+	.column{
+		position: relative;
+		img{
+			position: absolute;
+			left: 0;
+		    right: 0;
+		    top: 0;
+		    margin-left: auto;
+		    margin-right: auto;
+		} 
+		figure{
+			position: absolute;
+			left: 0;
+		    right: 0;
+		    top:0;
+		    margin-left: auto;
+		    margin-right: auto;
+		    margin: auto;
+			img{
+				position: relative;
+			}
+			figcaption{
+				text-align: center;
+			}
+		}
+	}
 
-	> div{
+	.align-bottom{
 		display: flex;
 		justify-content: end;
 		flex-direction: column;

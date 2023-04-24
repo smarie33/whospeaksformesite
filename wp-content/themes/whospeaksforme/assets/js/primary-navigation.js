@@ -1,4 +1,4 @@
-/**
+ /**
  * File primary-navigation.js.
  *
  * Required to open and close the mobile navigation.
@@ -214,4 +214,230 @@ function twentytwentyoneExpandSubMenu( el ) { // jshint ignore:line
 	window.addEventListener( 'load', function() {
 		new navMenu( 'primary' );
 	} );
+
+	let runDemImages = [];
+
+	document.querySelectorAll('.acf-three_columns .column:not(align-bottom) img').forEach( function( disImg ) {
+		runDemImages.push(moveImage(disImg));
+	})
+
+	function moveImage(curImg){
+		let useThis, container, scrollAmt, diff, conStartP;
+		useThis = (curImg.parentElement.nodeName == 'figure') ? curImg.parentNode : curImg;
+		container = useThis.closest('.column');
+		conP = container.getBoundingClientRect();
+		diff = container.offsetHeight - useThis.offsetHeight;
+		scrollAmt = conP.top + diff;
+		if(isInViewport(container)){
+			let useP, changeTop;
+			useP = useThis.getBoundingClientRect()
+			let curPos = conP.top - useP.top;
+			if(scrollingDown()){
+				changeTop = parseInt(useThis.style.top, 10);
+			}else{
+				changeTop = parseInt(useThis.style.top, 10);
+			}
+			if(curPos > -30 && curPos < scrollAmt){
+				console.log(changeTop);
+				useThis.style.top = changeTop+'px';
+			}
+		}
+
+	}
+
+	function isInViewport(element){
+		var viewportHeight = window.innerHeight;
+		var rect = element.getBoundingClientRect();
+		var position = rect.top/viewportHeight;
+		if (position >= 0 && position <= 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	window.onscroll = function() {
+		runDemImages.forEach(function(func){
+		     func(); // run your function
+		});
+	}
+
+
+	function scrollingDown(){
+	  var lastScroll = 0;
+
+	  window.onscroll = function() {
+	      let currentScroll = document.documentElement.scrollTop || document.body.scrollTop; // Get Current Scroll Value
+
+	      if (currentScroll > 0 && lastScroll <= currentScroll){
+	        lastScroll = currentScroll;
+	        return true;
+	      }else{
+	        lastScroll = currentScroll;
+	        return false
+	      }
+	  };
+	}
+
+
+// function moveImages(curImg){
+// 	let useThis;
+// 	useThis = (curImg.parentElement.nodeName == 'figure') ? curImg.parentNode : curImg;
+
+// 	var _containerHeight = useThis.closest('.column').offsetHeight;
+// 	var _height = useThis.offsetHeight;
+
+// 	newMeasurements = ifResize(_containerHeight, );
+
+// 	var _width, _scrollHeight;
+// 	var _movingElements = [];
+// 	var _scrollPercent = 0;
+// 	var pre = prefix();
+// 	var _jsPrefix  = pre.lowercase;
+// 	if(_jsPrefix == 'moz') _jsPrefix = 'Moz'
+// 	var _cssPrefix = pre.css;
+// 	var _positions = []
+
+// 	window.addEventListener('resize', ifResize);
+// 	loop();
+// }
+
+// function initMovingElements() {
+//   for (var i = 0; i < _positions.length; i++) {
+//     _positions[i].diff = {
+//       percent: _positions[i].end.percent - _positions[i].start.percent,
+//       x: _positions[i].end.x - _positions[i].start.x,
+//       y: _positions[i].end.y - _positions[i].start.y,
+//     }
+//     _positions[i].target = {};
+//     _positions[i].current = {};
+//     var el = document.getElementsByClassName('boy '+_positions[i].name)[0];
+//     _movingElements.push(el);
+//   }
+// }
+
+// function updateElements(p) {
+//     if(_scrollPercent <= p.start.percent) {
+//       p.target.x = p.start.x*_width;
+//       p.target.y = p.start.y*_containerHeight;
+//     } else if(_scrollPercent >= p.end.percent) {
+//       p.target.x = p.end.x*_width;
+//       p.target.y = p.end.y*_containerHeight;
+//     } else {
+//       p.target.x = p.start.x*_width + (p.diff.x*(_scrollPercent-p.start.percent)/p.diff.percent*_width);
+//       p.target.y = p.start.y*_containerHeight + (p.diff.y*(_scrollPercent-p.start.percent)/p.diff.percent*_containerHeight);
+//     }
+    
+//     // lerp
+//     if(!p.current.x) {
+//       p.current.x = p.target.x;
+//       p.current.y = p.target.y;
+//     } else {
+//       p.current.x = p.current.x + (p.target.x - p.current.x)*0.1;
+//       p.current.y = p.current.y + (p.target.y - p.current.y)*0.1;
+//     }
+//     _movingElements[i].style[_jsPrefix+'Transform'] = 'translate3d('+p.current.x+'px, '+
+//         p.current.y+'px, 0px)';
+// }
+
+
+
+// function loop() {
+//   _scrollOffset = window.pageYOffset || window.scrollTop;
+//   _scrollPercent = _scrollOffset/_scrollHeight || 0;
+//   updateElements();
+  
+//   requestAnimationFrame(loop);
+// }
+
+
+// function ifResize(containerHeight, height) {
+// 	var sh = containerHeight-height;
+
+//   return {
+//   	width: window.innerWidth;
+//   	height: window.innerHeight;
+//   	scrollHeight = sh;
+//   }
+// }
+
+
+// /* prefix detection http://davidwalsh.name/vendor-prefix */
+
+// function prefix() {
+//   var styles = window.getComputedStyle(document.documentElement, ''),
+//     pre = (Array.prototype.slice
+//       .call(styles)
+//       .join('') 
+//       .match(/-(moz|webkit|ms)-/) || (styles.OLink === '' && ['', 'o'])
+//     )[1],
+//     dom = ('WebKit|Moz|MS|O').match(new RegExp('(' + pre + ')', 'i'))[1];
+//   return {
+//     dom: dom,
+//     lowercase: pre,
+//     css: '-' + pre + '-',
+//     js: pre[0].toUpperCase() + pre.substr(1)
+//   };
+// }
+
 }() );
+
+// (function($) {
+
+// 	var scrollDirectionDown = true;
+
+// 	$('.acf-three_columns .column:not(align-bottom) img').forEach( function( disImg ) {
+// 		moveImages(disImg);
+// 	})
+
+// 	function moveImages(disImg){
+// 		let useThis;
+// 	 	useThis = (disImg.parents('figure').length > 0) ? disImg.parents('figure') : disImg;
+// 		let containerHeight = useThis.parents('.column').height;
+// 		let disImgHeight = useThis.height;
+// 		let scrollAmt = containerHeight - disImgHeight;
+// 		$(window).scroll(function(event) {
+// 			canUserSeeIt = inViewport(disImg);
+// 			//var started = false;
+//        		if(canUserSeeIt){
+//        			var position = disImg.position();
+// 				var pt = position.top;
+// 				var curMarg = useThis.outerWidth(true) - useThis.outerWidth();
+// 				let newmarg = 0;
+//        			if(scrollDirectionDown){
+// 					newmarg = curMarg+1;
+// 				}else{
+// 					newmarg = curMarg-1;
+// 				}
+// 				if(pt > 0 && pt < scrollAmt){
+// 					useThis.css({'margin-top': newmarg+'px'});
+// 				}
+//        		}
+// 		})
+// 	}
+
+// 	var scrollPosition = $(window).scrollTop();
+//     $(window).scroll(function() {
+//         var scroll = $(window).scrollTop();
+//         if (scroll > scrollPosition) {
+//             scrollDirectionDown = true;
+//         } else {
+//            scrollDirectionDown = false;
+//         }
+//         position = scroll;
+//     });
+    
+//     //check if el is visible in viewport
+//     function inViewport($ele) {
+//       var lBound = $(window).scrollTop(),
+//         uBound = lBound + $(window).height(),
+//         top = $ele.offset().top,
+//         bottom = top + $ele.outerHeight(true);
+
+//       return (top > lBound && top < uBound) ||
+//         (bottom > lBound && bottom < uBound) ||
+//         (lBound >= top && lBound <= bottom) ||
+//         (uBound >= top && uBound <= bottom);
+//     }
+	
+// })( jQuery );

@@ -13,13 +13,13 @@
 ?>
 
 <section class="acf-three_columns alignfull">
-  <div>
+  <div class="column<?php if(get_sub_field('align_bottom_left')): ?> align-bottom<?php endif; ?>">
     <?php the_sub_field('content_left') ?>
   </div>
-  <div>
+  <div class="column<?php if(get_sub_field('align_bottom_center')): ?> align-bottom<?php endif; ?>">
       <?php the_sub_field('content_center'); ?>
   </div>
-  <div>
+  <div class="column<?php if(get_sub_field('align_bottom_right')): ?> align-bottom<?php endif; ?>">
       <?php the_sub_field('content_right'); ?>
   </div>
 </section>
