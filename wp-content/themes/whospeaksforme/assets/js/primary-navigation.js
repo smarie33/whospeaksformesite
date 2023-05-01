@@ -196,18 +196,6 @@ function twentytwentyoneExpandSubMenu( el ) { // jshint ignore:line
 				this.querySelector( '.sub-menu-toggle' ).setAttribute( 'aria-expanded', 'false' );
 			} );
 		} );
-
-		document.getElementById( 'main-menu-toggle' ).addEventListener( 'click', function( event ) {
-			if(event.target.classList.contains('menu-active')){
-				event.target.classList.remove('menu-active');
-				event.target.innerHTML = 'Menu';
-				document.getElementById( 'masthead' ).classList.remove('menu-active');
-			}else{
-				event.target.classList.add('menu-active');
-				document.getElementById( 'masthead' ).classList.add('menu-active');
-				event.target.innerHTML = 'Close';
-			}
-		})
 	};
 
 	window.addEventListener( 'load', function() {

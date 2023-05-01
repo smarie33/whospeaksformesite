@@ -481,7 +481,7 @@ a:hover {
 .site a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
 
 	/* Only visible in Windows High Contrast mode */
-	outline: 2px solid transparent;
+	outline: none;
 	text-decoration: underline 1px dotted currentColor;
 	text-decoration-skip-ink: none;
 	background: rgba(255, 255, 255, 0.9);
@@ -498,7 +498,7 @@ a:hover {
 }
 
 .has-background-white .site a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
-	background: rgba(0, 0, 0, 0.9);
+	background: transparent;
 	color: var(--wp--style--color--link, var(--global--color-white));
 }
 

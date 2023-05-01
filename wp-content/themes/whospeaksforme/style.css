@@ -802,7 +802,7 @@ template {
 @media only screen and (min-width: 482px) {
 
 	.site-header {
-		padding-bottom: 10px;
+		padding-bottom: 0;
 	}
 }
 
@@ -1834,7 +1834,7 @@ a:hover {
 .site a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
 
 	/* Only visible in Windows High Contrast mode */
-	outline: 2px solid transparent;
+	outline: none;
 	text-decoration: underline 1px dotted currentColor;
 	text-decoration-skip-ink: none;
 	background: rgba(255, 255, 255, 0.9);
@@ -1851,7 +1851,7 @@ a:hover {
 }
 
 .has-background-white .site a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
-	background: rgba(0, 0, 0, 0.9);
+	background: transparent;
 	color: var(--wp--style--color--link, var(--global--color-white));
 }
 
@@ -3953,13 +3953,13 @@ table.wp-calendar-table caption {
 @media only screen and (min-width: 482px) {
 
 	.site-header {
-		padding-top: 10px;
+		padding-top: 0;
 	}
 }
 @media only screen and (min-width: 822px) {
 
 	.site-header {
-		padding-top: 10px;
+		padding-top: 0;
 		height: auto;
 	}
 }
@@ -3969,7 +3969,7 @@ table.wp-calendar-table caption {
 }
 
 .site-header.menu-active {
-	background-color: var(--global--color-black);
+	background-color: var(--global--color-blue);
 }
 
 .site-header.menu-active .primary-navigation {
@@ -3983,7 +3983,7 @@ table.wp-calendar-table caption {
 @media (hover: none) {
 
 	.site-header {
-		background-color: var(--global--color-black);
+		background-color: var(--global--color-blue);
 	}
 
 	.site-header .primary-navigation {
@@ -3994,38 +3994,6 @@ table.wp-calendar-table caption {
 		transform: translateY(0);
 		opacity: 1;
 	}
-}
-
-#main-menu-toggle {
-	font-weight: var(--primary-nav--font-weight);
-	font-size: var(--global--font-size-xs);
-	padding: var(--global--spacing-unit);
-	position: fixed;
-	right: 0;
-	z-index: 2500;
-	border: none;
-}
-@media (hover: none) {
-
-	#main-menu-toggle {
-		display: none;
-	}
-}
-
-#main-menu-toggle:hover {
-	box-shadow: none;
-	background-color: transparent;
-	transform: translateY(0);
-	color: var(--global--color-primary);
-}
-
-#main-menu-toggle:focus {
-	border: none;
-	outline: none;
-}
-
-#main-menu-toggle.menu-active {
-	color: var(--global--color-pink);
 }
 
 #content {
@@ -4041,6 +4009,16 @@ table.wp-calendar-table caption {
 .site-branding {
 	color: var(--branding--color-text);
 	margin-right: 140px;
+	padding: 0 20px;
+	position: absolute;
+	top: -12px;
+	z-index: 500;
+}
+@media only screen and (max-width: 821px) {
+
+	.site-branding {
+		top: -5px;
+	}
 }
 
 .site-branding:last-child {
@@ -4115,7 +4093,7 @@ table.wp-calendar-table caption {
 	margin-right: auto;
 	max-width: var(--branding--logo--max-width-mobile);
 	max-height: var(--branding--logo--max-height-mobile);
-	height: auto;
+	height: 40px !important;
 	display: inline-block;
 	width: auto;
 }
@@ -4136,10 +4114,6 @@ table.wp-calendar-table caption {
 		padding-top: 10px;
 		margin-top: 0;
 		top: var(--global--admin-bar--height);
-	}
-
-	.primary-navigation-open .site-header.has-logo:not(.has-title-and-tagline).has-menu .site-logo {
-		display: none;
 	}
 
 	.site-header.has-logo:not(.has-title-and-tagline).has-menu .site-logo img {
@@ -4850,13 +4824,13 @@ h1.page-title {
 	justify-content: space-between;
 	position: absolute;
 	right: 0;
-	padding-top: var(--global--spacing-vertical);
 	overflow-wrap: initial;
 }
 @media only screen and (max-width: 481px) {
 
 	.menu-button-container {
 		display: flex;
+		top: -45px;
 	}
 }
 
@@ -4915,7 +4889,7 @@ h1.page-title {
 .primary-navigation-open .menu-button-container {
 	width: 100%;
 	z-index: 500;
-	background-color: var(--global--color-black);
+	background-color: var(--global--color-blue);
 }
 
 .primary-navigation-open .menu-button-container #primary-mobile-menu {
@@ -4935,14 +4909,14 @@ h1.page-title {
 	align-items: center;
 	justify-content: center;
 	transition: all 0.5s ease-in-out;
-	transform: translateY(calc(-100% - 10px));
-	background-color: var(--global--color-black);
+	transform: translateY(0);
+	background-color: var(--global--color-blue);
 }
 
 .primary-navigation > .primary-menu-container {
 	position: fixed;
-	visibility: hidden;
-	opacity: 0;
+	visibility: visible;
+	opacity: 1;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -4952,7 +4926,7 @@ h1.page-title {
 	padding-right: var(--global--spacing-unit);
 	padding-bottom: var(--global--spacing-horizontal);
 	background-color: var(--global--color-background);
-	transform: translateY(var(--global--spacing-vertical));
+	transform: translateY(0);
 }
 @media (prefers-reduced-motion: no-preference) {
 
@@ -4968,7 +4942,7 @@ h1.page-title {
 		overflow-x: hidden;
 		overflow-y: auto;
 		border: 2px solid transparent;
-		background-color: var(--global--color-black);
+		background-color: var(--global--color-blue);
 	}
 
 	.has-logo.has-title-and-tagline .primary-navigation > .primary-menu-container {
@@ -5098,6 +5072,8 @@ h1.page-title {
 	background: transparent;
 	color: currentColor;
 	border: none;
+	transform: translateY(0);
+	box-shadow: none;
 }
 
 .primary-navigation > div > .menu-wrapper .sub-menu-toggle:focus {
@@ -5164,17 +5140,17 @@ h1.page-title {
 		top: -10px;
 		left: var(--global--spacing-horizontal);
 		border-style: solid;
-		border-color: var(--global--color-black) transparent;
+		border-color: var(--global--color-blue) transparent;
 		border-width: 0 7px 10px 7px;
 	}
 
 	.primary-navigation > div > .menu-wrapper > li > .sub-menu:after {
 		top: -9px;
-		border-color: var(--global--color-black) transparent;
+		border-color: var(--global--color-blue) transparent;
 	}
 
 	.primary-navigation > div > .menu-wrapper > li > .sub-menu li {
-		background: var(--global--color-black);
+		background: var(--global--color-blue);
 	}
 
 	.primary-navigation > div > .menu-wrapper > li > .sub-menu.submenu-reposition-left {
@@ -5408,8 +5384,8 @@ h1.page-title {
 	padding: 0;
 	list-style: none;
 	margin-left: var(--primary-nav--padding);
-	border: 1px solid var(--primary-nav--border-color);
-	background-color: var(--global--color-black);
+	border: 1px solid var(--global--color-blue);
+	background-color: var(--global--color-blue);
 }
 
 .primary-navigation .sub-menu .sub-menu {

@@ -3,6 +3,7 @@
 	//@extend %responsive-alignwide-width;
 	// align-items: flex-start;
 	// flex-wrap: wrap;
+	//display: flex;
 	row-gap: var(--global--spacing-vertical); // Add space in case the menu wraps below the site branding.
 	//justify-content: center;
 	position: fixed;
@@ -19,12 +20,12 @@
 
 	@include media(mobile) {
 		//padding-top: calc(var(--global--spacing-vertical) / 0.75); // 40px
-		padding-top: $baseline-unit;
+		padding-top: 0;
 	}
 
 	@include media(desktop) {
 		// padding-top: calc(2.4 * var(--global--spacing-vertical)); // 60px
-		padding-top: $baseline-unit;
+		padding-top: 0;
 		height: auto;
 	}
 
@@ -33,7 +34,7 @@
 	}
 
 	&.menu-active{
-		background-color: var(--global--color-black);
+		background-color: var(--global--color-blue);
 
 		.primary-navigation{
 			transform: translateY(0);
@@ -45,7 +46,7 @@
 		}
 	}
 	@include media(device) {
-		background-color: var(--global--color-black);
+		background-color: var(--global--color-blue);
 		
 		.primary-navigation{
 			transform: translateY(0);
@@ -55,32 +56,6 @@
 			transform: translateY(0);
 			opacity: 1;
 		}
-	}
-}
-
-#main-menu-toggle{
-	font-weight: var(--primary-nav--font-weight);
-	font-size: var(--global--font-size-xs);
-	padding: var(--global--spacing-unit);
-	@include media(device) {
-		display: none;
-	}
-	position: fixed;
-	right: 0;
-	z-index: 2500;
-	border: none;
-	&:hover{
-		box-shadow: none;
-		background-color: transparent;
-		transform: translateY(0);
-		color: var(--global--color-primary);
-	}
-	&:focus{
-		border: none;
-		outline: none;
-	}
-	&.menu-active{
-		color: var(--global--color-pink);
 	}
 }
 
@@ -97,6 +72,13 @@
 .site-branding {
 	color: var(--branding--color-text);
 	margin-right: 140px;
+	padding: 0 20px;
+	position: ABSOLUTE;
+    top: -12px;
+    z-index: 500;
+    @include media(desktop-only){
+        top: -5px;
+    }
 
 	&:last-child {
 		margin-right: 0;
@@ -172,7 +154,7 @@
 		margin-right: auto;
 		max-width: var(--branding--logo--max-width-mobile);
 		max-height: var(--branding--logo--max-height-mobile);
-		height: auto;
+		height: 40px !important;
 		display: inline-block;
 		width: auto;
 	}
@@ -205,7 +187,7 @@
 						top: var(--global--admin-bar--height);
 
 						.primary-navigation-open & {
-							display: none;
+							//display: none;
 						}
 
 						img {
