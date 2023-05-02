@@ -59,6 +59,19 @@
 
 </div><!-- #page -->
 
+<?php 
+$chart = 0;
+foreach(get_field('all_modules') as $mod){
+	if($mod['acf_fc_layout'] == 'donut_chart'){
+		$chart++;
+		break;
+	}
+}
+
+if($chart > 0): ?>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<?php endif; ?>
+
 <?php wp_footer(); ?>
 
 </body>

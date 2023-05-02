@@ -1302,7 +1302,8 @@ p a {
 	}
 }
 
-.acf-free_form_content .content {
+.acf-free_form_content .content,
+.acf-donut_chart .content {
 	padding: 0 10%;
 }
 

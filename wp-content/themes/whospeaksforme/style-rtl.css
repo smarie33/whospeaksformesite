@@ -1145,6 +1145,10 @@ p a {
 	padding: 0 10%;
 }
 
+.acf-donut_chart .content {
+	padding: 0 10%;
+}
+
 .acf-two_columns,
 .acf-three_columns {
 	display: flex;
