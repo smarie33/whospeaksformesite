@@ -12,8 +12,8 @@
 
 ?>
 <script type="text/javascript">
-  window.addEventListener('load', function () {
-    function animateValue(obj, start, end, duration) {
+  window.addEventListener('load', function (){
+    function animateValue(obj, start, end, duration){
       let startTimestamp = null;
       const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
@@ -30,7 +30,6 @@
       var viewportHeight = window.innerHeight;
       var rect = element.getBoundingClientRect();
       var position = rect.top/viewportHeight;
-      //console.log(rect.top+" "+position)
       if (position >= 0 && position <= 1) {
         return true;
       } else {
@@ -54,9 +53,9 @@
             <div class="donut-column" style="width:<?php echo $the_width ?>%">
               <canvas id="donut<?php echo $cnt; ?>"></canvas>
               <canvas id="donut<?php echo $cnt; ?>bg"></canvas>
-              <div class="percent-symbol">%</div>
-              <div id="donut_<?php echo $cnt; ?>" class="percent-num"></div>
-              <div class="blurb"><?php echo $a_nut['blurb']; ?></div>
+              <div class="percent-symbol" style="color:<?php the_sub_field('font_color') ?>">%</div>
+              <div id="donut_<?php echo $cnt; ?>" class="percent-num" style="color:<?php the_sub_field('font_color') ?>"><?php echo $a_nut['donut_percent'] ?></div>
+              <div class="blurb" style="color:<?php the_sub_field('font_color') ?>"><?php echo $a_nut['blurb']; ?></div>
             </div>
             <script type="text/javascript">
               window.addEventListener('load', function() {
@@ -90,8 +89,9 @@
                     backgroundColor: "rgb(126,179,72, 0)"
                   }
                 ];
-            
-                if(isInViewportChart('.acf-donut_chart')){
+                
+                const viewportCheck = document.querySelector('.acf-donut_chart');
+                if(isInViewportChart(viewportCheck)){
                   const obj<?php echo $cnt; ?> = document.getElementById("donut_<?php echo $cnt; ?>");
                   animateValue(obj<?php echo $cnt; ?>, 0, <?php echo $a_nut['donut_percent'] ?>, 5000);
                   new Chart($("#donut<?php echo $cnt; ?>bg").get(0).getContext("2d")).Doughnut(data<?php echo $cnt; ?>,options<?php echo $cnt; ?>);

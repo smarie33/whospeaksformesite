@@ -1,3 +1,8 @@
+.entry-content > section{
+	margin: 0;
+}
+
+
 .acf-full_width_banner{
 	padding: var(--global--banner-spacing-vertical) 0 var(--global--banner-spacing-vertical) 0;
 	.button-paragraph{
@@ -79,7 +84,12 @@
 
 .acf-donut_chart{
 	.content{
-		padding: 0 10%;
+		padding: 50px 10%;
+		display: flex;
+
+		.blurb{
+			text-transform: uppercase;
+		}
 	}
 }
 
@@ -132,10 +142,10 @@
 .acf-three_columns{
 	> div{
 		width: 80%;
-		margin: 0 10%;
+		margin: 50px 10%;
 		@include media(desktop){
 			width: 29.5%;
-			margin: 0 2%;
+			margin: 100px 2%;
 		}
 	}
 }

@@ -1220,6 +1220,10 @@ p a {
 }
 
 /* Category 04 can contain any default HTML element. Do not add classes here, just give the elements some basic styles. */
+.entry-content > section {
+	margin: 0;
+}
+
 .acf-full_width_banner {
 	padding: 100px 0 100px 0;
 }
@@ -1302,9 +1306,17 @@ p a {
 	}
 }
 
-.acf-free_form_content .content,
-.acf-donut_chart .content {
+.acf-free_form_content .content {
 	padding: 0 10%;
+}
+
+.acf-donut_chart .content {
+	padding: 50px 10%;
+	display: flex;
+}
+
+.acf-donut_chart .content .blurb {
+	text-transform: uppercase;
 }
 
 .acf-two_columns,
@@ -1370,13 +1382,13 @@ p a {
 
 .acf-three_columns > div {
 	width: 80%;
-	margin: 0 10%;
+	margin: 50px 10%;
 }
 @media only screen and (min-width: 822px) {
 
 	.acf-three_columns > div {
 		width: 29.5%;
-		margin: 0 2%;
+		margin: 100px 2%;
 	}
 }
 
