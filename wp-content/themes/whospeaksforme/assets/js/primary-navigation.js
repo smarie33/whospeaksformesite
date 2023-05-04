@@ -109,7 +109,7 @@ class DonutGraph {
         this.animationDuration = 2000;
         this.donutAnimationDuration = 1500;
         this.animationStartTime = null;
-        this.donutAnimationDelay = this.animationDuration - 500;
+        this.donutAnimationDelay = this.animationDuration - 1000;
         this.observer = new IntersectionObserver(this.startAnimation.bind(this), { threshold: 1.0 });
         this.animatedCircleColor = animatedCircleColor;
         this.behindCircleColor = behindCircleColor;
