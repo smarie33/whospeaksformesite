@@ -265,7 +265,7 @@
 <link rel="stylesheet" href="//assets.squarespace.com/universal/styles-compressed/management-89c4972db0b1e39952c4b-min.en-US.css" type="text/css">
 <link rel="stylesheet" href="//assets.squarespace.com/universal/styles-compressed/website-overlays-manager-7cecc648f858e6f692130-min.en-US.css" type="text/css">
 <link rel="stylesheet" href="//assets.squarespace.com/universal/styles-compressed/popup-overlay-948192219c3257f767ec5-min.en-US.css" type="text/css">
-<link rel="stylesheet" href="grabbedstyles.css" type="text/css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/grabbedstyles.css" type="text/css">
 </head>
    <body class="page--node--learn-facts path-node page-node-type-page">
        

@@ -11,33 +11,7 @@
 
 
 ?>
-<script type="text/javascript">
-  window.addEventListener('load', function (){
-    function animateValue(obj, start, end, duration){
-      let startTimestamp = null;
-      const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        obj.innerHTML = Math.floor(progress * (end - start) + start);
-        if (progress < 1) {
-          window.requestAnimationFrame(step);
-        }
-      };
-      window.requestAnimationFrame(step);
-    }
 
-    function isInViewportChart(element){
-      var viewportHeight = window.innerHeight;
-      var rect = element.getBoundingClientRect();
-      var position = rect.top/viewportHeight;
-      if (position >= 0 && position <= 1) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-  });
-</script>
 <section class="acf-donut_chart alignfull" style="background-color:<?php the_sub_field('banner_color') ?>">
   <div class="content">
     <?php 
@@ -51,52 +25,28 @@
           foreach( $donuts as $a_nut ):
     ?>
             <div class="donut-column" style="width:<?php echo $the_width ?>%">
-              <canvas id="donut<?php echo $cnt; ?>"></canvas>
-              <canvas id="donut<?php echo $cnt; ?>bg"></canvas>
-              <div class="percent-symbol" style="color:<?php the_sub_field('font_color') ?>">%</div>
-              <div id="donut_<?php echo $cnt; ?>" class="percent-num" style="color:<?php the_sub_field('font_color') ?>"><?php echo $a_nut['donut_percent'] ?></div>
-              <div class="blurb" style="color:<?php the_sub_field('font_color') ?>"><?php echo $a_nut['blurb']; ?></div>
+              <div class="container">
+                  <canvas id="donutGraph<?php echo $cnt; ?>" class="donut-graph" width="250" height="250"></canvas>
+                  <div class="words">
+                    <div id="percentage<?php echo $cnt; ?>" class="percentage" style="color:<?php the_sub_field('font_color') ?>"></div>
+                    <div class="blurb" style="color:<?php the_sub_field('font_color') ?>"><?php echo $a_nut['blurb']; ?></div>
+                  </div>
+              </div>
             </div>
             <script type="text/javascript">
               window.addEventListener('load', function() {
-                var behindpie<?php echo $cnt; ?> = {
-                    animation : false,
-                    percentageInnerCutout: 95,
-                    segmentShowStroke : false
-                }
-                var databg<?php echo $cnt; ?> = [
-                  {
-                    value: 100,
-                    color: 'rgb(<?php echo implode(',',$a_nut['donut_bar_color']) ?>)',
-                    backgroundColor: 'rgb(126,179,72, 0)'
-                  }
-                ]; 
-                var options<?php echo $cnt; ?> = {
-                    animation : true,
-                    animationEasing : "easeOutSine",
-                    percentageInnerCutout: 90,
-                    segmentShowStroke : false
-                }
-                var data<?php echo $cnt; ?> = [
-                  {
-                    value: <?php echo $a_nut['donut_percent'] ?>,
-                    color: 'rgb(<?php echo implode(',',$a_nut['donut_color']) ?>)',
-                    backgroundColor: 'rgb(126,179,72, 0)'
-                  },
-                  {
-                    value: <?php $leftover = 100 - $a_nut['donut_percent']; echo $leftover; ?>,
-                    color:"transparent",
-                    backgroundColor: "rgb(126,179,72, 0)"
-                  }
-                ];
+                const canvas<?php echo $cnt; ?> = document.getElementById('donutGraph<?php echo $cnt; ?>');
+                const percentageElement<?php echo $cnt; ?> = document.getElementById('percentage<?php echo $cnt; ?>');
+                const targetPercentage<?php echo $cnt; ?> = <?php echo $a_nut['donut_percent']; ?>;
+
+                resizeCanvas(canvas<?php echo $cnt; ?>);
                 
-                const viewportCheck = document.querySelector('.acf-donut_chart');
-                if(isInViewportChart(viewportCheck)){
-                  const obj<?php echo $cnt; ?> = document.getElementById("donut_<?php echo $cnt; ?>");
-                  animateValue(obj<?php echo $cnt; ?>, 0, <?php echo $a_nut['donut_percent'] ?>, 5000);
-                  new Chart($("#donut<?php echo $cnt; ?>bg").get(0).getContext("2d")).Doughnut(data<?php echo $cnt; ?>,options<?php echo $cnt; ?>);
-                  new Chart($("#donut<?php echo $cnt; ?>").get(0).getContext("2d")).Doughnut(databg<?php echo $cnt; ?>,behindpie<?php echo $cnt; ?>);
-                }
+                window.addEventListener('resize', function() {
+                    resizeCanvas(canvas<?php echo $cnt; ?>);
+                });
+
+                const donutGraph<?php echo $cnt; ?> = new DonutGraph(canvas<?php echo $cnt; ?>, percentageElement<?php echo $cnt; ?>, targetPercentage<?php echo $cnt; ?>, "<?php echo $a_nut['donut_color'] ?>", "<?php echo $a_nut['donut_bar_color'] ?>");
+                donutGraph<?php echo $cnt; ?>.observe();
               })
             </script>
           <?php $cnt++; endforeach; ?>

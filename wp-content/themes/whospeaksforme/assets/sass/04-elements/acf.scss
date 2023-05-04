@@ -84,11 +84,78 @@
 
 .acf-donut_chart{
 	.content{
-		padding: 50px 10%;
+		padding: 100px 10% 0 10%;
 		display: flex;
+		justify-content: center;
+
+		@include media(wide-only){
+			flex-direction: column;
+		}
+
+		.donut-column{
+			padding-bottom: 100px;
+			@include media(wide-only){
+				display: flex;
+				justify-content: center;
+				width: 100% !important;
+				padding-bottom: 50px;
+			}
+		}
+
+		.container{
+			position: relative;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+
+		    @include media(wide-only){
+				width: 50%;
+			}
+
+			@include media(desktop-only){
+				width: 100%;
+			} 
+
+		    .donut-graph{
+		    	display: block;
+		    }
+		    .words{
+		    	position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    transform: translate(-50%, -50%);
+			    font-size: 24px;
+			    font-weight: bold;
+			    color: #000;
+			    text-align: center;
+
+			    .percentage{
+			    	color: #000;
+				    font-weight: 700;
+				    font-family: calluna,serif;
+				    line-height: 1.125;
+				    letter-spacing: .05em;
+				    text-transform: uppercase;
+				    font-size: 100px;
+					&::before {
+					    font-weight: 300;
+					    font-family: calluna,serif;
+					    line-height: 1.66667;
+					    font-size: 25px;
+					    display: block;
+					    margin: 0 0 -6px;
+					    content: "%";
+					}
+				}
+		    }
+		}
 
 		.blurb{
-			text-transform: uppercase;
+			letter-spacing: .1em;
+		    text-transform: uppercase;
+		    font: 600 11px/20px "open-sans",sans-serif;
+		    max-width: 15em;
+		    margin-top: 10px;
 		}
 	}
 }

@@ -93,6 +93,133 @@ function twentytwentyoneExpandSubMenu( el ) { // jshint ignore:line
 	} );
 }
 
+class DonutGraph {
+    constructor(canvas, percentageElement, targetPercentage, animatedCircleColor, behindCircleColor) {
+    	// console.log('percentageElement', percentageElement);
+    	// console.log('targetPercentage', targetPercentage);
+    	// console.log('animatedCircleColor', animatedCircleColor);
+    	// console.log('behindCircleColor',behindCircleColor);
+        this.canvas = canvas;
+        this.ctx = canvas.getContext('2d');
+        this.percentageElement = percentageElement;
+        this.startAngle = -0.5 * Math.PI;
+        this.strokeWidth = 5;
+        this.thinnerStrokeWidth = 1;
+        this.targetPercentage = targetPercentage;
+        this.animationDuration = 2000;
+        this.donutAnimationDuration = 1500;
+        this.animationStartTime = null;
+        this.donutAnimationDelay = this.animationDuration - 500;
+        this.observer = new IntersectionObserver(this.startAnimation.bind(this), { threshold: 1.0 });
+        this.animatedCircleColor = animatedCircleColor;
+        this.behindCircleColor = behindCircleColor;
+    }
+
+    easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+    }
+
+    drawTransparentPart() {
+        const ctx = this.ctx;
+        const canvas = this.canvas;
+        const strokeWidth = this.strokeWidth;
+        const thinnerStrokeWidth = this.thinnerStrokeWidth;
+        const behindCircleColor = this.behindCircleColor;
+        const lessen = 60;
+
+        const parent = canvas.parentNode;
+        const parentStyle = getComputedStyle(parent);
+        const makeSize = parseInt(parentStyle.width, 10) - lessen;
+        canvas.style.width = makeSize + "px";
+        canvas.style.height = makeSize + "px";
+
+
+        // Draw transparent part
+        ctx.beginPath();
+        ctx.arc(canvas.width / 2, canvas.height / 2, (canvas.width - strokeWidth) / 2, this.startAngle, this.startAngle + 2 * Math.PI);
+        ctx.lineWidth = thinnerStrokeWidth;
+        ctx.strokeStyle =  behindCircleColor;
+        ctx.stroke();
+    }
+
+    drawDonut(percentage) {
+        const ctx = this.ctx;
+        const canvas = this.canvas;
+        const strokeWidth = this.strokeWidth;
+        const animatedCircleColor = this.animatedCircleColor;
+        const lessen = 30;
+
+        const parent = canvas.parentNode;
+        const parentStyle = getComputedStyle(parent);
+        const makeSize = parseInt(parentStyle.width, 10) - lessen;
+        canvas.style.width = makeSize + "px";
+        canvas.style.height = makeSize + "px";
+
+        const endAngle = this.startAngle + 2 * Math.PI * percentage / 100;
+
+        // Clear the canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the transparent part
+        this.drawTransparentPart();
+
+        // Draw red part
+        ctx.beginPath();
+        ctx.arc(canvas.width / 2, canvas.height / 2, (canvas.width - strokeWidth) / 2, this.startAngle, endAngle);
+        ctx.lineWidth = strokeWidth;
+        ctx.strokeStyle = animatedCircleColor;
+        ctx.stroke();
+    }
+
+    animate(timestamp) {
+    	if (!this.animationStartTime) {
+            this.animationStartTime = timestamp;
+        }
+
+        const elapsedTime = timestamp - this.animationStartTime;
+        const progress = this.easeInOutCubic(Math.min(elapsedTime / this.animationDuration, 1));
+
+        if (elapsedTime <= this.animationDuration) {
+            const currentPercentage = this.targetPercentage * progress;
+            this.percentageElement.innerText = Math.floor(currentPercentage);
+        }
+
+        if (elapsedTime > this.donutAnimationDelay) {
+            const donutProgress = this.easeInOutCubic(Math.min((elapsedTime - this.donutAnimationDelay) / this.donutAnimationDuration, 1));
+            const currentPercentage = this.targetPercentage * donutProgress;
+            this.drawDonut(currentPercentage);
+        }
+
+        if (elapsedTime <= this.animationDuration * 2 + this.donutAnimationDelay) {
+            requestAnimationFrame(this.animate.bind(this));
+        }
+    }
+
+    startAnimation(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                this.drawTransparentPart(); // Draw the transparent part initially
+                requestAnimationFrame(this.animate.bind(this));
+                this.observer.unobserve(this.canvas);
+            }
+        });
+    }
+
+    observe() {
+        this.observer.observe(this.canvas);
+    }
+}
+
+function resizeCanvas(canvas) {
+  const parent = canvas.parentNode;
+  const parentStyle = getComputedStyle(parent);
+  const lessen = 30;
+  const makeSize = parseInt(parentStyle.width, 10) - lessen;
+  canvas.style.width = makeSize + "px";
+  canvas.style.height = makeSize + "px";
+}
+
+
 ( function() {
 	/**
 	 * Menu Toggle Behaviors
