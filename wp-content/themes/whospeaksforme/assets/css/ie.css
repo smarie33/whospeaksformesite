@@ -5423,7 +5423,7 @@ h1.page-title {
   }
 }
 .primary-navigation > div > .menu-wrapper .sub-menu-toggle {
-  display: flex;
+  display: none;
   height: calc(27px + 1em);
   width: 44px;
   padding: 0;
