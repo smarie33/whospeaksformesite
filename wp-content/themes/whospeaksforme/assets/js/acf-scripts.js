@@ -20,16 +20,19 @@
 	    acf.add_filter('wysiwyg_tinymce_settings', function( mceInit, id, field ){
 
 			let parent = $(this).parents('.acf-field');
-			//let color = parent.prev().find('.acf-color-picker input').val();
-			if(field.prev().attr('data-type') == 'color_picker'){
-				//let assocColor = field.prev().find('.acf-input input').val();
-				let fullcolor = field.prev().find('.acf-input input').val();
-				let onlyHex = fullcolor.split('#')[1];
-				eachColor[id] = onlyHex;
-				let addClass = 'bgcolor-'+onlyHex;
-				mceInit.body_class = mceInit.body_class + ' ' + addClass
-
-			}
+			let allSibs = field.prev().siblings();
+			allSibs.each(function() {
+				let t = $(this);
+				if(t.hasClass('acf-field-color-picker')){
+					let fullcolor = t.find('.acf-input input').val();
+					console.log(fullcolor);
+					let onlyHex = fullcolor.split('#')[1];
+					eachColor[id] = onlyHex;
+					let addClass = 'bgcolor-'+onlyHex;
+					mceInit.body_class = mceInit.body_class + ' ' + addClass
+					return false;
+				}
+			})
 
 		    return mceInit;
 
