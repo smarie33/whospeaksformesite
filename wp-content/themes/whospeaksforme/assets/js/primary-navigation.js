@@ -206,6 +206,7 @@ class DonutGraph {
     }
 
     observe() {
+    	this.drawTransparentPart();
         this.observer.observe(this.canvas);
     }
 }
@@ -329,68 +330,73 @@ function resizeCanvas(canvas) {
 		new navMenu( 'primary' );
 	});
 
-	let runDemImages = [];
-	let isScrolling, start = 0, end = 0, distance = 0, lastDistance = 0, current = 0;
-	let previousScrollPosition = 0;
 
-	if (!start) {
-		start = window.pageYOffset;
+	function isElementInViewport(element) {
+	  const rect = element.getBoundingClientRect();
+	  return (
+	    rect.top >= 0 &&
+	    rect.left >= 0 &&
+	    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+	    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+	  );
 	}
 
 
-	document.querySelectorAll('.acf-three_columns .column:not(align-bottom) img').forEach( function( disImg ) {
-		useThis = (disImg.parentElement.nodeName == 'FIGURE') ? disImg.parentNode : disImg;
-		runDemImages.push(useThis);
-	})
+	window.addEventListener( 'load', function() {
+		let runDemImages = [];
+		let isScrolling, start = 0, end = 0, distance = 0, lastDistance = 0, current = 0;
+		let previousScrollPosition = 0;
 
-	function moveImage(useThis){
-		let container, scrollAmt, diff, conStartP;
-		container = useThis.closest('.column');
-		if(isInViewport(container)){
-			if(lastDistance !== current){
-				lastDistance = current;
-			}
+		document.querySelectorAll('.acf-three_columns .column.scroll-image img').forEach( function( disImg ) {
+			useThis = (disImg.parentElement.nodeName == 'FIGURE') ? disImg.parentNode : disImg;
+			useThis = (disImg.parentElement.nodeName == 'P') ? useThis.parentNode : useThis;
+			runDemImages.push(useThis);
+		})
 
-			current = window.pageYOffset;
-			// if(useThis.classList.contains('wp-image-137')){
-			// 	console.log(current+" "+lastDistance);
-			// }
-			let conP, useP, changeTop, curPos, scrollAmt, top, amt;
-			amt = current - lastDistance;
-			conP = container.getBoundingClientRect();
-			useP = useThis.getBoundingClientRect()
-			curPos = useP.top - conP.top;
-			scrollAmt = container.offsetHeight - useThis.offsetHeight;
-			top = (useThis.style.top == '') ? 0 : parseInt(useThis.style.top, 10);
-			//changeTop = isScrollingDown() ? top + amt : top - amt;
-			changeTop = top + amt;
-			if(changeTop < 0){
-				changeTop = 0;
-			}else if(changeTop > scrollAmt){
-				changeTop = scrollAmt;
-			}
-			useThis.style.top = changeTop+'px';
-		}		
-	}
+		window.addEventListener("scroll", () => {
+			let runThese = [];
 
-	function isInViewport(element){
-		var viewportHeight = window.innerHeight;
-		var rect = element.getBoundingClientRect();
-		var position = rect.top/viewportHeight;
-		//console.log(rect.top+" "+position)
-		if (position >= 0 && position <= 1) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	document.onscroll = function() {
-		setTimeout(() => {
-			runDemImages.forEach(function(img){
-			     moveImage(img);
+			runDemImages.forEach((img) => {
+				if(!isElementInViewport(img.parentElement)) {
+					img.style.transform = `translateY(0px)`;
+				}		
 			});
-		},1000)
-	}
+
+			runDemImages.forEach((img) => {
+				if(isElementInViewport(img.parentElement)) {
+					runThese.push(img);
+				}		
+			});
+
+			if (runThese.length < 1) {
+				return;
+			}
+
+			runThese.forEach((img) => {
+				const container = img.parentElement;
+				const theTop = 50;
+				const scrollY = window.scrollY;
+				const containerHeight = container.offsetHeight;
+				const imageHeight = img.offsetHeight;
+				const maxTranslateY = containerHeight - imageHeight;
+
+				let translateY = (container.offsetTop > 500) ? (container.offsetTop - scrollY) : -scrollY;
+
+				//let translateY = -scrollY;
+				//console.log(container.offsetTop - scrollY);
+
+				if (translateY < (theTop * -1)) {
+					translateY = (theTop * -1);
+				}
+
+				if(translateY > maxTranslateY){
+					translateY = maxTranslateY;
+				}
+
+				img.style.transform = `translateY(${translateY}px)`;
+			})
+		});
+	});
+
 
 }() );

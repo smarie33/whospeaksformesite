@@ -1134,6 +1134,9 @@ p a {
 }
 .acf-two_columns .column, .acf-three_columns .column {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 .acf-two_columns .column img, .acf-three_columns .column img {
   position: absolute;
@@ -1142,21 +1145,6 @@ p a {
   top: 0;
   margin-right: auto;
   margin-left: auto;
-}
-.acf-two_columns .column figure, .acf-three_columns .column figure {
-  position: absolute;
-  right: 0;
-  left: 0;
-  top: 0;
-  margin-right: auto;
-  margin-left: auto;
-  margin: auto;
-}
-.acf-two_columns .column figure img, .acf-three_columns .column figure img {
-  position: relative;
-}
-.acf-two_columns .column figure figcaption, .acf-three_columns .column figure figcaption {
-  text-align: center;
 }
 .acf-two_columns .align-bottom, .acf-three_columns .align-bottom {
   display: flex;
@@ -1180,6 +1168,17 @@ p a {
     width: 29.5%;
     margin: 100px 2%;
   }
+}
+.acf-three_columns .column.scroll-image figure, .acf-three_columns .column.scroll-image p {
+  position: absolute;
+  top: 50px;
+  transition: transform 0.5s ease;
+}
+.acf-three_columns .column.scroll-image figure img, .acf-three_columns .column.scroll-image p img {
+  position: relative;
+}
+.acf-three_columns .column.scroll-image figure figcaption, .acf-three_columns .column.scroll-image p figcaption {
+  text-align: center;
 }
 
 .acf-team_members .member {

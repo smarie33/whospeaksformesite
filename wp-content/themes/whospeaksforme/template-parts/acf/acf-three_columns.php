@@ -13,13 +13,13 @@
 ?>
 
 <section class="acf-three_columns alignfull">
-  <div class="column<?php if(get_sub_field('align_bottom_left')): ?> align-bottom<?php endif; ?>">
+  <div class="column<?php if(get_sub_field('bottom_align_content_left')): ?> align-bottom<?php endif; ?><?php if(get_sub_field('scroll_image_left')): ?> scroll-image<?php endif; ?>">
     <?php the_sub_field('content_left') ?>
   </div>
-  <div class="column<?php if(get_sub_field('align_bottom_center')): ?> align-bottom<?php endif; ?>">
+  <div class="column<?php if(get_sub_field('bottom_align_content_center')): ?> align-bottom<?php endif; ?><?php if(get_sub_field('scroll_image_center')): ?> scroll-image<?php endif; ?>">
       <?php the_sub_field('content_center'); ?>
   </div>
-  <div class="column<?php if(get_sub_field('align_bottom_right')): ?> align-bottom<?php endif; ?>">
+  <div class="column<?php if(get_sub_field('bottom_align_content_ight')): ?> align-bottom<?php endif; ?><?php if(get_sub_field('scroll_image_right')): ?> scroll-image<?php endif; ?>">
       <?php the_sub_field('content_right'); ?>
   </div>
 </section>
