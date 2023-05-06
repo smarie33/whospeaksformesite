@@ -19,20 +19,27 @@
 	    // $el will be equivalent to $('body')
 	    acf.add_filter('wysiwyg_tinymce_settings', function( mceInit, id, field ){
 
-			let parent = $(this).parents('.acf-field');
-			let allSibs = field.prev().siblings();
-			allSibs.each(function() {
-				let t = $(this);
-				if(t.hasClass('acf-field-color-picker')){
-					let fullcolor = t.find('.acf-input input').val();
-					console.log(fullcolor);
-					let onlyHex = fullcolor.split('#')[1];
-					eachColor[id] = onlyHex;
-					let addClass = 'bgcolor-'+onlyHex;
-					mceInit.body_class = mceInit.body_class + ' ' + addClass
-					return false;
-				}
-			})
+	    	if(field.parents('.layout').attr('data-layout') == 'two_columns'){
+	    		let fullcolor = field.next().find('.acf-input input').val();
+	    		let onlyHex = fullcolor.split('#')[1];
+	    		console.log(onlyHex);
+				eachColor[id] = onlyHex;
+				let addClass = 'bgcolor-'+onlyHex;
+				mceInit.body_class = mceInit.body_class + ' ' + addClass
+	    	}else{
+				let allSibs = field.prev().siblings();
+				allSibs.each(function() {
+					let t = $(this);
+					if(t.hasClass('acf-field-color-picker')){
+						let fullcolor = t.find('.acf-input input').val();
+						let onlyHex = fullcolor.split('#')[1];
+						eachColor[id] = onlyHex;
+						let addClass = 'bgcolor-'+onlyHex;
+						mceInit.body_class = mceInit.body_class + ' ' + addClass
+						return false;
+					}
+				})
+			} 
 
 		    return mceInit;
 

@@ -1306,6 +1306,26 @@ p a {
   }
 }
 
+.acf-two_columns .with-button {
+  flex-direction: column;
+  justify-content: center;
+}
+.acf-two_columns .with-button > * {
+  margin: auto;
+}
+.acf-two_columns .with-button .button-paragraph {
+  text-align: center;
+  width: 100%;
+}
+.acf-two_columns .full-width-images {
+  flex-direction: column;
+  justify-content: center;
+}
+.acf-two_columns .full-width-images img {
+  width: 100% !important;
+  height: auto !important;
+}
+
 .acf-two_columns .column, .acf-team_members .column {
   width: 80%;
   margin: 0 10%;
@@ -2095,7 +2115,7 @@ a:hover {
   border-radius: 0;
   cursor: pointer;
   display: inline-block;
-  font-weight: 500;
+  font-weight: 700;
   font-family: calluna, serif;
   font-size: 1.25rem;
   line-height: 1.5;
@@ -2110,7 +2130,7 @@ input[type=submit] {
   border-radius: 0;
   cursor: pointer;
   display: inline-block;
-  font-weight: 500;
+  font-weight: 700;
   font-family: calluna, serif;
   font-size: 1.25rem;
   line-height: 1.5;
@@ -2125,7 +2145,7 @@ input[type=reset] {
   border-radius: 0;
   cursor: pointer;
   display: inline-block;
-  font-weight: 500;
+  font-weight: 700;
   font-family: calluna, serif;
   font-size: 1.25rem;
   line-height: 1.5;
@@ -2142,7 +2162,7 @@ input[type=reset] {
   border: 2px solid #28303d;
   border-radius: 0;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 700;
   font-family: calluna, serif;
   font-size: 1.25rem;
   line-height: 1.5;
@@ -2395,6 +2415,22 @@ input[type=reset]:disabled {
 .button.no-hover-color {
   background-color: #c82262 !important;
   color: #fff !important;
+  font-weight: 700;
+  font-family: calluna, serif;
+  line-height: 1.125;
+  letter-spacing: 0.05em;
+  font-size: 15px;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  min-width: 190px;
+  height: 74px;
+  padding: 0;
+  border: 2px solid #1a1a18;
+  color: #1a1a18;
+  line-height: 70px;
+  text-align: center;
+  text-transform: uppercase;
 }
 .button.no-hover-color:hover {
   background-color: #c82262 !important;
@@ -2960,11 +2996,30 @@ h3 {
   }
 }
 
-h4,.h4 {
-  font-size: 1.5rem;
+h4 {
+  font-size: 2.25rem;
   font-weight: 600;
   letter-spacing: normal;
   line-height: 1.3;
+}
+
+@media only screen and (min-width: 652px){
+  h4{
+  font-size: 2.5rem;
+  }
+}
+
+.h4 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.3;
+}
+
+@media only screen and (min-width: 652px){
+  .h4{
+  font-size: 2.5rem;
+  }
 }
 
 h5,.h5 {
@@ -4459,11 +4514,17 @@ table.wp-calendar-table caption {
 .site-title {
   color: #28303d;
   font-family: calluna, serif;
-  font-size: 1.5rem;
+  font-size: 2.25rem;
   letter-spacing: normal;
   text-transform: uppercase;
   line-height: 1.3;
   margin-bottom: 5px;
+}
+
+@media only screen and (min-width: 652px){
+  .site-title{
+  font-size: 2.5rem;
+  }
 }
 .site-title a {
   color: currentColor;
@@ -4862,8 +4923,13 @@ body:not(.single) .site-main > article:last-of-type .entry-footer {
 }
 .author-bio .author-bio-content .author-title {
   font-family: calluna, serif;
-  font-size: 1.5rem;
+  font-size: 2.25rem;
   display: inline;
+}
+@media only screen and (min-width: 652px){
+  .author-bio .author-bio-content .author-title{
+  font-size: 2.5rem;
+  }
 }
 .author-bio .author-bio-content .author-description {
   font-size: 1rem;

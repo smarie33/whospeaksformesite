@@ -236,6 +236,28 @@
 	}
 }
 
+.acf-two_columns{
+	.with-button{
+		flex-direction: column;
+		justify-content: center;
+		& > *{
+			margin: auto;
+		}
+		.button-paragraph{
+			text-align: center;
+			width: 100%;
+		}
+	}
+	.full-width-images{
+		flex-direction: column;
+		justify-content: center;
+		img{
+			width: 100% !important;
+			height: auto !important;
+		}
+	}
+}
+
 .acf-two_columns, .acf-team_members{
 	.column{
 		width: 80%;
