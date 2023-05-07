@@ -1,5 +1,6 @@
 .entry-content > section{
 	margin: 0;
+	position: relative;
 }
 
 
@@ -29,7 +30,22 @@
 .fa {color: var(--global--color-pink)}
 
 .acf-free_form_content{
-		&.word-border{
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	.on-top{
+		position: relative;
+		z-index: 10;
+	}
+	.image-overlay{
+		position: absolute;
+		z-index: 0;
+		top:0;
+		left:0;
+		width: 100%;
+		height: 100%;
+	}
+	&.word-border{
 		.top,.left,.right{
 			display: none;
 		}
@@ -241,6 +257,7 @@
 		@include media(desktop-only){
 			flex-direction: column;
 		}
+
 		.column:first-of-type{
 			margin:0 2% 0 0;
 			@include media(desktop-only){
@@ -250,6 +267,10 @@
 		}
 
 		.column{
+			p{
+				position: relative;
+    			width: 100%;
+			}
 			@include media(desktop-only){
 				width: 96% !important;
 				margin: 0 2%;
@@ -269,7 +290,7 @@
 	}
 	.full-width-images{
 		flex-direction: column;
-		justify-content: center;
+		justify-content: flex-start;
 		img{
 			width: 100% !important;
 			height: auto !important;

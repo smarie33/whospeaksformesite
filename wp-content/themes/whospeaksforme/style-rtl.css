@@ -98,12 +98,16 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
   /* Font Family */
   --global--font-primary: calluna, serif;
   --global--font-secondary: calluna, serif;
+  /* Navigation */
+  --main-menu--height: 80px;
   /* Font Size */
   --global--font-size-base: 1.25rem;
+  --global--font-size-xxs: .8rem;
   --global--font-size-xs: 1rem;
   --global--font-size-sm: 1.125rem;
   --global--font-size-md: 1.25rem;
   --global--font-size-lg: 1.5rem;
+  --global--font-size-mid-lg: 1.9rem;
   --global--font-size-xl: 2.25rem;
   --global--font-size-xxl: 4rem;
   --global--font-size-xxxl: 5rem;
@@ -115,9 +119,9 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
   --global--line-height-page-title: 1.1;
   /* Headings */
   --heading--font-family: var(--global--font-primary);
-  --heading--font-size-h6: var(--global--font-size-xs);
+  --heading--font-size-h6: var(--global--font-size-xxs);
   --heading--font-size-h5: var(--global--font-size-sm);
-  --heading--font-size-h4: var(--global--font-size-xl);
+  --heading--font-size-h4: var(--global--font-size-mid-lg);
   --heading--font-size-h3: calc(1.25 * var(--global--font-size-lg));
   --heading--font-size-h2: var(--global--font-size-xl);
   --heading--font-size-h1: var(--global--font-size-page-title);
@@ -743,6 +747,10 @@ template {
   }
 }
 
+#main {
+  padding-top: 0;
+}
+
 /**
  * Site-main children wrappers
  * - Add double vertical margins here for clearer hierarchy
@@ -946,7 +954,7 @@ button {
 }
 
 p {
-  margin: var(--global--spacing-unit) 0 0;
+  margin: 0;
 }
 p a {
   color: var(--global--color-pink);
@@ -981,6 +989,7 @@ p a {
 /* Category 04 can contain any default HTML element. Do not add classes here, just give the elements some basic styles. */
 .entry-content > section {
   margin: 0;
+  position: relative;
 }
 
 .acf-full_width_banner {
@@ -1010,6 +1019,23 @@ p a {
   color: var(--global--color-pink);
 }
 
+.acf-free_form_content {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.acf-free_form_content .on-top {
+  position: relative;
+  z-index: 10;
+}
+.acf-free_form_content .image-overlay {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
 .acf-free_form_content.word-border .top, .acf-free_form_content.word-border .left, .acf-free_form_content.word-border .right {
   display: none;
 }
@@ -1221,6 +1247,10 @@ p a {
     margin: 0 2%;
   }
 }
+.acf-two_columns .column p {
+  position: relative;
+  width: 100%;
+}
 @media only screen and (max-width: 821px) {
   .acf-two_columns .column {
     width: 96% !important;
@@ -1240,7 +1270,7 @@ p a {
 }
 .acf-two_columns .full-width-images {
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .acf-two_columns .full-width-images img {
   width: 100% !important;
@@ -3529,6 +3559,9 @@ table.wp-calendar-table caption {
   transition: all 0.5s ease-in-out;
   height: 50px;
 }
+.site-header #site-navigation {
+  height: var(--main-menu--height);
+}
 .wp-custom-logo .site-header {
   align-items: center;
 }
@@ -3570,11 +3603,11 @@ table.wp-calendar-table caption {
 }
 
 #content {
-  padding-top: 60px;
+  padding-top: var(--main-menu--height);
 }
 @media only screen and (min-width: 822px) {
   #content {
-    padding-top: 100px;
+    padding-top: var(--main-menu--height);
   }
 }
 

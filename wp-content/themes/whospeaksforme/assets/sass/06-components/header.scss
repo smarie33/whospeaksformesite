@@ -13,6 +13,9 @@
 	transition: all .5s ease-in-out;
 	height: calc($baseline-unit * 5);
 
+	#site-navigation{
+		height: var(--main-menu--height);
+	}
 
 	.wp-custom-logo & {
 		align-items: center;
@@ -60,9 +63,9 @@
 }
 
 #content{
-	padding-top: calc($baseline-unit * 6);
+	padding-top: var(--main-menu--height);
 	@include media(desktop) {
-		padding-top: calc($baseline-unit * 10);
+		padding-top: var(--main-menu--height);
 	}
 }
 

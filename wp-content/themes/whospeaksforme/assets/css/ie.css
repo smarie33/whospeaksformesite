@@ -96,6 +96,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 /* Variables */
 :root {
   /* Font Family */
+  /* Navigation */
   /* Font Size */
   /* Line Height */
   /* Headings */
@@ -798,6 +799,10 @@ template {
   }
 }
 
+#main {
+  padding-top: 0;
+}
+
 /**
  * Site-main children wrappers
  * - Add double vertical margins here for clearer hierarchy
@@ -1045,7 +1050,7 @@ body {
 }
 
 p {
-  margin: 20px 0 0;
+  margin: 0;
 }
 p a {
   color: #c82262;
@@ -1080,6 +1085,7 @@ p a {
 /* Category 04 can contain any default HTML element. Do not add classes here, just give the elements some basic styles. */
 .entry-content > section {
   margin: 0;
+  position: relative;
 }
 
 .acf-full_width_banner {
@@ -1107,6 +1113,23 @@ p a {
   color: #c82262;
 }
 
+.acf-free_form_content {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.acf-free_form_content .on-top {
+  position: relative;
+  z-index: 10;
+}
+.acf-free_form_content .image-overlay {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 .acf-free_form_content.word-border .top, .acf-free_form_content.word-border .left, .acf-free_form_content.word-border .right {
   display: none;
 }
@@ -1323,6 +1346,10 @@ p a {
     margin: 0 2%;
   }
 }
+.acf-two_columns .column p {
+  position: relative;
+  width: 100%;
+}
 @media only screen and (max-width: 821px) {
   .acf-two_columns .column {
     width: 96% !important;
@@ -1342,7 +1369,7 @@ p a {
 }
 .acf-two_columns .full-width-images {
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .acf-two_columns .full-width-images img {
   width: 100% !important;
@@ -3023,30 +3050,11 @@ h3 {
   }
 }
 
-h4 {
-  font-size: 2.25rem;
+h4,.h4 {
+  font-size: 1.9rem;
   font-weight: 600;
   letter-spacing: normal;
   line-height: 1.3;
-}
-
-@media only screen and (min-width: 652px){
-  h4{
-  font-size: 2.5rem;
-  }
-}
-
-.h4 {
-  font-size: 2.25rem;
-  font-weight: 600;
-  letter-spacing: normal;
-  line-height: 1.3;
-}
-
-@media only screen and (min-width: 652px){
-  .h4{
-  font-size: 2.5rem;
-  }
 }
 
 h5,.h5 {
@@ -3057,7 +3065,7 @@ h5,.h5 {
 }
 
 h6,.h6 {
-  font-size: 1rem;
+  font-size: .8rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   line-height: 1.3;
@@ -4464,6 +4472,9 @@ table.wp-calendar-table caption {
   transition: all 0.5s ease-in-out;
   height: 50px;
 }
+.site-header #site-navigation {
+  height: 80px;
+}
 .wp-custom-logo .site-header {
   align-items: center;
 }
@@ -4505,11 +4516,11 @@ table.wp-calendar-table caption {
 }
 
 #content {
-  padding-top: 60px;
+  padding-top: 80px;
 }
 @media only screen and (min-width: 822px) {
   #content {
-    padding-top: 100px;
+    padding-top: 80px;
   }
 }
 
@@ -4541,17 +4552,11 @@ table.wp-calendar-table caption {
 .site-title {
   color: #28303d;
   font-family: calluna, serif;
-  font-size: 2.25rem;
+  font-size: 1.9rem;
   letter-spacing: normal;
   text-transform: uppercase;
   line-height: 1.3;
   margin-bottom: 5px;
-}
-
-@media only screen and (min-width: 652px){
-  .site-title{
-  font-size: 2.5rem;
-  }
 }
 .site-title a {
   color: currentColor;
@@ -4950,13 +4955,8 @@ body:not(.single) .site-main > article:last-of-type .entry-footer {
 }
 .author-bio .author-bio-content .author-title {
   font-family: calluna, serif;
-  font-size: 2.25rem;
+  font-size: 1.9rem;
   display: inline;
-}
-@media only screen and (min-width: 652px){
-  .author-bio .author-bio-content .author-title{
-  font-size: 2.5rem;
-  }
 }
 .author-bio .author-bio-content .author-description {
   font-size: 1rem;

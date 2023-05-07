@@ -6,6 +6,7 @@
 /* Variables */
 :root {
   /* Font Family */
+  /* Navigation */
   /* Font Size */
   /* Line Height */
   /* Headings */
@@ -744,6 +745,10 @@ a:hover {
   clear: both;
   font-family: calluna, serif;
   font-weight: 300;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 .wp-block-heading h1 strong,h1 strong,.h1 strong,.wp-block-heading h2 strong,h2 strong,.h2 strong,.wp-block-heading h3 strong,h3 strong,.h3 strong,.wp-block-heading h4 strong,h4 strong,.h4 strong,.wp-block-heading h5 strong,h5 strong,.h5 strong,.wp-block-heading h6 strong,h6 strong,.h6 strong {
   font-weight: 600;
@@ -911,43 +916,11 @@ h3 {
   }
 }
 
-.wp-block-heading h4 {
-  font-size: 2.25rem;
+.wp-block-heading h4,h4,.h4 {
+  font-size: 1.9rem;
   font-weight: 600;
   letter-spacing: normal;
   line-height: 1.3;
-}
-
-@media only screen and (min-width: 652px){
-  .wp-block-heading h4{
-  font-size: 2.5rem;
-  }
-}
-
-h4 {
-  font-size: 2.25rem;
-  font-weight: 600;
-  letter-spacing: normal;
-  line-height: 1.3;
-}
-
-@media only screen and (min-width: 652px){
-  h4{
-  font-size: 2.5rem;
-  }
-}
-
-.h4 {
-  font-size: 2.25rem;
-  font-weight: 600;
-  letter-spacing: normal;
-  line-height: 1.3;
-}
-
-@media only screen and (min-width: 652px){
-  .h4{
-  font-size: 2.5rem;
-  }
 }
 
 .wp-block-heading h5,h5,.h5 {
@@ -958,7 +931,7 @@ h4 {
 }
 
 .wp-block-heading h6,h6,.h6 {
-  font-size: 1rem;
+  font-size: .8rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   line-height: 1.3;

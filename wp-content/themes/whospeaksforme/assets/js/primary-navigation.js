@@ -331,7 +331,7 @@ function resizeCanvas(canvas) {
 	});
 
 
-	function isElementInViewport(element) {
+	function isElementInViewport(element){
 	  const rect = element.getBoundingClientRect();
 	  return (
 	    rect.top >= 0 &&
@@ -342,7 +342,18 @@ function resizeCanvas(canvas) {
 	}
 
 
-	window.addEventListener( 'load', function() {
+	window.addEventListener('load', function() {
+		//adject full width images in two column layouts
+		const fullImages = document.querySelectorAll('.full-width-images img');
+		if(fullImages.length > 0){
+			fullImages.forEach( function( img ) {
+				let p = img.parentElement;
+				p.style.position = 'relative';
+				p.style.width = '100%';
+				p.style.height = img.offsetHeight+'px';
+			})
+		}
+
 		let runDemImages = [];
 		let isScrolling, start = 0, end = 0, distance = 0, lastDistance = 0, current = 0;
 		let previousScrollPosition = 0;
