@@ -133,7 +133,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
   --heading--line-height-h3: var(--global--line-height-heading);
   --heading--line-height-h2: var(--global--line-height-heading);
   --heading--line-height-h1: var(--global--line-height-page-title);
-  --heading--font-weight: normal;
+  --heading--font-weight: 300;
   --heading--font-weight-page-title: 300;
   --heading--font-weight-strong: 600;
   /* Block: Latest posts */
@@ -197,9 +197,10 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
   --button--color-background: var(--global--color-secondary);
   --button--color-background-active: var(--global--color-background);
   --button--font-family: var(--global--font-primary);
-  --button--font-size: var(--global--font-size-base);
+  --button--font-size: var(--global--font-size-xs);
   --button--font-weight: 700;
   --button--line-height: 1.5;
+  --button--letter-spacing: .05em;
   --button--border-width: 2px;
   --button--border-radius: 0;
   --button--padding-vertical: 15px;
@@ -309,7 +310,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
     --global--font-size-xxl: 6rem;
     --global--font-size-xxxl: 9rem;
     --heading--font-size-h3: 2rem;
-    --heading--font-size-h2: 3rem;
+    --heading--font-size-h2: 2.25rem;
   }
 }
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -1203,6 +1204,29 @@ p a {
   }
 }
 
+.acf-two_columns {
+  justify-content: center;
+}
+@media only screen and (max-width: 821px) {
+  .acf-two_columns {
+    flex-direction: column;
+  }
+}
+.acf-two_columns .column:first-of-type {
+  margin: 0 0 0 2%;
+}
+@media only screen and (max-width: 821px) {
+  .acf-two_columns .column:first-of-type {
+    width: 96% !important;
+    margin: 0 2%;
+  }
+}
+@media only screen and (max-width: 821px) {
+  .acf-two_columns .column {
+    width: 96% !important;
+    margin: 0 2%;
+  }
+}
 .acf-two_columns .with-button {
   flex-direction: column;
   justify-content: center;
@@ -1223,24 +1247,24 @@ p a {
   height: auto !important;
 }
 
-.acf-two_columns .column, .acf-team_members .column {
+.acf-team_members .column {
   width: 80%;
   margin: 0 10%;
   padding: 120px 0 0 0;
 }
 @media only screen and (min-width: 822px) {
-  .acf-two_columns .column, .acf-team_members .column {
+  .acf-team_members .column {
     width: 42%;
     margin: 0 2%;
   }
 }
-.acf-two_columns .member, .acf-team_members .member {
+.acf-team_members .member {
   padding: 120px 0 100px 0;
 }
-.acf-two_columns .member-info, .acf-team_members .member-info {
+.acf-team_members .member-info {
   padding-bottom: 20px;
 }
-.acf-two_columns hr, .acf-team_members hr {
+.acf-team_members hr {
   border: none;
   height: 10px;
   width: 100%;
@@ -1248,7 +1272,7 @@ p a {
   box-shadow: 0 10px 20px -20px #333;
   margin: -50px auto 10px;
 }
-.acf-two_columns hr:last-of-type, .acf-team_members hr:last-of-type {
+.acf-team_members hr:last-of-type {
   display: none;
 }
 
@@ -1810,6 +1834,7 @@ input[type=reset],
   text-transform: uppercase;
   transform: translateY(0);
   transition: 0.3s ease;
+  letter-spacing: var(--button--letter-spacing);
 }
 .site .button:not(:hover):not(:active):not(.has-text-color),
 button:not(:hover):not(:active):not(.has-text-color),

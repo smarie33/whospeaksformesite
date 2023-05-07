@@ -43,7 +43,7 @@
   --heading--line-height-h3: var(--global--line-height-heading);
   --heading--line-height-h2: var(--global--line-height-heading);
   --heading--line-height-h1: var(--global--line-height-page-title);
-  --heading--font-weight: normal;
+  --heading--font-weight: 300;
   --heading--font-weight-page-title: 300;
   --heading--font-weight-strong: 600;
   /* Block: Latest posts */
@@ -107,9 +107,10 @@
   --button--color-background: var(--global--color-secondary);
   --button--color-background-active: var(--global--color-background);
   --button--font-family: var(--global--font-primary);
-  --button--font-size: var(--global--font-size-base);
+  --button--font-size: var(--global--font-size-xs);
   --button--font-weight: 700;
   --button--line-height: 1.5;
+  --button--letter-spacing: .05em;
   --button--border-width: 2px;
   --button--border-radius: 0;
   --button--padding-vertical: 15px;
@@ -219,7 +220,7 @@
     --global--font-size-xxl: 6rem;
     --global--font-size-xxxl: 9rem;
     --heading--font-size-h3: 2rem;
-    --heading--font-size-h2: 3rem;
+    --heading--font-size-h2: 2.25rem;
   }
 }
 /**
@@ -485,6 +486,7 @@ a:hover {
   text-transform: uppercase;
   transform: translateY(0);
   transition: 0.3s ease;
+  letter-spacing: var(--button--letter-spacing);
 }
 .wp-block-button__link:not(:hover):not(:active):not(.has-text-color) {
   color: var(--global--color-primary);
@@ -778,6 +780,7 @@ a:hover {
   text-transform: uppercase;
   transform: translateY(0);
   transition: 0.3s ease;
+  letter-spacing: var(--button--letter-spacing);
   display: inline-block;
 }
 .wp-block-file .wp-block-file__button:not(:hover):not(:active):not(.has-text-color) {
@@ -1562,6 +1565,7 @@ pre.wp-block-preformatted {
   text-transform: uppercase;
   transform: translateY(0);
   transition: 0.3s ease;
+  letter-spacing: var(--button--letter-spacing);
   box-shadow: none;
   margin-left: 0;
 }

@@ -33,6 +33,7 @@
 	text-transform: uppercase;
 	transform: translateY(0);
     transition: .3s ease;
+    letter-spacing: var(--button--letter-spacing);
 
 	// Standard Button Color Relationship Logic
 	&:not(:hover):not(:active) {

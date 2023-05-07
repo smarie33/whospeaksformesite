@@ -54,7 +54,7 @@ $baseline-unit: 10px;
 	--heading--line-height-h2: var(--global--line-height-heading);
 	--heading--line-height-h1: var(--global--line-height-page-title);
 
-	--heading--font-weight: normal;
+	--heading--font-weight: 300;
 	--heading--font-weight-page-title: 300;
 	--heading--font-weight-strong: 600;
 
@@ -130,9 +130,10 @@ $baseline-unit: 10px;
 	--button--color-background-active: var(--global--color-background);
 	// Fonts
 	--button--font-family: var(--global--font-primary);
-	--button--font-size: var(--global--font-size-base);
+	--button--font-size: var(--global--font-size-xs);
 	--button--font-weight: 700;
 	--button--line-height: 1.5;
+	--button--letter-spacing: .05em;
 	// Borders
 	--button--border-width: 2px;
 	--button--border-radius: 0;
@@ -255,6 +256,6 @@ $baseline-unit: 10px;
 		--global--font-size-xxl: 6rem; // 96px / 16px
 		--global--font-size-xxxl: 9rem; // 144px / 16px
 		--heading--font-size-h3: 2rem; // 32px / 16px
-		--heading--font-size-h2: 3rem; // 48px / 16px
+		--heading--font-size-h2: 2.25rem; // 36px / 16px
 	}
 }

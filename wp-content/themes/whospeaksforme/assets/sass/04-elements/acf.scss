@@ -237,6 +237,25 @@
 }
 
 .acf-two_columns{
+		justify-content: center;
+		@include media(desktop-only){
+			flex-direction: column;
+		}
+		.column:first-of-type{
+			margin:0 2% 0 0;
+			@include media(desktop-only){
+				width: 96% !important;
+				margin: 0 2%;
+			}
+		}
+
+		.column{
+			@include media(desktop-only){
+				width: 96% !important;
+				margin: 0 2%;
+			}
+		}
+
 	.with-button{
 		flex-direction: column;
 		justify-content: center;
@@ -258,7 +277,7 @@
 	}
 }
 
-.acf-two_columns, .acf-team_members{
+.acf-team_members{
 	.column{
 		width: 80%;
 		margin: 0 10%;
