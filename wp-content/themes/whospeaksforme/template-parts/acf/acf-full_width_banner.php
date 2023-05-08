@@ -28,15 +28,13 @@ if(get_sub_field('padding_left') != '' || get_sub_field('padding_top') != '' || 
   }
 }
 
-if(get_sub_field('background_color') != ''){
-  $style_write[] = 'background-color:'.get_sub_field('banner_color');
+if(get_sub_field('banner_color') != ''){
+  $style_write[] = 'background-color: '.get_sub_field('banner_color');
 }
 
 if(count($style_write) > 0){
   $styles = $style.implode('; ',$style_write).$end;
 }
-
-?>
 
 ?>
 
