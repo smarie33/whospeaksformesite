@@ -169,7 +169,7 @@
 		.blurb{
 			letter-spacing: .1em;
 		    text-transform: uppercase;
-		    font: 600 11px/20px "open-sans",sans-serif;
+		    font: 600 11px/20px calluna,sans-serif;
 		    max-width: 15em;
 		    margin-top: 10px;
 		}
@@ -267,13 +267,14 @@
 		}
 
 		.column{
+			flex-direction: column;
 			p{
 				position: relative;
     			width: 100%;
 			}
 			@include media(desktop-only){
 				width: 96% !important;
-				margin: 0 2%;
+				margin: 5% 2%;
 			}
 		}
 
@@ -281,7 +282,7 @@
 		flex-direction: column;
 		justify-content: center;
 		& > *{
-			margin: auto;
+			margin: 0 auto;
 		}
 		.button-paragraph{
 			text-align: center;

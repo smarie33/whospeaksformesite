@@ -10,7 +10,6 @@
 	      // return colors
 	      return args;
 	 });
-
 	
 
 	//on page load change wysiwyg background to this color
@@ -18,6 +17,10 @@
     
 	    // $el will be equivalent to $('body')
 	    acf.add_filter('wysiwyg_tinymce_settings', function( mceInit, id, field ){
+	    	console.log(mceInit);
+
+	    	mceInit.toolbar1 = 'fontsizeselect,'+ mceInit.toolbar1;
+	    	mceInit.fontsize_formats = '9px 10px 12px 13px 14px 16px 18px 21px 24px 28px 32px 36px 38px 40px 42px 44px 46px 48px 50px 52px 54px 58px 60px 62px';
 
 	    	if(field.parents('.layout').attr('data-layout') == 'two_columns'){
 	    		let fullcolor = field.next().find('.acf-input input').val();

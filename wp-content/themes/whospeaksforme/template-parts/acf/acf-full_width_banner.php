@@ -9,10 +9,38 @@
  * @since Twenty Twenty-One 1.0
  */
 
+$style = ' style="';
+$end = '"';
+$padding = '';
+$styles = '';
+
+$padding_array = [];
+$style_write = [];
+
+if(get_sub_field('padding_left') != '' || get_sub_field('padding_top') != '' || get_sub_field('padding_right') != '' || get_sub_field('padding_bottom') != ''){
+  $padding_array[] = (get_sub_field('padding_top') == '' || get_sub_field('padding_top') == 0) ? 0 : get_sub_field('padding_top').'px';
+  $padding_array[] = (get_sub_field('padding_right') == '' || get_sub_field('padding_right') == 0) ? 0 : get_sub_field('padding_right').'px';
+  $padding_array[] = (get_sub_field('padding_bottom') == '' || get_sub_field('padding_bottom') == 0) ? 0 : get_sub_field('padding_bottom').'px';
+  $padding_array[] = (get_sub_field('padding_left') == '' || get_sub_field('padding_left') == 0) ? 0 : get_sub_field('padding_left').'px';
+  $padding = implode(' ',$padding_array);
+  if($padding != '0 0 0 0'){
+    $style_write[] = 'padding: '.$padding;
+  }
+}
+
+if(get_sub_field('background_color') != ''){
+  $style_write[] = 'background-color:'.get_sub_field('banner_color');
+}
+
+if(count($style_write) > 0){
+  $styles = $style.implode('; ',$style_write).$end;
+}
 
 ?>
 
-<section class="acf-full_width_banner alignfull" style="background-color:<?php the_sub_field('banner_color') ?>">
+?>
+
+<section class="acf-full_width_banner alignfull"<?php echo $styles; ?>>
   <?php the_sub_field('text'); ?>
   <?php $banner_link = get_sub_field('link') ?>
   <?php if(!empty($banner_link)): ?>

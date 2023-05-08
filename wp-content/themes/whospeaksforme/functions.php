@@ -725,4 +725,5 @@ function my_mce4_options($init) {
 
     return $init;
 }
+
 ?>

@@ -1,7 +1,7 @@
 // Footer
 .site-footer {
 	padding-top: 0;
-	padding-bottom: calc(1.7 * var(--global--spacing-vertical));
+	padding-bottom: 0;
 	@extend %responsive-alignwide-width;
 
 	// Increase the top vertical spacing when there is no widget area.
