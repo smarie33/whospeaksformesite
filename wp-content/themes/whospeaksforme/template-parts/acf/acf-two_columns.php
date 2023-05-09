@@ -44,10 +44,10 @@ $style_write_right = [];
 $style_write_right[] = 'width:'.$columnSize[1];
 
 if(get_sub_field('padding_left_right') != '' || get_sub_field('padding_top_right') != '' || get_sub_field('padding_right_right') != '' || get_sub_field('padding_bottom_right') != ''){
-  $padding_array_right[] = get_sub_field('padding_left_right') == '' ? 0 : get_sub_field('padding_left_right').'px';
   $padding_array_right[] = get_sub_field('padding_top_right') == '' ? 0 : get_sub_field('padding_top_right').'px';
   $padding_array_right[] = get_sub_field('padding_right_right') == '' ? 0 : get_sub_field('padding_right_right').'px';
   $padding_array_right[] = get_sub_field('padding_bottom_right') == '' ? 0 : get_sub_field('padding_bottom_right').'px';
+  $padding_array_right[] = get_sub_field('padding_left_right') == '' ? 0 : get_sub_field('padding_left_right').'px';
   $padding_right_write = implode(' ',$padding_array_right);
   if($padding_right_write != '0 0 0 0'){
     $style_write_right[] = 'padding: '.$padding_right_write;

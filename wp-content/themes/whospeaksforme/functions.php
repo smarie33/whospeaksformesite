@@ -726,4 +726,20 @@ function my_mce4_options($init) {
     return $init;
 }
 
+
+//contact form shortcode
+add_shortcode('Contact', 'contact_form');
+function contact_form($atts) {
+    $default = array(
+        'action' => '#',
+    );
+    $a = shortcode_atts($default, $atts);
+
+    ob_start();
+    include('template-parts/acf/acf-contact_form.php');
+    $form = ob_get_clean();
+    return $form;
+}
+
+
 ?>

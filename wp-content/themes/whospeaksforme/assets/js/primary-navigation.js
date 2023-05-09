@@ -358,7 +358,7 @@ function resizeCanvas(canvas) {
 		let isScrolling, start = 0, end = 0, distance = 0, lastDistance = 0, current = 0;
 		let previousScrollPosition = 0;
 
-		document.querySelectorAll('.acf-three_columns .column.scroll-image img').forEach( function( disImg ) {
+		document.querySelectorAll('.column.scroll-image img').forEach( function( disImg ) {
 			useThis = (disImg.parentElement.nodeName == 'FIGURE') ? disImg.parentNode : disImg;
 			useThis = (disImg.parentElement.nodeName == 'P') ? useThis.parentNode : useThis;
 			runDemImages.push(useThis);
