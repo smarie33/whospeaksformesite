@@ -1554,6 +1554,23 @@ p a {
 	flex-direction: column;
 }
 
+.acf-two_columns .column.scroll-image figure,
+.acf-two_columns .column.scroll-image p {
+	position: absolute;
+	top: 50px;
+	transition: transform 0.5s ease;
+}
+
+.acf-two_columns .column.scroll-image figure img,
+.acf-two_columns .column.scroll-image p img {
+	position: relative;
+}
+
+.acf-two_columns .column.scroll-image figure figcaption,
+.acf-two_columns .column.scroll-image p figcaption {
+	text-align: center;
+}
+
 .acf-two_columns .column p {
 	position: relative;
 	width: 100%;

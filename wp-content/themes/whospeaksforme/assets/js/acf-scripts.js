@@ -21,15 +21,14 @@
 	    	mceInit.toolbar1 = 'fontsizeselect,'+ mceInit.toolbar1;
 	    	mceInit.fontsize_formats = '9px 10px 12px 13px 14px 16px 18px 21px 24px 28px 32px 36px 38px 40px 42px 44px 46px 48px 50px 52px 54px 58px 60px 62px';
 
-	    	if(field.parents('.layout').attr('data-layout') == 'two_columns'){
-	    		let fullcolor = field.next().find('.acf-input input').val();
-	    		let onlyHex = fullcolor.split('#')[1];
-				eachColor[id] = onlyHex;
-				let addClass = 'bgcolor-'+onlyHex;
-				mceInit.body_class = mceInit.body_class + ' ' + addClass
-	    	}else{
+	    	// if(field.parents('.layout').attr('data-layout') == 'two_columns'){
+	    	// 	let fullcolor = field.next().find('.acf-input input').val();
+	    	// 	let onlyHex = fullcolor.split('#')[1];
+			// 	eachColor[id] = onlyHex;
+			// 	let addClass = 'bgcolor-'+onlyHex;
+			// 	mceInit.body_class = mceInit.body_class + ' ' + addClass
+	    	// }else{
 				let allSibs = field.siblings();
-				console.log(allSibs);
 				allSibs.each(function() {
 					let t = $(this);
 					if(t.hasClass('acf-field-color-picker')){
@@ -41,7 +40,7 @@
 						return false;
 					}
 				})
-			} 
+			//} 
 
 		    return mceInit;
 
