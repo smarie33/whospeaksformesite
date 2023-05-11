@@ -387,7 +387,9 @@ function resizeCanvas(canvas) {
 		let isScrolling, start = 0, end = 0, distance = 0, lastDistance = 0, current = 0;
 		let previousScrollPosition = 0;
 
-		highlightNavLink(sections,navLinks);
+		if(jumpNav != null){
+			highlightNavLink(sections,navLinks);
+		}
 		updateScrollBarHeight(scrollBar);
 
 		//adject full width images in two column layouts

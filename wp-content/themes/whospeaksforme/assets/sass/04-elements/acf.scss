@@ -253,44 +253,44 @@
 }
 
 .acf-two_columns{
-		justify-content: center;
+	justify-content: center;
+	@include media(desktop-only){
+		flex-direction: column;
+	}
+
+	.column:first-of-type{
+		margin:0 2% 0 0;
 		@include media(desktop-only){
-			flex-direction: column;
+			width: 96% !important;
+			margin: 0 2%;
 		}
+	}
 
-		.column:first-of-type{
-			margin:0 2% 0 0;
-			@include media(desktop-only){
-				width: 96% !important;
-				margin: 0 2%;
-			}
-		}
-
-		.column{
-			flex-direction: column;
-			&.scroll-image{
-				flex-direction: row;
-				figure,p{
-					position: absolute;
-					top: 50px;
-					transition: transform 0.5s ease;
-					img{
-						position: relative;
-					}
-					figcaption{
-						text-align: center;
-					}
+	.column{
+		flex-direction: column;
+		&.scroll-image{
+			flex-direction: row;
+			figure,p{
+				position: absolute;
+				top: 50px;
+				transition: transform 0.5s ease;
+				img{
+					position: relative;
+				}
+				figcaption{
+					text-align: center;
 				}
 			}
-			p{
-				position: relative;
-    			width: 100%;
-			}
-			@include media(desktop-only){
-				width: 96% !important;
-				margin: 5% 2%;
-			}
 		}
+		p{
+			position: relative;
+			width: 100%;
+		}
+		@include media(desktop-only){
+			width: 96% !important;
+			margin: 5% 2%;
+		}
+	}
 
 	.with-button{
 		flex-direction: column;
@@ -306,9 +306,6 @@
 	.full-width-images{
 		flex-direction: column;
 		justify-content: flex-start;
-		p{
-			height: 100%;
-		}
 		img{
 			width: 100% !important;
 			height: auto !important;
