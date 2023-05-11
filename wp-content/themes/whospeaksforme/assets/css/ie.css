@@ -204,6 +204,14 @@ hr {
 	overflow: visible; /* 2 */
 }
 
+hr.double-border {
+	border-bottom: 0.5em solid #262661;
+	box-shadow: 0 0.5em 0 #c82262;
+	width: 100%;
+	height: 50px;
+	margin: -50px auto 10px;
+}
+
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
@@ -1647,6 +1655,134 @@ p a {
 
 .entry-content .acf-team_members img {
 	height: auto !important;
+}
+
+.acf-jump_link a {
+	width: 100%;
+	height: 5px;
+	display: block;
+}
+
+.acf-jump-link-nav {
+	position: fixed;
+	top: 52px;
+	left: 0;
+	z-index: 100;
+	transform: translateX(0);
+	width: 100vw;
+	padding: 80px 0 0 0;
+	margin: 0;
+	background: #fff;
+}
+
+.acf-jump-link-nav.roll-up a {
+	height: 75px;
+	border-width: 0;
+	border-radius: 0;
+}
+
+.acf-jump-link-nav.roll-up a:hover,
+.acf-jump-link-nav.roll-up a.at-section {
+	border: none;
+}
+
+.acf-jump-link-nav.roll-up a span {
+	padding-bottom: 20px;
+}
+
+.acf-jump-link-nav ul {
+	padding-right: 35px;
+	padding-left: 35px;
+	max-width: 1220px;
+	margin-right: auto;
+	margin-left: auto;
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: repeat(7, 1fr);
+	background: #fff;
+	list-style: none;
+	border: 0;
+}
+
+.acf-jump-link-nav ul li {
+	transition: 0.4s ease;
+}
+
+.acf-jump-link-nav ul li a {
+	height: 75px;
+	color: #000;
+	font-weight: 700;
+	font-family: calluna, serif;
+	line-height: 1.125;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	font-size: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 114px;
+	border: 2px solid #f0f0f0;
+	border-radius: 5px;
+	text-align: center;
+	text-decoration: none;
+	transition: 0.4s ease;
+}
+
+.acf-jump-link-nav ul li a:hover {
+	text-decoration: none;
+	border: 2px solid #ca2162;
+}
+
+.acf-jump-link-nav ul li a.at-section {
+	text-decoration: none;
+	border: 2px solid #ca2162;
+}
+
+.acf-jump-link-nav ul li a:hover span {
+	color: #ca2162;
+}
+
+.acf-jump-link-nav ul li a.at-section span {
+	color: #ca2162;
+}
+
+.acf-jump-link-nav ul li a:hover span::after,
+.acf-jump-link-nav ul li a.at-section span::after {
+	opacity: 1;
+}
+
+.acf-jump-link-nav ul li a span {
+	position: relative;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: #000;
+}
+
+.acf-jump-link-nav ul li a span::before {
+	background: #fff;
+	display: block;
+	width: 36px;
+	height: 36px;
+	margin: 0 auto 15px;
+	border-radius: 50%;
+	content: "";
+	transition: 0.4s ease;
+}
+
+.acf-jump-link-nav ul li a span::after {
+	background: #ca2162;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	display: block;
+	width: 36px;
+	height: 36px;
+	margin: 0 auto 15px;
+	border-radius: 50%;
+	content: "";
+	transition: 0.4s ease;
+	opacity: 0;
 }
 
 .contact-form {

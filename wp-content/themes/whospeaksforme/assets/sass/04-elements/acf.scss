@@ -350,6 +350,119 @@
 	height: auto !important;
 }
 
+.acf-jump_link{
+	a{
+		width: 100%;
+		height: 5px;
+		display: block;
+	}
+}
+
+.acf-jump-link-nav{
+	position: fixed;
+    top: 52px;
+    left: 0;
+    z-index: 100;
+    transform: translateX(0);
+    width: 100vw;
+    padding: var(--main-menu--height) 0 0 0;
+    margin: 0;
+    background: var(--global--color-white);
+
+    &.roll-up{
+    	a{
+    		height: 75px;
+		    border-width: 0;
+		    border-radius: 0;
+		    &:hover, &.at-section{
+		    	border: none;
+		    }
+		    span{
+		    	padding-bottom: 20px;
+		    }
+    	}
+    }
+
+	ul{
+		padding-right: 35px;
+	    padding-left: 35px;
+	    max-width: 1220px;
+	    margin-right: auto;
+	    margin-left: auto;
+	    display: grid;
+	    grid-gap: 30px;
+	    grid-template-columns: repeat(7,1fr);
+	    background: var(--global--color-white);
+	    list-style: none;
+	    border: 0;
+		li{
+			transition: .4s ease;
+			a{
+				height: 75px;
+			    color: var(--global--color-black);
+			    font-weight: 700;
+			    font-family: calluna,serif;
+			    line-height: 1.125;
+			    letter-spacing: .05em;
+			    text-transform: uppercase;
+			    font-size: 15px;
+			    display: flex;
+			    align-items: center;
+			    justify-content: center;
+			    height: 114px;
+			    border: 2px solid var(--global--color-light-gray);
+			    border-radius: 5px;
+			    text-align: center;
+			    text-decoration: none;
+			    transition: .4s ease;
+			    &:hover, &.at-section{
+			    	text-decoration: none;
+			    	border: 2px solid var(--global--color-dk-pink);
+			    	span{
+						color: var(--global--color-dk-pink);
+						&::after{
+				    		opacity: 1;
+				    	}
+			    	}
+			    }
+			    span{
+			    	position: relative;
+			    	letter-spacing: .05em;
+    				text-transform: uppercase;
+    				color: var(--global--color-black);
+			    	&::before{
+				    	background: var(--global--color-white);
+				    	display: block;
+					    width: 36px;
+					    height: 36px;
+					    margin: 0 auto 15px;
+					    border-radius: 50%;
+					    transition: .4s ease;
+					    content: "";
+					    transition: .4s ease;
+			    	}
+			    	&::after{
+			    		background: var(--global--color-dk-pink);
+			    		position: absolute;
+					    top: 0;
+					    right: 0;
+					    left: 0;
+					    display: block;
+					    width: 36px;
+					    height: 36px;
+					    margin: 0 auto 15px;
+					    border-radius: 50%;
+					    transition: .4s ease;
+					    content: "";
+					    transition: .4s ease;
+					    opacity: 0;
+			    	}
+			    }
+			}
+		}
+	}
+}
+
 .contact-form{
 	max-width: 355px;
 	padding-right: 30px;

@@ -23,7 +23,7 @@ $title_index = 0;
         $collapsed_title = str_replace(" ", "-", strtolower($nav_item['jump_title']));
         $modified_titles[] = $collapsed_title;
     ?>
-        <li><a href="#<?php echo $collapsed_title; ?>"><?php echo $nav_item['jump_title']; ?></a></li>
+        <li><a class="jump-link" href="#<?php echo $collapsed_title; ?>"><span><?php echo $nav_item['jump_title']; ?></span></a></li>
     <?php endforeach; ?>
     </ul>
     <hr class="double-border">
