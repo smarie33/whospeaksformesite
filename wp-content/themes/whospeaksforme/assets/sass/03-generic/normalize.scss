@@ -83,6 +83,9 @@ pre {
 a {
 	background-color: transparent;
 	text-decoration-thickness: 1px;
+   &:focus{
+      text-decoration: none;
+   }
 }
 
 /**

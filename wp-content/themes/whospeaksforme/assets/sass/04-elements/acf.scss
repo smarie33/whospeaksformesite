@@ -306,6 +306,9 @@
 	.full-width-images{
 		flex-direction: column;
 		justify-content: flex-start;
+		p{
+			height: 100%;
+		}
 		img{
 			width: 100% !important;
 			height: auto !important;

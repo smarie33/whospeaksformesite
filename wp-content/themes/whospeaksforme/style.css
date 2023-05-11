@@ -426,6 +426,10 @@ a {
 	text-decoration-thickness: 1px;
 }
 
+a:focus {
+	text-decoration: none;
+}
+
 /**
  * 1. Remove the bottom border in Chrome 57-
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
@@ -1460,6 +1464,10 @@ p a {
 	justify-content: flex-start;
 }
 
+.acf-two_columns .full-width-images p {
+	height: 100%;
+}
+
 .acf-two_columns .full-width-images img {
 	width: 100% !important;
 	height: auto !important;
@@ -2283,7 +2291,7 @@ a:hover {
 
 	/* Only visible in Windows High Contrast mode */
 	outline: none;
-	text-decoration: underline 1px dotted currentColor;
+	text-decoration: none;
 	text-decoration-skip-ink: none;
 	background: rgba(255, 255, 255, 0.9);
 }

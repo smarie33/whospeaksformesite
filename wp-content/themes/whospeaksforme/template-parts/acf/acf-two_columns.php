@@ -73,7 +73,7 @@ $styles_right = $style.implode('; ',$style_write_right).$end;
       </p>
     <?php endif; ?>
   </div>
-  <div class="column<?php if(get_sub_field('full_width_images_right')): ?> full-width-images<?php endif; ?>><?php if(get_sub_field('scroll_image_right')): ?> scroll-image<?php endif; ?><?php if(get_sub_field('add_button_right')): ?> with-button<?php endif; ?>"<?php echo $styles_right; ?>>
+  <div class="column<?php if(get_sub_field('full_width_images_right')): ?> full-width-images<?php endif; ?><?php if(get_sub_field('scroll_image_right')): ?> scroll-image<?php endif; ?><?php if(get_sub_field('add_button_right')): ?> with-button<?php endif; ?>"<?php echo $styles_right; ?>>
     <?php the_sub_field('content_right'); ?>
     <?php if(get_sub_field('add_button_right')): ?>
       <?php $open_new = get_field('link_right')['target'] ? get_field('link_right')['target'] : '_self'; ?>
