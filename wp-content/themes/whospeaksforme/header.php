@@ -21,6 +21,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div id="vertical-scroll-bar"></div>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content">

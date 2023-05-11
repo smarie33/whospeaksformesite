@@ -366,8 +366,20 @@ function resizeCanvas(canvas) {
 	}
 
 
+	function updateScrollBarHeight(scrollBar) {
+	    const windowHeight = window.innerHeight;
+	    const documentHeight = document.documentElement.scrollHeight;
+	    const scrollPosition = window.pageYOffset;
+
+	    const scrollPercentage = (scrollPosition / (documentHeight - windowHeight)) * 100;
+
+	    scrollBar.style.height = scrollPercentage + 'vh';
+	}
+
+
 
 	window.addEventListener('load', function() {
+		const scrollBar = document.getElementById('vertical-scroll-bar');
 		const jumpNav = document.querySelector('.acf-jump-link-nav');
 		const sections = document.querySelectorAll('.acf-jump_link a');
 		const navLinks = document.querySelectorAll('.acf-jump-link-nav .jump-link');
@@ -376,6 +388,7 @@ function resizeCanvas(canvas) {
 		let previousScrollPosition = 0;
 
 		highlightNavLink(sections,navLinks);
+		updateScrollBarHeight(scrollBar);
 
 		//adject full width images in two column layouts
 		const fullImages = document.querySelectorAll('.full-width-images img');
@@ -425,9 +438,9 @@ function resizeCanvas(canvas) {
 			    } else {
 			        jumpNav.classList.remove('roll-up');
 			    }
-
-
 			}
+
+			updateScrollBarHeight(scrollBar);
 			
 
 			let runThese = [];

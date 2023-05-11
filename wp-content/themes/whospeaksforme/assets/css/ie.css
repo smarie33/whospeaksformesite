@@ -5881,6 +5881,16 @@ table.wp-calendar-table caption {
 	}
 }
 
+#vertical-scroll-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 3px;
+	background-color: #ca2162;
+	height: 0;
+	z-index: 2000;
+}
+
 .site-footer {
 	padding-top: 0;
 	padding-bottom: 0;
