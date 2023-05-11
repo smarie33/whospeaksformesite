@@ -341,12 +341,41 @@ function resizeCanvas(canvas) {
 	  );
 	}
 
+	function highlightNavLink(sections,navLinks) {
+	    let linkHighlighted = false;
+
+	    sections.forEach((section, index) => {
+	        if (isElementInViewport(section)) {
+	            navLinks[index].classList.add('at-section');
+	            linkHighlighted = true;
+	        } else {
+	            navLinks[index].classList.remove('at-section');
+	        }
+	    });
+
+	    if (!linkHighlighted && window.pageYOffset < sections[0].offsetTop) {
+	        navLinks[0].classList.add('highlighted');
+	    }
+	}
+
+	function highlightLinkOnClick(allLinks, toHighlight, theClass){
+		allLinks.forEach( jump => {
+			jump.classList.remove(theClass);
+		})
+		toHighlight.classList.add(theClass);
+	}
+
+
 
 	window.addEventListener('load', function() {
 		const jumpNav = document.querySelector('.acf-jump-link-nav');
+		const sections = document.querySelectorAll('.acf-jump_link a');
+		const navLinks = document.querySelectorAll('.acf-jump-link-nav .jump-link');
 		let runDemImages = [];
 		let isScrolling, start = 0, end = 0, distance = 0, lastDistance = 0, current = 0;
 		let previousScrollPosition = 0;
+
+		highlightNavLink(sections,navLinks);
 
 		//adject full width images in two column layouts
 		const fullImages = document.querySelectorAll('.full-width-images img');
@@ -365,19 +394,12 @@ function resizeCanvas(canvas) {
 			runDemImages.push(useThis);
 		})
 
-		function highlightLink(allLinks, toHighlight, theClass){
-			allLinks.forEach( jump => {
-				jump.classList.remove(theClass);
-			})
-			toHighlight.classList.add(theClass);
-		}
-
 		let allJumpLinks = document.querySelectorAll('.jump-link');
 		allJumpLinks.forEach( jump => {
 			jump.addEventListener('click', function (event) {
 		        event.preventDefault();
 
-		        highlightLink(allJumpLinks, jump, 'at-section');
+		        highlightLinkOnClick(allJumpLinks, jump, 'at-section');
 
 		        const headerSizes = 250;
 
@@ -396,11 +418,16 @@ function resizeCanvas(canvas) {
 		})
 
 		window.addEventListener("scroll", () => {
-			if (window.pageYOffset > 30) {
-		        jumpNav.classList.add('roll-up');
-		    } else {
-		        jumpNav.classList.remove('roll-up');
-		    }
+			if(jumpNav != null){
+				highlightNavLink(sections,navLinks);
+				if (window.pageYOffset > 30) {
+			        jumpNav.classList.add('roll-up');
+			    } else {
+			        jumpNav.classList.remove('roll-up');
+			    }
+
+
+			}
 			
 
 			let runThese = [];
