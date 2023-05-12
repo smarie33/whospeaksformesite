@@ -22,6 +22,10 @@ html {
 
 body {
 	margin: 0;
+   &.popup-on{
+      overflow: hidden;
+      height: 100vh;
+   }
 }
 
 /**

@@ -21,9 +21,9 @@
 	<footer id="colophon" class="site-footer alignfull">
 
 		<?php
-		if( have_rows('all_modules', 'option') ):
+		if( have_rows('all_modules', 'footer') ):
 
-		    while ( have_rows('all_modules', 'option') ) : the_row();
+		    while ( have_rows('all_modules', 'footer') ) : the_row();
 
 		    	get_template_part( 'template-parts/acf/acf', get_row_layout(), the_post());
 

@@ -421,9 +421,24 @@ function resizeCanvas(canvas) {
 		const sections = document.querySelectorAll('.acf-jump_link a');
 		const navLinks = document.querySelectorAll('.acf-jump-link-nav .jump-link');
 		const toolTipROs = document.querySelectorAll('.tooltip-hover');
+		const mainPopup = document.getElementById('main-popup');
+		const body = document.getElementsByTagName('body');
+
 		let runDemImages = [];
 		let isScrolling, start = 0, end = 0, distance = 0, lastDistance = 0, current = 0;
 		let previousScrollPosition = 0;
+
+		if(mainPopup != null){
+			mainPopup.style.width = window.innerWidth + 'px';
+			mainPopup.style.height = window.innerHeight + 'px';
+			body[0].classList.add('popup-on');
+			mainPopup.classList.add('show_popup');
+
+			document.querySelector('#main-popup .close').addEventListener('click', function (event) {
+				body[0].classList.remove('popup-on');
+				mainPopup.classList.remove('show_popup');
+			})
+		}
 
 		if(jumpNav != null){
 			highlightNavLink(sections,navLinks);

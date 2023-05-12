@@ -677,22 +677,35 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 	}
 endif;
 
-//Add options page for footer
+//Add options page for popup and footer
 add_action('acf/init', 'my_acf_op_init');
 function my_acf_op_init() {
 
     // Check function exists.
     if( function_exists('acf_add_options_page') ) {
 
-        // Register options page.
-        $option_page = acf_add_options_page(array(
-            'page_title'    => __('Footer'),
-            'menu_title'    => __('Footer'),
-            'menu_slug'     => 'footer',
-            'capability'    => 'edit_posts',
-            'icon_url' 		=> 'dashicons-layout',
-            'redirect'      => false
-        ));
+    	acf_add_options_page(array(
+	        'page_title'    => 'Extra Theme Settings',
+	        'menu_title'    => 'Extra Theme Settings',
+	        'menu_slug'     => 'extra-theme-settings',
+	        'capability'    => 'edit_posts',
+	        'icon_url' 		=> 'dashicons-layout',
+	        'redirect'      => false
+	    ));
+
+	    acf_add_options_sub_page(array(
+	    	'post_id'		=> 'popup',
+	        'page_title'    => 'Popup Settings',
+	        'menu_title'    => 'Popup',
+	        'parent_slug'   => 'extra-theme-settings'
+	    ));
+
+        acf_add_options_sub_page(array(
+        	'post_id'		=> 'footer',
+	        'page_title'    => 'Theme Footer Settings',
+	        'menu_title'    => 'Footer',
+	        'parent_slug'   => 'extra-theme-settings'
+	    ));
     }
 }
 

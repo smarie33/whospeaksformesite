@@ -21,6 +21,20 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php if(get_field('show_popup','popup')): ?>
+<div id="main-popup" style="background-color:<?php the_field('overlay_background_color','popup') ?>">
+	<div class="popup-bg" style="background-color:<?php the_field('popup_background_color','popup') ?>">
+		<div class="popup-content">
+			<div class="close">x</div>
+			<?php the_field('content','popup'); ?>
+			<?php if(get_field('add_button','popup')): ?>
+            <?php $open_new = get_field('link','popup')['target'] ? get_field('link','popup')['target'] : '_self'; ?>
+            <a class="button <?php the_field('button_type','popup') ?>" href="<?php echo get_field('link','popup')['url'] ?>" target="<?php echo $open_new; ?>"><?php echo get_field('link','popup')['title'] ?></a>
+          <?php endif; ?>
+		</div>		
+	</div>
+</div>
+<?php endif; ?>
 <div id="vertical-scroll-bar"></div>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
