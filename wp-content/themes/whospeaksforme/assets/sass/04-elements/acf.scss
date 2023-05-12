@@ -568,7 +568,7 @@
 .acf-large_tooltip{
 	display: flex;
 	justify-content: center;
-	padding: 200px 0;
+	padding: 0 0 200px 0;
 	.tooltip-hover{
 		font-size: 60px;
 	    font-family: calluna,serif;
@@ -582,20 +582,18 @@
 	    position: relative;
 	    display: inline-block;
 	    &:after{
-		    display: block;
+		    display: inline-block;
 		    width: 9px;
 		    height: 9px;
-		    margin: 0 55px;
+		    margin: 0 18%;
 		    border-radius: 50%;
 		    background: #000;
 		    content: "";
 		    position: absolute;
 			top: 30px;
-	    }
-	    &:last-of-type{
-	    	&:after{
-	    		display: none;
-	    	}
+			&:last-of-type{
+		    	display: none;
+		    }
 	    }
 	}
 	.tooltip{
