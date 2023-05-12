@@ -564,3 +564,112 @@
 
 	}
 }
+
+.acf-large_tooltip{
+	display: flex;
+	justify-content: center;
+	.tooltip-hover{
+		font-size: 60px;
+	    font-family: calluna,serif;
+	    line-height: 1.22222;
+	    letter-spacing: 0;
+	    font-weight: 700;
+	    position: relative;
+	    text-align: center;
+	    text-transform: uppercase;
+	    cursor: pointer;
+	    position: relative;
+	    display: inline-block;
+	    &:after{
+		    display: block;
+		    width: 9px;
+		    height: 9px;
+		    margin: 0 55px;
+		    border-radius: 50%;
+		    background: #000;
+		    content: "";
+		    position: absolute;
+			top: 30px;
+	    }
+	    &:last-of-type{
+	    	&:after{
+	    		display: none;
+	    	}
+	    }
+	}
+	.tooltip{
+		box-shadow: 0 14px 28px rgba(0,0,0,.16), 0 10px 10px rgba(0,0,0,.23);
+		transition: all 0.5s ease 0s;
+		opacity: 0;
+		height: 0;
+		padding: 45px 40px 45px 45px;
+    	font: 300 15px/25px calluna,serif;
+    	width: 340px;
+    	background-color: #fff;
+    	position: absolute;
+    	z-index: 2000;
+    	text-transform: none;
+
+		&.hide_tooltip{
+		    opacity: 0;
+		    height: 0;
+		    overflow: hidden;
+		}
+		&.show_tooltip{
+			opacity: 1;
+			height: auto;			
+		}
+		.button{
+			margin-top: 20px;
+		}
+	}
+	&.word-border{
+		.top,.left,.right{
+			display: none;
+		}
+		.words{
+			text-transform: uppercase;
+			font-size: var(--global--font-size-xs);
+		}
+	}
+	@include media(desktop){
+		&.word-border{
+			display: block;
+			.centered{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			.words{
+				color: var(--global--color-pink);
+				font-weight: bold;
+				text-align: center;
+				align-self: center;
+			}
+			.top{
+				display: block;
+				width:100%;
+				padding: calc($baseline-unit * 9) 0;
+			}
+			.left,.right{
+				align-content: center;
+				display: flex;
+			}
+			.left{
+				.words{
+					transform: rotate(-90deg);
+					white-space: nowrap;
+				}
+			}
+			.right{
+				.words{
+					transform: rotate(90deg);
+					white-space: nowrap;
+				}
+			}
+			.content{
+				padding: 0;
+			}
+		}
+	}
+}

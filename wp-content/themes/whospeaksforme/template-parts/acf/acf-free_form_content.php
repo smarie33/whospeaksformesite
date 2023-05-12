@@ -50,13 +50,13 @@ if(get_sub_field('image_overlay') != ''){
 <section class="acf-free_form_content alignfull<?php if(get_sub_field('word_border')): ?> word-border<?php endif; ?>"<?php echo $styles ?>>
   <div class="on-top">
     <?php if(get_sub_field('word_border')): ?>
-      <div class="top"><div class="words">who speaks for me?</div></div>
+      <div class="top"><div class="words"><?php the_sub_field('word_border_words'); ?></div></div>
       <div class="centered">
-        <div class="left"><div class="words">who speaks for me?</div></div>
+        <div class="left"><div class="words"><?php the_sub_field('word_border_words'); ?></div></div>
     <?php endif; ?>
       <div class="content"><?php the_sub_field('content'); ?></div>
     <?php if(get_sub_field('word_border')): ?>
-      <div class="right"><div class="words">who speaks for me?</div></div>
+      <div class="right"><div class="words"><?php the_sub_field('word_border_words'); ?></div></div>
       </div>
     <?php endif; ?>
   </div>
