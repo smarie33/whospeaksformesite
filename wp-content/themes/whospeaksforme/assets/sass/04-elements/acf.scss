@@ -33,7 +33,6 @@ color: var(--global--color-pink);
 
 
 .acf-social_media_lrg{
-	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -47,7 +46,7 @@ color: var(--global--color-pink);
 			&.lt-pink:hover{color: var(--global--color-lt-pink) !important;}
 			&.dk-pink:hover{color: var(--global--color-dk-pink) !important;}
 			&.lt-blue:hover{color: var(--global--color-lt-blue) !important;}
-			&.blue:hover{color: var(--global--color-blur) !important;}
+			&.blue:hover{color: var(--global--color-blue) !important;}
 			&.dk-blue:hover{color: var(--global--color-dk-blue) !important;}
 		}
 	}

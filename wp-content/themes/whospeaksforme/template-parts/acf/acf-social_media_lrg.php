@@ -25,7 +25,7 @@ $padding_array[] = (get_sub_field('padding_right') == '' || get_sub_field('paddi
 $padding_array[] = (get_sub_field('padding_bottom') == '' || get_sub_field('padding_bottom') == 0) ? 0 : get_sub_field('padding_bottom').'px';
 $padding_array[] = (get_sub_field('padding_left') == '' || get_sub_field('padding_left') == 0) ? 0 : get_sub_field('padding_left').'px';
 
-$style_write[] = 'padding: '.$padding;
+$style_write[] = 'padding:'.implode(' ',$padding_array);
 
 $margin_array[] = (get_sub_field('margin_top') == '' || get_sub_field('margin_top') == 0) ? 'auto' : get_sub_field('margin_top').'px';
 $margin_array[] = (get_sub_field('margin_right') == '' || get_sub_field('margin_right') == 0) ? 'auto' : get_sub_field('margin_right').'px';

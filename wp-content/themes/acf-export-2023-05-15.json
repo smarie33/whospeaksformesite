@@ -809,6 +809,24 @@
                         "display": "block",
                         "sub_fields": [
                             {
+                                "key": "field_6434caf443d98",
+                                "label": "Banner Color",
+                                "name": "banner_color",
+                                "aria-label": "",
+                                "type": "color_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "20",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "#CA2162",
+                                "enable_opacity": 0,
+                                "return_format": "string"
+                            },
+                            {
                                 "key": "field_64596abd58368",
                                 "label": "Padding Top",
                                 "name": "padding_top",
@@ -983,24 +1001,6 @@
                                 "step": "",
                                 "prepend": "",
                                 "append": ""
-                            },
-                            {
-                                "key": "field_6434caf443d98",
-                                "label": "Banner Color",
-                                "name": "banner_color",
-                                "aria-label": "",
-                                "type": "color_picker",
-                                "instructions": "",
-                                "required": 0,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "20",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "default_value": "#CA2162",
-                                "enable_opacity": 0,
-                                "return_format": "string"
                             },
                             {
                                 "key": "field_6438c82bba571",
@@ -1717,6 +1717,28 @@
                                 "append": ""
                             },
                             {
+                                "key": "field_646243caa7f0a",
+                                "label": "Padding Left",
+                                "name": "padding_left",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": "",
+                                "max": "",
+                                "placeholder": "",
+                                "step": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
                                 "key": "field_64629b7c3c5fc",
                                 "label": "Margin Top",
                                 "name": "margin_top",
@@ -1761,28 +1783,6 @@
                                 "append": ""
                             },
                             {
-                                "key": "field_64629b753c5fb",
-                                "label": "Margin Left",
-                                "name": "margin_left",
-                                "aria-label": "",
-                                "type": "number",
-                                "instructions": "",
-                                "required": 0,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "25",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "default_value": "",
-                                "min": "",
-                                "max": "",
-                                "placeholder": "",
-                                "step": "",
-                                "prepend": "",
-                                "append": ""
-                            },
-                            {
                                 "key": "field_64629b723c5fa",
                                 "label": "Margin Bottom",
                                 "name": "margin_bottom",
@@ -1805,9 +1805,9 @@
                                 "append": ""
                             },
                             {
-                                "key": "field_646243caa7f0a",
-                                "label": "Padding Left",
-                                "name": "padding_left",
+                                "key": "field_64629b753c5fb",
+                                "label": "Margin Left",
+                                "name": "margin_left",
                                 "aria-label": "",
                                 "type": "number",
                                 "instructions": "",

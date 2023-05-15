@@ -1128,7 +1128,6 @@ p a {
 }
 
 .acf-social_media_lrg {
-	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -1164,7 +1163,7 @@ p a {
 }
 
 .acf-social_media_lrg a .fa.blue:hover {
-	color: var(--global--color-blur) !important;
+	color: var(--global--color-blue) !important;
 }
 
 .acf-social_media_lrg a .fa.dk-blue:hover {
