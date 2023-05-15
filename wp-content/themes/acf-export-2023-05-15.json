@@ -283,6 +283,57 @@
         "show_in_rest": 0
     },
     {
+        "key": "group_64624ccc42e5d",
+        "title": "Where to show footer",
+        "fields": [
+            {
+                "key": "field_64624ccc6a3b8",
+                "label": "Do not show footer on these pages",
+                "name": "do_not_show_footer_on_these_pages",
+                "aria-label": "",
+                "type": "relationship",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "page"
+                ],
+                "post_status": "",
+                "taxonomy": "",
+                "filters": [
+                    "search"
+                ],
+                "return_format": "id",
+                "min": "",
+                "max": "",
+                "elements": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options-footer"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
         "key": "group_645a5997e86a4",
         "title": "Jump Link Page Template",
         "fields": [
@@ -834,6 +885,94 @@
                                 "conditional_logic": 0,
                                 "wrapper": {
                                     "width": "20",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": "",
+                                "max": "",
+                                "placeholder": "",
+                                "step": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_646297d21e4b5",
+                                "label": "Margin Top",
+                                "name": "margin_top",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": "",
+                                "max": "",
+                                "placeholder": "",
+                                "step": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_646297eb1e4b6",
+                                "label": "Margin Right",
+                                "name": "margin_right",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": "",
+                                "max": "",
+                                "placeholder": "",
+                                "step": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_646297f81e4b7",
+                                "label": "Margin Bottom",
+                                "name": "margin_bottom",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": "",
+                                "max": "",
+                                "placeholder": "",
+                                "step": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_646298031e4b8",
+                                "label": "Margin Left",
+                                "name": "margin_left",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
                                     "class": "",
                                     "id": ""
                                 },
@@ -1559,6 +1698,94 @@
                                 "key": "field_646243c6a7f09",
                                 "label": "Padding Bottom",
                                 "name": "padding_bottom",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": "",
+                                "max": "",
+                                "placeholder": "",
+                                "step": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_64629b7c3c5fc",
+                                "label": "Margin Top",
+                                "name": "margin_top",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": "",
+                                "max": "",
+                                "placeholder": "",
+                                "step": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_64629b6e3c5f9",
+                                "label": "Margin Right",
+                                "name": "margin_right",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": "",
+                                "max": "",
+                                "placeholder": "",
+                                "step": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_64629b753c5fb",
+                                "label": "Margin Left",
+                                "name": "margin_left",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": "",
+                                "max": "",
+                                "placeholder": "",
+                                "step": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_64629b723c5fa",
+                                "label": "Margin Bottom",
+                                "name": "margin_bottom",
                                 "aria-label": "",
                                 "type": "number",
                                 "instructions": "",

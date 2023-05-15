@@ -21,15 +21,17 @@
 	<footer id="colophon" class="site-footer alignfull">
 
 		<?php
-		if(!in_array(get_queried_object_id(),get_field('do_not_show_footer_on_these_pages','footer'))):
-			if( have_rows('all_modules', 'footer') ):
+		if(get_field('do_not_show_footer_on_these_pages','footer')):
+			if(!in_array(get_queried_object_id(),get_field('do_not_show_footer_on_these_pages','footer'))):
+				if( have_rows('all_modules', 'footer') ):
 
-			    while ( have_rows('all_modules', 'footer') ) : the_row();
+				    while ( have_rows('all_modules', 'footer') ) : the_row();
 
-			    	get_template_part( 'template-parts/acf/acf', get_row_layout(), the_post());
+				    	get_template_part( 'template-parts/acf/acf', get_row_layout(), the_post());
 
-			    endwhile;
+				    endwhile;
 
+				endif;
 			endif;
 		endif;
 		?>

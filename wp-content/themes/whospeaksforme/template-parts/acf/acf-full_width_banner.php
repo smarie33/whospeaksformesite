@@ -17,16 +17,22 @@ $styles = '';
 $padding_array = [];
 $style_write = [];
 
-if(get_sub_field('padding_left') != '' || get_sub_field('padding_top') != '' || get_sub_field('padding_right') != '' || get_sub_field('padding_bottom') != ''){
-  $padding_array[] = (get_sub_field('padding_top') == '' || get_sub_field('padding_top') == 0) ? 0 : get_sub_field('padding_top').'px';
-  $padding_array[] = (get_sub_field('padding_right') == '' || get_sub_field('padding_right') == 0) ? 0 : get_sub_field('padding_right').'px';
-  $padding_array[] = (get_sub_field('padding_bottom') == '' || get_sub_field('padding_bottom') == 0) ? 0 : get_sub_field('padding_bottom').'px';
-  $padding_array[] = (get_sub_field('padding_left') == '' || get_sub_field('padding_left') == 0) ? 0 : get_sub_field('padding_left').'px';
-  $padding = implode(' ',$padding_array);
-  if($padding != '0 0 0 0'){
-    $style_write[] = 'padding: '.$padding;
-  }
-}
+$padding_array[] = (get_sub_field('padding_top') == '' || get_sub_field('padding_top') == 0) ? 0 : get_sub_field('padding_top').'px';
+$padding_array[] = (get_sub_field('padding_right') == '' || get_sub_field('padding_right') == 0) ? 0 : get_sub_field('padding_right').'px';
+$padding_array[] = (get_sub_field('padding_bottom') == '' || get_sub_field('padding_bottom') == 0) ? 0 : get_sub_field('padding_bottom').'px';
+$padding_array[] = (get_sub_field('padding_left') == '' || get_sub_field('padding_left') == 0) ? 0 : get_sub_field('padding_left').'px';
+
+$style_write[] = 'padding:'.implode(' ',$padding_array);
+
+$margin_array[] = (get_sub_field('margin_top') == '' || get_sub_field('margin_top') == 0) ? 'auto' : get_sub_field('margin_top').'px';
+$margin_array[] = (get_sub_field('margin_right') == '' || get_sub_field('margin_right') == 0) ? 'auto' : get_sub_field('margin_right').'px';
+$margin_array[] = (get_sub_field('margin_bottom') == '' || get_sub_field('margin_bottom') == 0) ? 'auto' : get_sub_field('margin_bottom').'px';
+$margin_array[] = (get_sub_field('margin_left') == '' || get_sub_field('margin_left') == 0) ? 'auto' : get_sub_field('margin_left').'px';
+
+$style_write[] = 'margin:'.implode(' ',$margin_array);
+
+
+
 
 if(get_sub_field('banner_color') != ''){
   $style_write[] = 'background-color: '.get_sub_field('banner_color');
