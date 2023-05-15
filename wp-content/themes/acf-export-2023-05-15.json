@@ -1182,7 +1182,7 @@
                     "layout_6434bea150ad9": {
                         "key": "layout_6434bea150ad9",
                         "name": "social_media",
-                        "label": "Social Media",
+                        "label": "Small Social Media",
                         "display": "block",
                         "sub_fields": [
                             {
@@ -1423,6 +1423,312 @@
                                     [
                                         {
                                             "field": "field_6434bf4cbaf16",
+                                            "operator": "==",
+                                            "value": "reddit"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": ""
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    "layout_6461b56d27075": {
+                        "key": "layout_6461b56d27075",
+                        "name": "social_media_lrg",
+                        "label": "Social Media",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_6461b8a573279",
+                                "label": "Background Color",
+                                "name": "background_color",
+                                "aria-label": "",
+                                "type": "color_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "33",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "enable_opacity": 0,
+                                "return_format": "string"
+                            },
+                            {
+                                "key": "field_6461b57f27080",
+                                "label": "Color",
+                                "name": "color",
+                                "aria-label": "",
+                                "type": "color_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "33",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "enable_opacity": 0,
+                                "return_format": "string"
+                            },
+                            {
+                                "key": "field_6461b59627081",
+                                "label": "Hover Color",
+                                "name": "hover_color",
+                                "aria-label": "",
+                                "type": "button_group",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "33",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "white": "White",
+                                    "black": "Black",
+                                    "pink": "Pink",
+                                    "lt-pink": "Light Pink",
+                                    "dk-pink": "Dark Pink",
+                                    "lt-blue": "Light Blue",
+                                    "blue": "Blue",
+                                    "dk-blue": "Dark Blue"
+                                },
+                                "default_value": "",
+                                "return_format": "value",
+                                "allow_null": 0,
+                                "layout": "vertical"
+                            },
+                            {
+                                "key": "field_6461b56d27077",
+                                "label": "options",
+                                "name": "options",
+                                "aria-label": "",
+                                "type": "checkbox",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "email": "email",
+                                    "facebook": "facebook",
+                                    "instagram": "instagram",
+                                    "twitter": "twitter",
+                                    "tiktok": "tiktok",
+                                    "discord": "discord",
+                                    "tumblr": "tumblr",
+                                    "reddit": "reddit"
+                                },
+                                "default_value": [],
+                                "return_format": "value",
+                                "allow_custom": 0,
+                                "save_custom": 0,
+                                "layout": "vertical",
+                                "toggle": 0,
+                                "custom_choice_button_text": "Add new choice"
+                            },
+                            {
+                                "key": "field_6461b56d27078",
+                                "label": "email",
+                                "name": "email",
+                                "aria-label": "",
+                                "type": "link",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_6461b56d27077",
+                                            "operator": "==",
+                                            "value": "email"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "array"
+                            },
+                            {
+                                "key": "field_6461b56d27079",
+                                "label": "facebook",
+                                "name": "facebook",
+                                "aria-label": "",
+                                "type": "url",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_6461b56d27077",
+                                            "operator": "==",
+                                            "value": "facebook"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_6461b56d2707a",
+                                "label": "instagram",
+                                "name": "instagram",
+                                "aria-label": "",
+                                "type": "url",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_6461b56d27077",
+                                            "operator": "==",
+                                            "value": "instagram"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_6461b56d2707b",
+                                "label": "twitter",
+                                "name": "twitter",
+                                "aria-label": "",
+                                "type": "url",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_6461b56d27077",
+                                            "operator": "==",
+                                            "value": "twitter"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_6461b56d2707c",
+                                "label": "tiktok",
+                                "name": "tiktok",
+                                "aria-label": "",
+                                "type": "url",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_6461b56d27077",
+                                            "operator": "==",
+                                            "value": "tiktok"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_6461b56d2707d",
+                                "label": "discord",
+                                "name": "discord",
+                                "aria-label": "",
+                                "type": "url",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_6461b56d27077",
+                                            "operator": "==",
+                                            "value": "discord"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_6461b56d2707e",
+                                "label": "tumblr",
+                                "name": "tumblr",
+                                "aria-label": "",
+                                "type": "url",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_6461b56d27077",
+                                            "operator": "==",
+                                            "value": "tumblr"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_6461b56d2707f",
+                                "label": "reddit",
+                                "name": "reddit",
+                                "aria-label": "",
+                                "type": "url",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_6461b56d27077",
                                             "operator": "==",
                                             "value": "reddit"
                                         }

@@ -59,7 +59,7 @@
       <?php if(!get_field('double_up') || $double_up == 1): ?>
        <hr>
       <?php endif; ?>
-      <?php $direction = ($direction == 'row') ? 'row-reverse' : 'row'; ?>
+      <?php //$direction = ($direction == 'row') ? 'row-reverse' : 'row'; ?>
     <?php endforeach; ?>
     <?php wp_reset_postdata(); ?>
   <?php endif; ?>

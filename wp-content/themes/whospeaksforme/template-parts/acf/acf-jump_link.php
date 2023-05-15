@@ -13,5 +13,6 @@
 ?>
 
 <section class="acf-jump_link alignfull">
+  <?php if(get_sub_field('show_rule_line')): ?><hr><?php endif; ?>
   <a id="<?php echo $args['jumplink']; ?>"></a>
 </section>

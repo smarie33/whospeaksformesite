@@ -12,7 +12,7 @@
 
 ?>
 
-<section id="block-sociallinksblock" class="acf-social_media alignfull">
+<section class="acf-social_media alignfull">
     <h2 class="block__title"><?php the_sub_field('text'); ?></h2>
     <?php foreach(get_sub_field('options') as $option): ?>
       <?php if($option == 'email'): ?>
