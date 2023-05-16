@@ -468,28 +468,28 @@ function resizeCanvas(canvas) {
 
 		if(slides.length > 0){
 			// Duplicate first and last slides
-			let firstSlide = slides[0].cloneNode(true);
-			let lastSlide = slides[slides.length - 1].cloneNode(true);
-			document.querySelector('.acf-slider-area').appendChild(firstSlide);
-			document.querySelector('.acf-slider-area').prepend(lastSlide);
+			// let firstSlide = slides[0].cloneNode(true);
+			// let lastSlide = slides[slides.length - 1].cloneNode(true);
+			// document.querySelector('.acf-slider-area').appendChild(firstSlide);
+			// document.querySelector('.acf-slider-area').prepend(lastSlide);
 
-			slides = Array.from(document.querySelectorAll('.acf-slide'));
+			// slides = Array.from(document.querySelectorAll('.acf-slide'));
 
-			slides.forEach((slide, index) => {
-				index = index + 1;
-			  	let toCenter = slide.offsetWidth;
-	    		let position = (index - currentIndex) * toCenter;
-			  slide.style.transform = `translateX(${position}px)`;
-			});
+			// slides.forEach((slide, index) => {
+			// 	index = index + 1;
+			//   	let toCenter = slide.offsetWidth;
+	    	// 	let position = (index - currentIndex) * toCenter;
+			//   slide.style.transform = `translateX(${position}px)`;
+			// });
 
-			document.getElementById('acf-slide-prev').addEventListener('click', event => {
-				let getCurIndex = switchSlide(event,slides,currentIndex);
-				currentIndex = getCurIndex;
-			});
-			document.getElementById('acf-slide-next').addEventListener('click', event => {
-				let getCurIndex = switchSlide(event,slides,currentIndex);
-				currentIndex = getCurIndex;
-			});
+			// document.getElementById('acf-slide-prev').addEventListener('click', event => {
+			// 	let getCurIndex = switchSlide(event,slides,currentIndex);
+			// 	currentIndex = getCurIndex;
+			// });
+			// document.getElementById('acf-slide-next').addEventListener('click', event => {
+			// 	let getCurIndex = switchSlide(event,slides,currentIndex);
+			// 	currentIndex = getCurIndex;
+			// });
 		}
 
 		if(mainPopup != null){
@@ -623,3 +623,7 @@ function resizeCanvas(canvas) {
 
 
 }() );
+
+// (function($) {
+// 	alert('j');
+// })(jQuery);

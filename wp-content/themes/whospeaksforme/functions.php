@@ -396,6 +396,22 @@ add_action( 'after_setup_theme', 'twenty_twenty_one_content_width', 0 );
  *
  * @return void
  */
+
+//if slick slider is on page
+// global $post;
+// echo $post;
+// $cur_fields = get_field('all_modules', $post->id);
+// echo print_r($cur_fields,true);
+// $has_slider = false;
+// foreach($cur_fields as $cur_field){
+// 	echo $cur_field['acf_fc_layout'];
+// 	echo '<br>';
+// 	if($cur_field['acf_fc_layout'] == 'slider'){
+// 		$has_slider = true;
+// 		break;
+// 	}
+// }
+
 function twenty_twenty_one_scripts() {
 	// Note, the is_IE global variable is defined by WordPress and is used
 	// to detect if the current browser is internet explorer.
@@ -413,6 +429,13 @@ function twenty_twenty_one_scripts() {
 
 	// Print styles.
 	wp_enqueue_style( 'twenty-twenty-one-print-style', get_template_directory_uri() . '/assets/css/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
+
+	//if($has_slider){
+		wp_enqueue_style( 'slick-slider-css', get_template_directory_uri() . '/'.'slick.css', array(), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_style( 'slick-slider--theme-css', get_template_directory_uri() . '/'.'slick-theme.css', array(), wp_get_theme()->get( 'Version' ) );
+
+
+	//}
 
 	// Threaded comment reply styles.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -476,8 +499,30 @@ function twenty_twenty_one_scripts() {
 	);
 	wp_script_add_data( 'font-awesome','crossorigin', 'anonymous' );
 
+	//if($has_slider){
+	wp_enqueue_script(
+		'slick-slider',
+		'//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js',
+		array('jquery'),
+		wp_get_theme()->get( 'Version' ),
+		true
+	);
+
+	wp_enqueue_script(
+		'slider-functions',
+		get_template_directory_uri() . '/assets/js/slider-functions.js',
+		array('slick-slider'),
+		wp_get_theme()->get( 'Version' ),
+		true
+	);
+	//}
+
+	wp_add_inline_script( 'slider', $slider_functions );
+
+
 }
 add_action( 'wp_enqueue_scripts', 'twenty_twenty_one_scripts' );
+
 
 function acf_scripts() {
 	wp_enqueue_script(

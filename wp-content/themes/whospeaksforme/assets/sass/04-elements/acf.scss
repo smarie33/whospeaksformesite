@@ -498,58 +498,63 @@ color: var(--global--color-pink);
 	}
 }
 
-.acf-slider-area{
+.slick-initialized .slick-slide.acf-slide{
 	display: flex;
-	width: 100%;
-	height: 60vh;
-	overflow: hidden;
-	position: relative;
-
-	.acf-slide{
+}
+.acf-slider{
+	padding: 120px 0;
+}
+.acf-slide{
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+.image{
+	display: flex;
+	flex-direction: column;
+	.attribution{
+		text-align: center;
+		padding: 10px 0 0 0;
+	}
+	.image-holder{
+		width: 331px;
+	    height: 445px;
+		overflow: hidden;
+		position: relative;
 		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		flex-shrink: 0;
-		width: 768px;
-		height: 100%;
-		transition: transform 0.5s ease-in-out;
-		box-sizing: border-box;
-		.image{
-		    flex: 0 1 331px;
-		    width: 331px;
-		    height: 443.5px;
-			object-fit: cover;
-			overflow: hidden;
-			&.left-tilt{
-				img{
-					padding: 17px;
-    				transform: rotate(-3deg);
-				}
-			}
-			&.right-tilt{
-				img{
-					padding: 17px;
-    				transform: rotate(3deg);
-				}
-			}
-			img{
-				flex: 0 1 331px;
-			    width: 331px;
-			    height: 443.5px;
-			}
-			.image-holder{
-				display: flex;
-			    justify-content: center;
-			    width: 100%;
-			}
+		justify-content: center;
+		&.left-tilt{
+			padding: 17px;
+			transform: rotate(-3deg);
 		}
-		.text {
-			flex: 0 1 400px;
-			display: flex;
-		    justify-content: center;
-		    width: 100%;
+		&.right-tilt{
+			padding: 17px;
+			transform: rotate(3deg);
 		}
+
+		img{
+	    	width: auto;
+    		height: 443.5px;
+    		max-width: initial;
+		}
+	}
+		// .image-holder{
+		// 	display: flex;
+		//     justify-content: center;
+		//     width: 100%;
+		//     img{
+		//     	width: auto;
+	    // 		height: 443.5px;
+	    // 		max-width: initial;
+		// 	}
+		// }
+	}
+	.text {
+		flex: 0 1 400px;
+		display: flex;
+	    justify-content: center;
+	    width: 100%;
+	    padding-left: 30px;
 	}
 }
 
@@ -558,30 +563,8 @@ color: var(--global--color-pink);
 		text-transform: uppercase;
 		color: var(--global--color-white);
 		text-align: center;
+		font-size: 13px;
 		padding: 20px 0;
-	}
-	.acf-slider-controls{
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		display: flex;
-		justify-content: space-between;
-
-		.control {
-		  width: 50%;
-		  height: 100%;
-		}
-
-		.control.left {
-		  cursor: url('arrow.png') 16 16, auto; /* replace with your arrow cursor */
-		  transform: rotate(180deg);
-		}
-
-		.control.right {
-		  cursor: url('arrow.png') 16 16, auto; /* replace with your arrow cursor */
-		}
 	}
 }
 

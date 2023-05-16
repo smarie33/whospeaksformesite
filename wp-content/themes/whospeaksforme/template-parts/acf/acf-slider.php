@@ -20,8 +20,10 @@ $tilt_type = 'left';
   <div class="acf-slider-area">
     <?php foreach($slides  as $slide): ?>
     <div class="acf-slide">
-      <div class="image <?php echo $tilt_type; ?>-tilt">
-        <img src="<?php echo $slide['image']['sizes']['1536x1536']; ?>">
+      <div class="image">
+        <div class="image-holder <?php echo $tilt_type; ?>-tilt">
+          <img src="<?php echo $slide['image']['sizes']['1536x1536']; ?>">
+        </div>
         <?php if(!empty($slide['attribution'])): ?>
         <div class="attribution"><span style="color:<?php echo $att_color; ?>">Courtesy of</span> <a href="<?php echo $slide['attribution']['url']; ?>"><?php echo $slide['attribution']['title']; ?></a></div>
         <?php endif; ?>
