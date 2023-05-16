@@ -9,7 +9,9 @@
  * @since Twenty Twenty-One 1.0
  */
 $tooltips = get_sub_field('large_tooltip');
+$tothelast = count($tooltips);
 $cnt = 1;
+$dot = ' dot';
 ?>
 
 <section class="acf-large_tooltip alignfull<?php if(get_sub_field('word_border')): ?> word-border<?php endif; ?>" style="background-color:<?php the_sub_field('background_color') ?>">
@@ -21,7 +23,8 @@ $cnt = 1;
   <?php endif; ?>
 
   <?php foreach($tooltips as $tooltip): ?>
-      <div class="tooltip-hover">
+    <?php if($cnt == $tothelast){$dot = '';} ?>
+      <div class="tooltip-hover<?php echo $dot; ?>">
         <?php echo $tooltip['rollover_text']; ?>
         <div class="tooltip" id="tooltip_<?php echo $cnt ?>">
           <?php echo $tooltip['tooltip_Info']; ?>

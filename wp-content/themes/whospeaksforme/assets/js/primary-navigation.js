@@ -330,6 +330,44 @@ function resizeCanvas(canvas) {
 		new navMenu( 'primary' );
 	});
 
+	function switchSlide(button, slides, currentIndex) {
+	  let direction = button.target.id === 'acf-slide-next' ? 1 : -1;
+	  currentIndex += direction;
+
+
+	  slides.forEach((slide, index) => {
+	    let toCenter = slide.offsetWidth + ((window.innerWidth - slide.offsetWidth) / 2);
+	    let position = (index - currentIndex) * toCenter;
+
+	    slide.style.transform = `translateX(${position}px)`;
+	    slide.style.transition = 'transform 0.5s';
+	  });
+
+	  // Loop back without animation
+	  if (currentIndex === 0) {
+	    setTimeout(() => {
+	      currentIndex = slides.length - 2;
+	      slides.forEach((slide, index) => {
+	      	let toCenter = slide.offsetWidth + ((window.innerWidth - slide.offsetWidth) / 2);
+	    	let position = (index - currentIndex) * toCenter;
+	        slide.style.transform = `translateX(${position}px)`;
+	        slide.style.transition = 'none';
+	      });
+	    }, 500);
+	  } else if (currentIndex === slides.length - 1) {
+	    setTimeout(() => {
+	      currentIndex = 1;
+	      slides.forEach((slide, index) => {
+	        let toCenter = slide.offsetWidth + ((window.innerWidth - slide.offsetWidth) / 2);
+	    	let position = (index - currentIndex) * toCenter;
+	        slide.style.transform = `translateX(${position}px)`;
+	        slide.style.transition = 'none';
+	      });
+	    }, 500);
+	  }
+
+	  return currentIndex;
+	}
 
 	function isElementInViewport(element){
 	  const rect = element.getBoundingClientRect();
@@ -421,10 +459,38 @@ function resizeCanvas(canvas) {
 		const toolTipROs = document.querySelectorAll('.tooltip-hover');
 		const mainPopup = document.getElementById('main-popup');
 		const body = document.getElementsByTagName('body');
+		let slides = Array.from(document.querySelectorAll('.acf-slide'));
+		let currentIndex = 1; // Start from the first slide (not the duplicate)
 
 		let runDemImages = [];
 		let isScrolling, start = 0, end = 0, distance = 0, lastDistance = 0, current = 0;
 		let previousScrollPosition = 0;
+
+		if(slides.length > 0){
+			// Duplicate first and last slides
+			let firstSlide = slides[0].cloneNode(true);
+			let lastSlide = slides[slides.length - 1].cloneNode(true);
+			document.querySelector('.acf-slider-area').appendChild(firstSlide);
+			document.querySelector('.acf-slider-area').prepend(lastSlide);
+
+			slides = Array.from(document.querySelectorAll('.acf-slide'));
+
+			slides.forEach((slide, index) => {
+				index = index + 1;
+			  	let toCenter = slide.offsetWidth;
+	    		let position = (index - currentIndex) * toCenter;
+			  slide.style.transform = `translateX(${position}px)`;
+			});
+
+			document.getElementById('acf-slide-prev').addEventListener('click', event => {
+				let getCurIndex = switchSlide(event,slides,currentIndex);
+				currentIndex = getCurIndex;
+			});
+			document.getElementById('acf-slide-next').addEventListener('click', event => {
+				let getCurIndex = switchSlide(event,slides,currentIndex);
+				currentIndex = getCurIndex;
+			});
+		}
 
 		if(mainPopup != null){
 			mainPopup.style.width = window.innerWidth + 'px';
@@ -432,7 +498,7 @@ function resizeCanvas(canvas) {
 			body[0].classList.add('popup-on');
 			mainPopup.classList.add('show_popup');
 
-			document.querySelector('#main-popup .close').addEventListener('click', function (event) {
+			document.querySelector('#main-popup .close').addEventListener('click', event => {
 				body[0].classList.remove('popup-on');
 				mainPopup.classList.remove('show_popup');
 			})
