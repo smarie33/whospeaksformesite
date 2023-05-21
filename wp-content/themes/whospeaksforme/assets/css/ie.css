@@ -1857,10 +1857,6 @@ p a {
 	display: flex;
 }
 
-.acf-slider {
-	padding: 120px 0;
-}
-
 .acf-slide {
 	flex-direction: row;
 	justify-content: center;
@@ -1911,18 +1907,55 @@ p a {
 	padding-left: 30px;
 }
 
+.acf-slider {
+	position: relative;
+	padding: 120px 0;
+}
+
 .acf-slider .title {
 	text-transform: uppercase;
 	color: #fff;
 	text-align: center;
+	letter-spacing: 0.2em;
 	font-size: 13px;
 	padding: 20px 0;
+}
+
+.acf-slider .control {
+	width: 25%;
+	height: 100%;
+	cursor: pointer;
+	position: absolute;
+	z-index: 10;
+}
+
+.acf-slider .control.right {
+	right: 0;
+	top: 0;
 }
 
 .acf-large_tooltip {
 	display: flex;
 	justify-content: center;
 	padding: 0 0 200px 0;
+}
+
+.acf-large_tooltip .big-words {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.acf-large_tooltip .big-words .dot:after {
+	display: inline-block;
+	width: 9px;
+	height: 9px;
+	margin: 0 18%;
+	border-radius: 50%;
+	background: #000;
+	content: "";
+	position: relative;
+	top: 15px;
 }
 
 .acf-large_tooltip .tooltip-hover {
@@ -1936,18 +1969,6 @@ p a {
 	cursor: pointer;
 	position: relative;
 	display: inline-block;
-}
-
-.acf-large_tooltip .tooltip-hover.dot:after {
-	display: inline-block;
-	width: 9px;
-	height: 9px;
-	margin: 0 18%;
-	border-radius: 50%;
-	background: #000;
-	content: "";
-	position: absolute;
-	top: 30px;
 }
 
 .acf-large_tooltip .tooltip {

@@ -5,11 +5,13 @@
 	  centerMode: true,
 	  centerPadding: '400px',
 	  slidesToShow: 1,
+	 	prevArrow: '<div class="control left" id="acf-slide-prev"></div>',
+    	nextArrow: '<div class="control right" id="acf-slide-next"></div>',
 	  responsive: [
 	  	{
 	      breakpoint: 1490,
 	      settings: {
-	        arrows: false,
+	        arrows: true,
 	        centerMode: true,
 	        centerPadding: '300px',
 	        slidesToShow: 1
@@ -18,7 +20,7 @@
 	    {
 	      breakpoint: 1330,
 	      settings: {
-	        arrows: false,
+	        arrows: true,
 	        centerMode: true,
 	        centerPadding: '200px',
 	        slidesToShow: 1
@@ -27,7 +29,7 @@
 	    {
 	      breakpoint: 1150,
 	      settings: {
-	        arrows: false,
+	        arrows: true,
 	        centerMode: true,
 	        centerPadding: '125px',
 	        slidesToShow: 1
@@ -36,7 +38,7 @@
 	    {
 	      breakpoint: 980,
 	      settings: {
-	        arrows: false,
+	        arrows: true,
 	        centerMode: true,
 	        centerPadding: '50px',
 	        slidesToShow: 1

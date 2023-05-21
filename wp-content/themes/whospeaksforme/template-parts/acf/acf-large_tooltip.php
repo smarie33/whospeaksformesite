@@ -11,7 +11,7 @@
 $tooltips = get_sub_field('large_tooltip');
 $tothelast = count($tooltips);
 $cnt = 1;
-$dot = ' dot';
+$dot = '<div class="dot"></div>';
 ?>
 
 <section class="acf-large_tooltip alignfull<?php if(get_sub_field('word_border')): ?> word-border<?php endif; ?>" style="background-color:<?php the_sub_field('background_color') ?>">
@@ -21,10 +21,10 @@ $dot = ' dot';
   <div class="centered">
     <div class="left"><div class="words"><?php the_sub_field('word_border_words'); ?></div></div>
   <?php endif; ?>
-
+  <div class="big-words">
   <?php foreach($tooltips as $tooltip): ?>
     <?php if($cnt == $tothelast){$dot = '';} ?>
-      <div class="tooltip-hover<?php echo $dot; ?>">
+      <div class="tooltip-hover">
         <?php echo $tooltip['rollover_text']; ?>
         <div class="tooltip" id="tooltip_<?php echo $cnt ?>">
           <?php echo $tooltip['tooltip_Info']; ?>
@@ -34,9 +34,10 @@ $dot = ' dot';
           <?php endif; ?>
         </div>
       </div>
+      <?php echo $dot; ?>
       <?php $cnt++; ?>
   <?php endforeach; ?>
-
+  </div>
   <?php if(get_sub_field('word_border')): ?>
       <div class="right"><div class="words"><?php the_sub_field('word_border_words'); ?></div></div>
     </div>
