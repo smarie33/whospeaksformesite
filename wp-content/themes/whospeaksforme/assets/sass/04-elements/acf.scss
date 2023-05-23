@@ -549,17 +549,7 @@ color: var(--global--color-pink);
 .acf-slider{
 	position: relative;
 	padding: 120px 0;
-	.acf-slider-area{
-		// &.right{
-		//   	cursor: url('assets/images/arrow.png') 16 16, auto; /* replace with your arrow cursor */
-		//   	right: 0;
-	    // 	top: 0;
-		//  }
-		// &.left{
-		// 	cursor: url('assets/images/arrow.png') 16 16, auto; /* replace with your arrow cursor */
-		// 	transform: rotate(180deg);
-		// }
-	}
+	cursor: none;
 	.title{
 		text-transform: uppercase;
 		color: var(--global--color-white);
@@ -571,14 +561,34 @@ color: var(--global--color-pink);
 	.control {
 		width: 25%;
 		height: 100%;
-		cursor: pointer;
 		position: absolute;
+		cursor: none;
 		z-index: 10;
 		&.right{
 		  	right: 0;
 	    	top: 0;
 		}
 	}
+	.custom-cursor {
+	    position: absolute;
+	    z-index: 900;
+	    display: none;
+	    transition: transform .3s ease-in-out;
+	    height: 97px;
+	    width: 135px;
+	}
+	.rotated {
+	    transform: rotate(180deg);
+	}
+
+	.rotated-bounce {
+	    animation: bounce 0.3s;
+	}
+}
+
+@keyframes bounce {
+    0%, 100% {transform: rotate(180deg);}
+    50% {transform: rotate(200deg);}
 }
 
 .acf-large_tooltip{

@@ -330,45 +330,6 @@ function resizeCanvas(canvas) {
 		new navMenu( 'primary' );
 	});
 
-	function switchSlide(button, slides, currentIndex) {
-	  let direction = button.target.id === 'acf-slide-next' ? 1 : -1;
-	  currentIndex += direction;
-
-
-	  slides.forEach((slide, index) => {
-	    let toCenter = slide.offsetWidth + ((window.innerWidth - slide.offsetWidth) / 2);
-	    let position = (index - currentIndex) * toCenter;
-
-	    slide.style.transform = `translateX(${position}px)`;
-	    slide.style.transition = 'transform 0.5s';
-	  });
-
-	  // Loop back without animation
-	  if (currentIndex === 0) {
-	    setTimeout(() => {
-	      currentIndex = slides.length - 2;
-	      slides.forEach((slide, index) => {
-	      	let toCenter = slide.offsetWidth + ((window.innerWidth - slide.offsetWidth) / 2);
-	    	let position = (index - currentIndex) * toCenter;
-	        slide.style.transform = `translateX(${position}px)`;
-	        slide.style.transition = 'none';
-	      });
-	    }, 500);
-	  } else if (currentIndex === slides.length - 1) {
-	    setTimeout(() => {
-	      currentIndex = 1;
-	      slides.forEach((slide, index) => {
-	        let toCenter = slide.offsetWidth + ((window.innerWidth - slide.offsetWidth) / 2);
-	    	let position = (index - currentIndex) * toCenter;
-	        slide.style.transform = `translateX(${position}px)`;
-	        slide.style.transition = 'none';
-	      });
-	    }, 500);
-	  }
-
-	  return currentIndex;
-	}
-
 	function isElementInViewport(element){
 	  const rect = element.getBoundingClientRect();
 	  return (
@@ -459,38 +420,15 @@ function resizeCanvas(canvas) {
 		const toolTipROs = document.querySelectorAll('.tooltip-hover');
 		const mainPopup = document.getElementById('main-popup');
 		const body = document.getElementsByTagName('body');
-		let slides = Array.from(document.querySelectorAll('.acf-slide'));
-		let currentIndex = 1; // Start from the first slide (not the duplicate)
+		const sliderAreas = document.querySelectorAll('.acf-slider');
+	    const customCursor = document.querySelectorAll('.custom-cursor');
+	    const halfPage = window.innerWidth / 2;
+
 
 		let runDemImages = [];
 		let isScrolling, start = 0, end = 0, distance = 0, lastDistance = 0, current = 0;
 		let previousScrollPosition = 0;
 
-		if(slides.length > 0){
-			// Duplicate first and last slides
-			// let firstSlide = slides[0].cloneNode(true);
-			// let lastSlide = slides[slides.length - 1].cloneNode(true);
-			// document.querySelector('.acf-slider-area').appendChild(firstSlide);
-			// document.querySelector('.acf-slider-area').prepend(lastSlide);
-
-			// slides = Array.from(document.querySelectorAll('.acf-slide'));
-
-			// slides.forEach((slide, index) => {
-			// 	index = index + 1;
-			//   	let toCenter = slide.offsetWidth;
-	    	// 	let position = (index - currentIndex) * toCenter;
-			//   slide.style.transform = `translateX(${position}px)`;
-			// });
-
-			// document.getElementById('acf-slide-prev').addEventListener('click', event => {
-			// 	let getCurIndex = switchSlide(event,slides,currentIndex);
-			// 	currentIndex = getCurIndex;
-			// });
-			// document.getElementById('acf-slide-next').addEventListener('click', event => {
-			// 	let getCurIndex = switchSlide(event,slides,currentIndex);
-			// 	currentIndex = getCurIndex;
-			// });
-		}
 
 		if(mainPopup != null){
 			mainPopup.style.width = window.innerWidth + 'px';
@@ -509,6 +447,35 @@ function resizeCanvas(canvas) {
 		}
 
 		updateScrollBarHeight(scrollBar);
+
+		if(sliderAreas.length > 0){
+			const offsetPadding = 150;
+			sliderAreas.forEach( (sliderArea,i) => {
+			    sliderArea.addEventListener('mousemove', function(e) {
+			    	let posY = e.clientY - offsetPadding;
+			        customCursor[i].style.display = 'block';
+			        customCursor[i].style.top = `${posY}px`;
+			        customCursor[i].style.left = `${e.clientX}px`;
+
+			        if (e.pageX > halfPage) {
+			            customCursor[i].classList.remove('rotated');
+			            customCursor[i].classList.remove('rotated-bounce');
+			        } else {
+			            if (!customCursor[i].classList.contains('rotated')) {
+			                customCursor[i].classList.add('rotated');
+			                customCursor[i].classList.add('rotated-bounce');
+			                setTimeout(function() {
+			                    customCursor[i].classList.remove('rotated-bounce');
+			                }, 500);
+			            }
+			        }
+			    })
+
+			    sliderArea.addEventListener('mouseleave', function() {
+			        customCursor[i].style.display = 'none';
+			    });
+			})
+		}
 
 		if(toolTipROs != null){
 			toolTipROs.forEach( toolTipRO => {
@@ -623,7 +590,3 @@ function resizeCanvas(canvas) {
 
 
 }() );
-
-// (function($) {
-// 	alert('j');
-// })(jQuery);

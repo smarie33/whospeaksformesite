@@ -16,6 +16,7 @@ $att_color = (get_sub_field('attribution_color') == '') ? '#fff' : get_sub_field
 $tilt_type = 'left';
 ?>
 <section class="acf-slider alignfull" style="background-color:<?php echo $bg_color; ?>">
+  <img class="custom-cursor" src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow.svg" alt="custom cursor" />
   <div class="title"  style="color:<?php echo $title_color; ?>"><?php the_sub_field('title'); ?></div>
   <div class="acf-slider-area">
     <?php foreach($slides  as $slide): ?>
