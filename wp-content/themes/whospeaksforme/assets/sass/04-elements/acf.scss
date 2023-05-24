@@ -609,6 +609,15 @@ color: var(--global--color-pink);
 		    content: "";
 		    position: relative;
 			top: 15px;
+			@media only screen and (max-width: $tool_tip) {
+				display: none;
+			}
+	    }
+
+	    @media only screen and (max-width: $tool_tip) {
+		    display: block;
+		    margin: auto;
+		    text-align: center;
 	    }
 	}
 	.tooltip-hover{
@@ -623,6 +632,14 @@ color: var(--global--color-pink);
 	    cursor: pointer;
 	    position: relative;
 	    display: inline-block;
+	    @media only screen and (max-width: $tool_tip) {
+		    display: block;
+		    margin: auto;
+		    text-align: center;
+		    &:not(:first-of-type){
+		    	padding-top: 50px;
+		    }
+	    }
 	}
 	.tooltip{
 		box-shadow: 0 14px 28px rgba(0,0,0,.16), 0 10px 10px rgba(0,0,0,.23);
@@ -636,11 +653,29 @@ color: var(--global--color-pink);
     	position: absolute;
     	z-index: 2000;
     	text-transform: none;
+    	@media only screen and (max-width: $tool_tip) {
+		    left: 0;
+		    top: 0;
+		    position: relative;
+		    margin: auto;
+		    opacity: 1;
+		    height: auto;
+		    z-index: auto;
+		}
 
 		&.hide_tooltip{
 		    opacity: 0;
 		    height: 0;
 		    overflow: hidden;
+		    @media only screen and (max-width: $tool_tip) {
+			    left: 0;
+			    top: 0;
+			    position: relative;
+			    margin: auto;
+			    opacity: 1;
+			    height: auto;
+			    z-index: auto;
+			}
 		}
 		&.show_tooltip{
 			opacity: 1;

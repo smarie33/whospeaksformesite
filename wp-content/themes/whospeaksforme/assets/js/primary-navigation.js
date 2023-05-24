@@ -377,30 +377,32 @@ function resizeCanvas(canvas) {
 
 
 	function showTooltip(event) {
-		const toolTipRO = event.srcElement;
-		const tooltip = event.srcElement.firstElementChild;
-		if(tooltip != null){
-		tooltip.classList.add('show_tooltip');
-			tooltip.classList.remove('hide_tooltip');
+		if(window.innerWidth > 1249){
+			const toolTipRO = event.srcElement;
+			const tooltip = event.srcElement.firstElementChild;
+			if(tooltip != null){
+				tooltip.classList.add('show_tooltip');
+				tooltip.classList.remove('hide_tooltip');
 
-		    const tooltipRect = tooltip.getBoundingClientRect();
-		    const rolloverRect = toolTipRO.getBoundingClientRect();
-		    const viewportWidth = window.innerWidth;
-		    const viewportHeight = window.innerHeight;
+			    const tooltipRect = tooltip.getBoundingClientRect();
+			    const rolloverRect = toolTipRO.getBoundingClientRect();
+			    const viewportWidth = window.innerWidth;
+			    const viewportHeight = window.innerHeight;
 
-		    let left = 0;
-		    let top = 40;
+			    let left = 0;
+			    let top = 40;
 
-		    if (tooltipRect.left + tooltipRect.width > viewportWidth) {
-		    	left = rolloverRect.left - (tooltipRect.width / 2);
-		    }
+			    if (tooltipRect.left + tooltipRect.width > viewportWidth) {
+			    	left = rolloverRect.left - (tooltipRect.width / 2);
+			    }
 
-		    if((rolloverRect.bottom + tooltipRect.height) >= (window.innerHeight || document.documentElement.clientHeight)){
-		    	top = -tooltipRect.height;
-		    }
+			    if((rolloverRect.bottom + tooltipRect.height) >= (window.innerHeight || document.documentElement.clientHeight)){
+			    	top = -tooltipRect.height;
+			    }
 
-		    tooltip.style.left = left + 'px';
-		    tooltip.style.top = top + 'px';
+			    tooltip.style.left = left + 'px';
+			    tooltip.style.top = top + 'px';
+			}
 		}
 	}
 

@@ -1828,6 +1828,20 @@ p a {
 	position: relative;
 	top: 15px;
 }
+@media only screen and (max-width: 1250px) {
+
+	.acf-large_tooltip .big-words .dot:after {
+		display: none;
+	}
+}
+@media only screen and (max-width: 1250px) {
+
+	.acf-large_tooltip .big-words {
+		display: block;
+		margin: auto;
+		text-align: center;
+	}
+}
 
 .acf-large_tooltip .tooltip-hover {
 	font-size: 60px;
@@ -1841,6 +1855,18 @@ p a {
 	cursor: pointer;
 	position: relative;
 	display: inline-block;
+}
+@media only screen and (max-width: 1250px) {
+
+	.acf-large_tooltip .tooltip-hover {
+		display: block;
+		margin: auto;
+		text-align: center;
+	}
+
+	.acf-large_tooltip .tooltip-hover:not(:first-of-type) {
+		padding-top: 50px;
+	}
 }
 
 .acf-large_tooltip .tooltip {
@@ -1856,11 +1882,35 @@ p a {
 	z-index: 2000;
 	text-transform: none;
 }
+@media only screen and (max-width: 1250px) {
+
+	.acf-large_tooltip .tooltip {
+		left: 0;
+		top: 0;
+		position: relative;
+		margin: auto;
+		opacity: 1;
+		height: auto;
+		z-index: auto;
+	}
+}
 
 .acf-large_tooltip .tooltip.hide_tooltip {
 	opacity: 0;
 	height: 0;
 	overflow: hidden;
+}
+@media only screen and (max-width: 1250px) {
+
+	.acf-large_tooltip .tooltip.hide_tooltip {
+		left: 0;
+		top: 0;
+		position: relative;
+		margin: auto;
+		opacity: 1;
+		height: auto;
+		z-index: auto;
+	}
 }
 
 .acf-large_tooltip .tooltip.show_tooltip {
