@@ -1394,9 +1394,16 @@ p a {
 
 .acf-three_columns .column.scroll-image figure,
 .acf-three_columns .column.scroll-image p {
-	position: absolute;
+	position: relative;
 	top: 50px;
 	transition: transform 0.5s ease;
+}
+@media only screen and (min-width: 822px) {
+
+	.acf-three_columns .column.scroll-image figure,
+	.acf-three_columns .column.scroll-image p {
+		position: absolute;
+	}
 }
 
 .acf-three_columns .column.scroll-image figure img,
