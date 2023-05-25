@@ -1720,6 +1720,12 @@ p a {
 	align-items: center;
 	flex-shrink: 0;
 }
+@media only screen and (max-width: 651px) {
+
+	.acf-slide {
+		flex-direction: column;
+	}
+}
 
 .acf-slide .image {
 	display: flex;
@@ -1730,6 +1736,12 @@ p a {
 	text-align: center;
 	padding: 10px 0 0 0;
 }
+@media only screen and (max-width: 651px) {
+
+	.acf-slide .image .attribution {
+		font-size: 12px;
+	}
+}
 
 .acf-slide .image .image-holder {
 	width: 331px;
@@ -1738,6 +1750,13 @@ p a {
 	position: relative;
 	display: flex;
 	justify-content: center;
+}
+@media only screen and (max-width: 651px) {
+
+	.acf-slide .image .image-holder {
+		width: 231px;
+		height: 245px;
+	}
 }
 
 .acf-slide .image .image-holder.left-tilt {
@@ -1755,6 +1774,12 @@ p a {
 	height: 443.5px;
 	max-width: initial;
 }
+@media only screen and (max-width: 651px) {
+
+	.acf-slide .image .image-holder img {
+		height: 243.5px;
+	}
+}
 
 .acf-slide .text {
 	flex: 0 1 400px;
@@ -1762,6 +1787,18 @@ p a {
 	justify-content: center;
 	width: 100%;
 	padding-left: 30px;
+}
+@media only screen and (max-width: 651px) {
+
+	.acf-slide .text {
+		flex: 0 1 150px;
+	}
+}
+@media only screen and (max-width: 651px) {
+
+	.acf-slide .text span {
+		font-size: 24px !important;
+	}
 }
 
 .acf-slider {

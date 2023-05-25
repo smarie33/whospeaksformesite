@@ -519,12 +519,18 @@ section.acf-free_form_content{
 	justify-content: center;
 	align-items: center;
 	flex-shrink: 0;
+	@include media(laptop-only) {
+    	flex-direction: column;
+    }
 .image{
 	display: flex;
 	flex-direction: column;
 	.attribution{
 		text-align: center;
 		padding: 10px 0 0 0;
+		@include media(laptop-only) {
+			font-size: 12px;
+		}
 	}
 	.image-holder{
 		width: 331px;
@@ -533,6 +539,10 @@ section.acf-free_form_content{
 		position: relative;
 		display: flex;
 		justify-content: center;
+		@include media(laptop-only) {
+		    width: 231px;
+    		height: 245px;
+    	}
 		&.left-tilt{
 			padding: 17px;
 			transform: rotate(-3deg);
@@ -546,6 +556,9 @@ section.acf-free_form_content{
 	    	width: auto;
     		height: 443.5px;
     		max-width: initial;
+    		@include media(laptop-only) {
+		    	height: 243.5px;
+		    }
 		}
 	}
 
@@ -556,6 +569,14 @@ section.acf-free_form_content{
 	    justify-content: center;
 	    width: 100%;
 	    padding-left: 30px;
+	    @include media(laptop-only) {
+	    	flex: 0 1 150px;
+	    }
+	    span{
+	    	@include media(laptop-only) {
+	    		font-size: 24px !important;
+	    	}
+	    }
 	}
 }
 

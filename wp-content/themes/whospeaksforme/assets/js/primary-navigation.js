@@ -424,7 +424,7 @@ function resizeCanvas(canvas) {
 		const body = document.getElementsByTagName('body');
 		const sliderAreas = document.querySelectorAll('.acf-slider');
 	    const customCursor = document.querySelectorAll('.custom-cursor');
-	    const halfPage = window.innerWidth / 2;
+	    let halfPage = window.innerWidth / 2;
 
 
 		let runDemImages = [];
