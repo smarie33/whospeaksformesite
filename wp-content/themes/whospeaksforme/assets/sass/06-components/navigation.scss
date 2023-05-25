@@ -18,7 +18,10 @@
 	#primary-mobile-menu {
 		display: flex;
 		margin-left: auto;
-		padding: calc(var(--button--padding-vertical) - (0.25 * var(--global--spacing-unit))) calc(0.5 * var(--button--padding-horizontal));
+		padding-top: 57px;
+		padding-left: calc(var(--button--padding-vertical) - (0.25 * var(--global--spacing-unit))) calc(0.5 * var(--button--padding-horizontal));
+		padding-bottom: calc(var(--button--padding-vertical) - (0.25 * var(--global--spacing-unit))) calc(0.5 * var(--button--padding-horizontal));
+		padding-right: calc(var(--button--padding-vertical) - (0.25 * var(--global--spacing-unit))) calc(0.5 * var(--button--padding-horizontal));
 		font-size: var(--primary-nav--font-size-button);
 		font-weight: var(--primary-nav--font-weight-button);
 		background-color: transparent;
@@ -221,10 +224,10 @@
 		padding-left: 0;
 		position: relative;
 
-		@include media(desktop-only){
-			flex-direction: column;
-			justify-content: center;
-		}
+		// @include media(desktop-only){
+		// 	flex-direction: column;
+		// 	justify-content: center;
+		// }
 
 		@include media(mobile-only) {
 			padding-bottom: 100px;

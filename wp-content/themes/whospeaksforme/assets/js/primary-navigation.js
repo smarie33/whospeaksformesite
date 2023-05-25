@@ -533,6 +533,10 @@ function resizeCanvas(canvas) {
 		    });
 		})
 
+		window.addEventListener("resize", () => {
+			halfPage = window.innerWidth / 2;
+		})
+
 		window.addEventListener("scroll", () => {
 			if(jumpNav != null){
 				highlightNavLink(sections,navLinks);

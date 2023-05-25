@@ -52,6 +52,12 @@ color: var(--global--color-pink);
 	}
 }
 
+section.acf-free_form_content{
+	@include media(desktop-only){
+		margin-top: 50px !important;
+	}
+}
+
 .acf-free_form_content{
 	background-repeat: no-repeat;
 	background-position: center;
@@ -285,10 +291,14 @@ color: var(--global--color-pink);
 	}
 
 	.column:first-of-type{
-		margin:0 2% 0 0;
+		padding: 0;
+		margin: 0 2%;
+
 		@include media(desktop-only){
 			width: 96% !important;
-			margin: 0 2%;
+			padding: 50px 0;
+			margin: 30px 2%;
+
 		}
 	}
 
@@ -658,7 +668,7 @@ color: var(--global--color-pink);
     	text-transform: none;
     	@media only screen and (max-width: $tool_tip) {
 		    left: 0;
-		    top: 0;
+		    top: 0 !important;
 		    position: relative;
 		    margin: auto;
 		    opacity: 1;
@@ -672,7 +682,7 @@ color: var(--global--color-pink);
 		    overflow: hidden;
 		    @media only screen and (max-width: $tool_tip) {
 			    left: 0;
-			    top: 0;
+			    top: 0 !important;
 			    position: relative;
 			    margin: auto;
 			    opacity: 1;

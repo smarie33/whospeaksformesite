@@ -1178,6 +1178,13 @@ p a {
 	color: var(--global--color-dk-blue) !important;
 }
 
+@media only screen and (max-width: 821px) {
+
+	section.acf-free_form_content {
+		margin-top: 50px !important;
+	}
+}
+
 .acf-free_form_content {
 	background-repeat: no-repeat;
 	background-position: center;
@@ -1453,13 +1460,15 @@ p a {
 }
 
 .acf-two_columns .column:first-of-type {
-	margin: 0 2% 0 0;
+	padding: 0;
+	margin: 0 2%;
 }
 @media only screen and (max-width: 821px) {
 
 	.acf-two_columns .column:first-of-type {
 		width: 96% !important;
-		margin: 0 2%;
+		padding: 50px 0;
+		margin: 30px 2%;
 	}
 }
 
@@ -1893,7 +1902,7 @@ p a {
 
 	.acf-large_tooltip .tooltip {
 		left: 0;
-		top: 0;
+		top: 0 !important;
 		position: relative;
 		margin: auto;
 		opacity: 1;
@@ -1911,7 +1920,7 @@ p a {
 
 	.acf-large_tooltip .tooltip.hide_tooltip {
 		left: 0;
-		top: 0;
+		top: 0 !important;
 		position: relative;
 		margin: auto;
 		opacity: 1;
@@ -5022,6 +5031,7 @@ table.wp-calendar-table caption {
 	}
 
 	body:not(.primary-navigation-open) .site-header.has-logo.has-title-and-tagline .menu-button-container #primary-mobile-menu {
+		padding-top: 67px;
 		padding-left: calc(var(--global--spacing-horizontal) * 0.6 - 4.5px);
 		padding-right: calc(var(--global--spacing-horizontal) * 0.6 - 4.5px);
 		margin-right: calc(0px - var(--global--spacing-horizontal) * 0.6);
@@ -5716,7 +5726,10 @@ h1.page-title {
 .menu-button-container #primary-mobile-menu {
 	display: flex;
 	margin-left: auto;
-	padding: calc(var(--button--padding-vertical) - 0.25 * var(--global--spacing-unit)) calc(0.5 * var(--button--padding-horizontal));
+	padding-top: 57px;
+	padding-left: calc(var(--button--padding-vertical) - 0.25 * var(--global--spacing-unit)) calc(0.5 * var(--button--padding-horizontal));
+	padding-bottom: calc(var(--button--padding-vertical) - 0.25 * var(--global--spacing-unit)) calc(0.5 * var(--button--padding-horizontal));
+	padding-right: calc(var(--button--padding-vertical) - 0.25 * var(--global--spacing-unit)) calc(0.5 * var(--button--padding-horizontal));
 	font-size: var(--primary-nav--font-size-button);
 	font-weight: var(--primary-nav--font-weight-button);
 	background-color: transparent;
@@ -5905,13 +5918,6 @@ h1.page-title {
 	max-width: none;
 	padding-left: 0;
 	position: relative;
-}
-@media only screen and (max-width: 821px) {
-
-	.primary-navigation > div > .menu-wrapper {
-		flex-direction: column;
-		justify-content: center;
-	}
 }
 @media only screen and (max-width: 481px) {
 

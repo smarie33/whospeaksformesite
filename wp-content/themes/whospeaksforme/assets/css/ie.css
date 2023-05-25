@@ -1326,6 +1326,13 @@ p a {
 	color: #19193f !important;
 }
 
+@media only screen and (max-width: 821px) {
+
+	section.acf-free_form_content {
+		margin-top: 50px !important;
+	}
+}
+
 .acf-free_form_content {
 	background-repeat: no-repeat;
 	background-position: center;
@@ -1607,13 +1614,15 @@ p a {
 }
 
 .acf-two_columns .column:first-of-type {
-	margin: 0 2% 0 0;
+	padding: 0;
+	margin: 0 2%;
 }
 @media only screen and (max-width: 821px) {
 
 	.acf-two_columns .column:first-of-type {
 		width: 96% !important;
-		margin: 0 2%;
+		padding: 50px 0;
+		margin: 30px 2%;
 	}
 }
 
@@ -2051,7 +2060,7 @@ p a {
 
 	.acf-large_tooltip .tooltip {
 		left: 0;
-		top: 0;
+		top: 0 !important;
 		position: relative;
 		margin: auto;
 		opacity: 1;
@@ -2069,7 +2078,7 @@ p a {
 
 	.acf-large_tooltip .tooltip.hide_tooltip {
 		left: 0;
-		top: 0;
+		top: 0 !important;
 		position: relative;
 		margin: auto;
 		opacity: 1;
@@ -6257,6 +6266,7 @@ table.wp-calendar-table caption {
 	}
 
 	body:not(.primary-navigation-open) .site-header.has-logo.has-title-and-tagline .menu-button-container #primary-mobile-menu {
+		padding-top: 67px;
 		padding-left: 11px;
 		padding-right: 11px;
 		margin-right: -15px;
@@ -7063,7 +7073,10 @@ h1.page-title {
 .menu-button-container #primary-mobile-menu {
 	display: flex;
 	margin-left: auto;
-	padding: 10px 15px;
+	padding-top: 57px;
+	padding-left: 10px 15px;
+	padding-bottom: 10px 15px;
+	padding-right: 10px 15px;
 	font-size: 1rem;
 	font-weight: 500;
 	background-color: transparent;
@@ -7264,13 +7277,6 @@ h1.page-title {
 	max-width: none;
 	padding-left: 0;
 	position: relative;
-}
-@media only screen and (max-width: 821px) {
-
-	.primary-navigation > div > .menu-wrapper {
-		flex-direction: column;
-		justify-content: center;
-	}
 }
 @media only screen and (max-width: 481px) {
 
