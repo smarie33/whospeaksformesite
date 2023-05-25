@@ -25,7 +25,9 @@
 <div id="main-popup" style="background-color:<?php the_field('overlay_background_color','popup') ?>">
 	<div class="popup-bg" style="background-color:<?php the_field('popup_background_color','popup') ?>">
 		<div class="popup-content">
-			<div class="close">x</div>
+			<div class="close" style="background-color:<?php the_field('popup_background_color','popup') ?>">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/close.png">
+			</div>
 			<?php the_field('content','popup'); ?>
 			<?php if(get_field('add_button','popup')): ?>
             <?php $open_new = get_field('link','popup')['target'] ? get_field('link','popup')['target'] : '_self'; ?>

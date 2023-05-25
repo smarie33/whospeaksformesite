@@ -414,6 +414,27 @@ function resizeCanvas(canvas) {
 		}
 	}
 
+	function setCookie(name, value, days) {
+		var expires = "";
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+			expires = "; expires=" + date.toUTCString();
+		}
+		document.cookie = name + "=" + (value || "") + expires + "; path=/";
+  	}
+
+  function getCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for (var i = 0; i < ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+	}
+	return null;
+  }
+
 	window.addEventListener('load', function() {
 		const scrollBar = document.getElementById('vertical-scroll-bar');
 		const jumpNav = document.querySelector('.acf-jump-link-nav');
@@ -425,6 +446,7 @@ function resizeCanvas(canvas) {
 		const sliderAreas = document.querySelectorAll('.acf-slider');
 	    const customCursor = document.querySelectorAll('.custom-cursor');
 	    let halfPage = window.innerWidth / 2;
+	    let isPopupClosed = getCookie("popupClosed");
 
 
 		let runDemImages = [];
@@ -432,7 +454,7 @@ function resizeCanvas(canvas) {
 		let previousScrollPosition = 0;
 
 
-		if(mainPopup != null){
+		if(mainPopup != null && !isPopupClosed){
 			mainPopup.style.width = window.innerWidth + 'px';
 			mainPopup.style.height = window.innerHeight + 'px';
 			body[0].classList.add('popup-on');
@@ -441,6 +463,7 @@ function resizeCanvas(canvas) {
 			document.querySelector('#main-popup .close').addEventListener('click', event => {
 				body[0].classList.remove('popup-on');
 				mainPopup.classList.remove('show_popup');
+				setCookie("popupClosed", true, 5);
 			})
 		}
 
