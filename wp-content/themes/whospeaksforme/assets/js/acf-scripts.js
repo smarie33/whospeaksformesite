@@ -19,7 +19,7 @@
 	    acf.add_filter('wysiwyg_tinymce_settings', function( mceInit, id, field ){
 
 	    	mceInit.toolbar1 = 'fontsizeselect,'+ mceInit.toolbar1;
-	    	mceInit.fontsize_formats = '9px 10px 12px 13px 14px 16px 18px 22px 24px 26px 28px 32px 34px 36px 38px 40px 42px 44px 46px 48px 50px 52px 54px 58px 60px 62px';
+	    	mceInit.fontsize_formats = '9px 10px 12px 13px 14px 16px 18px 20px 22px 24px 26px 28px 32px 34px 36px 38px 40px 42px 44px 46px 48px 50px 52px 54px 58px 60px 62px';
 
     		let inRepeater = field.parents('.acf-field-repeater');
     		if(inRepeater.length > 0){

@@ -2368,6 +2368,36 @@ p a {
 	max-width: 500px;
 }
 
+h2 {
+	visibility: hidden;
+	min-height: 50px;
+}
+
+h2 span {
+	animation: fadeIn 1s ease-in-out forwards;
+}
+
+h2 span,
+.to-reveal,
+.member-info {
+	opacity: 0;
+}
+
+.fade-this-in {
+	animation: fadeIn 1s ease-in-out 0.5s forwards;
+}
+
+@keyframes fadeIn {
+
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
 blockquote {
 	padding: 0;
 	position: relative;

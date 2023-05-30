@@ -340,6 +340,13 @@ function resizeCanvas(canvas) {
 	  );
 	}
 
+	function isElementPeaking(element){
+	  const rect = element.getBoundingClientRect();
+	  if(rect.top >= 30){
+	  	return true;
+	  }
+	}
+
 	function highlightNavLink(sections,navLinks) {
 	    let linkHighlighted = false;
 
@@ -435,6 +442,160 @@ function resizeCanvas(canvas) {
 	return null;
   }
 
+  function getValuesByKey(obj, key) {
+	  let result = [];
+
+	  function recursiveSearch(innerObj, key) {
+	    for(let i in innerObj) {
+	      if(!innerObj.hasOwnProperty(i)) continue;
+	      if(i === key) {
+	        result.push(innerObj[i]);
+	      } else if (typeof innerObj[i] === 'object') {
+	        recursiveSearch(innerObj[i], key);
+	      }
+	    }
+	  }
+
+	  recursiveSearch(obj, key);
+	  return result;
+  }
+
+  function getAllNodeInfo(node) {
+	  let obj = {};
+
+	  obj['tagName'] = node.tagName;
+
+	  if (node.attributes.length > 0) {
+	    obj['attributes'] = {};
+	    for (let j = 0; j < node.attributes.length; j++) {
+	      let attr = node.attributes[j];
+	      obj['attributes'][attr.name] = attr.value;
+	    }
+	  }
+
+	  if (node.hasChildNodes()) {
+	    obj['childTags'] = [];
+	    let childNodes = node.childNodes;
+	    for (let i = 0; i < childNodes.length; i++) {
+	      let child = childNodes[i];
+	      if (child.nodeType === Node.ELEMENT_NODE) { // Only process element nodes
+	        obj['childTags'].push(getAllNodeInfo(child));
+	      }
+	    }
+	  } else {
+	    obj['innerHTML'] = node.innerHTML;
+	  }
+
+	  return obj;
+	}
+
+	function getSiblingValuesByValue(obj, targetValue) {
+    let siblingValues = null;
+
+    function traverse(obj) {
+        for (let key in obj) {
+            if (typeof obj[key] === 'object' && obj[key] !== null) {
+                traverse(obj[key]);
+            } else {
+                if (obj[key] === targetValue) {
+                    siblingValues = Object.values(obj);
+                }
+            }
+        }
+    }
+
+	    traverse(obj);
+	    return siblingValues;
+	}
+
+
+function fadeThingsIn(item, type){
+  	let word = '';
+  	let aria = item.textContent;
+  	let allInfo = getAllNodeInfo(item)
+  	switch(type) {
+	  case 'letter':
+	    word =  item.textContent.split('');
+	    break;
+	  case 'word':
+	   	word = item.textContent.split(' ');
+	    break;
+	  case 'section':
+	    word = item;
+	    break;
+	  default:
+	}
+
+	if(type == 'letter' || type == 'word'){
+		item.textContent = '';
+		item.setAttribute('aria-label', aria);
+
+		if(type == 'letter'){
+			let sup = getSiblingValuesByValue(allInfo, 'SUP');
+			if(sup != null){
+				word = [];
+				let divide = aria.split("TM");
+				divide.forEach( (area,index) => {
+					let breakUp = area.split('');
+					breakUp.forEach(theBreak =>{
+						word.push(theBreak);
+					})
+					if(index < divide.length - 1){
+						word.push('&trade;');
+					}
+				})
+			}
+		}
+
+		let styles = getValuesByKey(allInfo, 'style');
+		let boldness = getValuesByKey(allInfo, 'tagName');
+		if(boldness.includes("STRONG")){
+			styles.push('font-weight:bold;');
+		}
+		styles.push('visibility: visible;');
+		item.setAttribute('style', styles.join(' '));
+		item.setAttribute('class', 'shown');
+
+		setTimeout(() => {
+			for(let i = 0; i < word.length; i++) {
+			    var span = document.createElement('span');
+			    span.innerHTML = word[i];
+
+			    //span.style.animationDelay = `${i * 1}s`; // Adjust the timing as needed
+
+			    span.style.opacity = 0;
+			    span.style.animation = `fadeIn 1s ease-in-out ${i * .02}s forwards`;
+			    item.appendChild(span);
+			}
+		}, "500");
+	}else{
+		item.setAttribute('class', 'shown fade-this-in');
+		item.style.opacity = 0;
+		item.style.animation = `fadeIn 1s ease-in-out .5s forwards`;
+	}
+}
+
+function runReveals(elements, type){
+	elements.forEach( function( element ) {
+		if(!element.classList.contains('shown')){
+			if(isElementInViewport(element)){
+				fadeThingsIn(element, type);
+			}
+		}
+	})
+}
+
+function runRevealsWithPeak(elements, type){
+	elements.forEach( function( element ) {
+		if(!element.classList.contains('shown')){
+			if(isElementPeaking(element)){
+				fadeThingsIn(element, type);
+			}
+		}
+	})
+}
+
+
 	window.addEventListener('load', function() {
 		const scrollBar = document.getElementById('vertical-scroll-bar');
 		const jumpNav = document.querySelector('.acf-jump-link-nav');
@@ -447,7 +608,31 @@ function resizeCanvas(canvas) {
 	    const customCursor = document.querySelectorAll('.custom-cursor');
 	    let halfPage = window.innerWidth / 2;
 	    let isPopupClosed = getCookie("popupClosed");
+		
+		let banners = document.querySelectorAll('h2');
+		let paragraphs = document.querySelectorAll('p');
+		let team = document.querySelectorAll('.member-info');
 
+		paragraphs.forEach( p => {
+			let cnt = 0;
+			for (const child of p.children){
+			  if(child.tagName == 'IMG' || child.classList.contains('button') || child.classList.contains('tooltip')){
+			  	cnt++;
+			  	return;
+			  }
+			}
+			if(cnt < 1){
+				p.classList.add('to-reveal');
+			}
+		})
+		
+		let reveals = document.querySelectorAll('.to-reveal');
+
+		runReveals(banners, 'letter');
+		runRevealsWithPeak(reveals, 'section');
+		if(team.length > 0){
+			runRevealsWithPeak(team, 'section');
+		}
 
 		let runDemImages = [];
 		let isScrolling, start = 0, end = 0, distance = 0, lastDistance = 0, current = 0;
@@ -561,6 +746,15 @@ function resizeCanvas(canvas) {
 		})
 
 		window.addEventListener("scroll", () => {
+
+			runReveals(banners, 'letter');
+			runRevealsWithPeak(reveals, 'section');
+			if(team.length > 0){
+				runRevealsWithPeak(team, 'section');
+			}
+
+
+
 			if(jumpNav != null){
 				highlightNavLink(sections,navLinks);
 				if (window.pageYOffset > 30) {
