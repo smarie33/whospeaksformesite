@@ -919,13 +919,17 @@ h2{
 	min-height: 50px;
 	span{
 	    opacity: 0;
-	    animation: fadeIn 1s ease-in-out forwards;
+	    //animation: fadeIn 1s ease-in-out forwards;
 	}
 }
 
-.to-reveal,.member-info{
+p,.member-info{
     opacity: 0;
     //animation: fadeIn 1s ease-in-out forwards;
+}
+
+p.no-reveal{
+	opacity: 1;
 }
 
 .fade-this-in{

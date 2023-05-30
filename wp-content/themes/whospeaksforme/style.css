@@ -2200,12 +2200,15 @@ h2 {
 
 h2 span {
 	opacity: 0;
-	animation: fadeIn 1s ease-in-out forwards;
 }
 
-.to-reveal,
+p,
 .member-info {
 	opacity: 0;
+}
+
+p.no-reveal {
+	opacity: 1;
 }
 
 .fade-this-in {

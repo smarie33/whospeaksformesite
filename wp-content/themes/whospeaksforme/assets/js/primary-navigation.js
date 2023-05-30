@@ -342,7 +342,7 @@ function resizeCanvas(canvas) {
 
 	function isElementPeaking(element){
 	  const rect = element.getBoundingClientRect();
-	  if(rect.top >= 30){
+	  if(rect.top <= ((window.innerHeight || document.documentElement.clientHeight) + 50)){
 	  	return true;
 	  }
 	}
@@ -570,8 +570,8 @@ function fadeThingsIn(item, type){
 		}, "500");
 	}else{
 		item.setAttribute('class', 'shown fade-this-in');
-		item.style.opacity = 0;
-		item.style.animation = `fadeIn 1s ease-in-out .5s forwards`;
+		//item.style.opacity = 0;
+		//item.style.animation = `fadeIn 1s ease-in-out .5s forwards`;
 	}
 }
 
@@ -612,22 +612,23 @@ function runRevealsWithPeak(elements, type){
 		let banners = document.querySelectorAll('h2');
 		let paragraphs = document.querySelectorAll('p');
 		let team = document.querySelectorAll('.member-info');
+		let reveals = [];
 
 		paragraphs.forEach( p => {
 			let cnt = 0;
 			for (const child of p.children){
 			  if(child.tagName == 'IMG' || child.classList.contains('button') || child.classList.contains('tooltip')){
 			  	cnt++;
-			  	return;
+			  	break;
 			  }
 			}
-			if(cnt < 1){
-				p.classList.add('to-reveal');
+			if(cnt > 0){
+				p.classList.add('no-reveal');
+			}else{
+				reveals.push(p);
 			}
 		})
 		
-		let reveals = document.querySelectorAll('.to-reveal');
-
 		runReveals(banners, 'letter');
 		runRevealsWithPeak(reveals, 'section');
 		if(team.length > 0){
