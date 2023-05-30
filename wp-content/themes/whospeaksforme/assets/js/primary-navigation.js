@@ -607,6 +607,7 @@ function runRevealsWithPeak(elements, type){
 		const sliderAreas = document.querySelectorAll('.acf-slider');
 	    const customCursor = document.querySelectorAll('.custom-cursor');
 	    const aboveJump = jumpNav.previousSibling.previousSibling;
+	    const jumpLinks = document.querySelectorAll('.acf-jump_link');
 	    const spaceAboveJump = aboveJump.offsetHeight
 	    let halfPage = window.innerWidth / 2;
 	    let isPopupClosed = getCookie("popupClosed");
@@ -657,9 +658,14 @@ function runRevealsWithPeak(elements, type){
 
 		if(jumpNav != null){
 			highlightNavLink(sections,navLinks);
+			if(window.pageYOffset > spaceAboveJump){
+				jumpNav.classList.add('fix');
+		    }else{
+		    	jumpNav.classList.remove('fix');
+		    }
 		}
 
-		updateScrollBarHeight(scrollBar);
+	updateScrollBarHeight(scrollBar);
 
 		if(sliderAreas.length > 0){
 			const offsetPadding = 150;
@@ -722,27 +728,46 @@ function runRevealsWithPeak(elements, type){
 		})
 
 		let allJumpLinks = document.querySelectorAll('.jump-link');
-		allJumpLinks.forEach( jump => {
-			jump.addEventListener('click', function (event) {
-		        event.preventDefault();
+		let jumpLinkNav = document.querySelector('.acf-jump-link-nav');
 
-		        highlightLinkOnClick(allJumpLinks, jump, 'at-section');
+		if(jumpLinks.length > 0){
+			jumpLinks.forEach( (link,indx) => {
+				link.querySelector('a').id = allJumpLinks[indx].getAttribute('href').split('#')[1];
+			})
+		}
 
-		        const headerSizes = 250;
+		//allJumpLinks.forEach( jump => {
+			jumpLinkNav.addEventListener('click', function (event) {
+				let targetId, jump;
+				if(event.target.tagName === 'SPAN'){
+					console.log(event.target.dataset.target);
+					targetId = event.target.dataset.target;
+					jump = event.target.parentElement;
+				}else{
+					targetId = this.getAttribute('href'); 
+					jump = this;
+				}
+				//console.log(targetId);
+				//if(event.target.tagName === 'A'){
+			        event.preventDefault();
 
-		        const targetId = this.getAttribute('href');
-		        const targetElement = document.querySelector(targetId);
+			        highlightLinkOnClick(allJumpLinks, jump, 'at-section');
 
-		        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+			        const headerSizes = 250;
 
-		        const scrollOptions = {
-		            top: targetPosition - headerSizes,
-		            behavior: 'smooth'
-		        };
+			        const targetElement = document.querySelector(targetId);
 
-		        window.scrollTo(scrollOptions);
-		    });
-		})
+			        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+
+			        const scrollOptions = {
+			            top: targetPosition - headerSizes,
+			            behavior: 'smooth'
+			        };
+
+			        window.scrollTo(scrollOptions);
+			   // }
+			});
+		//})
 
 		window.addEventListener("resize", () => {
 			halfPage = window.innerWidth / 2;
