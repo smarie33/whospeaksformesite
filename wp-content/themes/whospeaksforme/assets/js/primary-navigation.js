@@ -606,6 +606,8 @@ function runRevealsWithPeak(elements, type){
 		const body = document.getElementsByTagName('body');
 		const sliderAreas = document.querySelectorAll('.acf-slider');
 	    const customCursor = document.querySelectorAll('.custom-cursor');
+	    const aboveJump = jumpNav.previousSibling.previousSibling;
+	    const spaceAboveJump = aboveJump.offsetHeight
 	    let halfPage = window.innerWidth / 2;
 	    let isPopupClosed = getCookie("popupClosed");
 		
@@ -762,6 +764,13 @@ function runRevealsWithPeak(elements, type){
 			        jumpNav.classList.add('roll-up');
 			    } else {
 			        jumpNav.classList.remove('roll-up');
+			    }
+
+
+			    if(window.pageYOffset > spaceAboveJump){
+					jumpNav.classList.add('fix');
+			    }else{
+			    	jumpNav.classList.remove('fix');
 			    }
 			}
 

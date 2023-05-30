@@ -1751,7 +1751,7 @@ p a {
 }
 
 .acf-jump-link-nav {
-	position: fixed;
+	position: relative;
 	top: 52px;
 	left: 0;
 	z-index: 100;
@@ -1760,6 +1760,10 @@ p a {
 	padding: 80px 0 0 0;
 	margin: 0;
 	background: #fff;
+}
+
+.acf-jump-link-nav.fix {
+	position: fixed;
 }
 @media only screen and (max-width: 821px) {
 

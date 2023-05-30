@@ -406,7 +406,7 @@ section.acf-free_form_content{
 }
 
 .acf-jump-link-nav{
-	position: fixed;
+	position: relative;
     top: 52px;
     left: 0;
     z-index: 100;
@@ -415,6 +415,9 @@ section.acf-free_form_content{
     padding: var(--main-menu--height) 0 0 0;
     margin: 0;
     background: var(--global--color-white);
+    &.fix{
+    	position: fixed;
+    }
     @include media(desktop-only){
 		display: none;
 	}
