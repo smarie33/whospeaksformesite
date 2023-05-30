@@ -412,7 +412,9 @@ section.acf-free_form_content{
     padding: var(--main-menu--height) 0 0 0;
     margin: 0;
     background: var(--global--color-white);
-
+    @include media(desktop-only){
+		display: none;
+	}
 
     &.roll-up{
     	a{
@@ -463,6 +465,9 @@ section.acf-free_form_content{
 			    text-align: center;
 			    text-decoration: none;
 			    transition: .4s ease;
+			    @include media(wide-only){
+					font-size: 12px;
+				}
 			    &:hover, &.at-section{
 			    	text-decoration: none;
 			    	border: 2px solid var(--global--color-dk-pink);

@@ -1754,6 +1754,12 @@ p a {
 	margin: 0;
 	background: #fff;
 }
+@media only screen and (max-width: 821px) {
+
+	.acf-jump-link-nav {
+		display: none;
+	}
+}
 
 .acf-jump-link-nav.roll-up a {
 	height: 75px;
@@ -1810,6 +1816,12 @@ p a {
 	text-align: center;
 	text-decoration: none;
 	transition: 0.4s ease;
+}
+@media only screen and (max-width: 1023px) {
+
+	.acf-jump-link-nav ul li a {
+		font-size: 12px;
+	}
 }
 
 .acf-jump-link-nav ul li a:hover {
