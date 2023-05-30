@@ -308,6 +308,9 @@ section.acf-free_form_content{
 			flex-direction: row;
 			figure,p{
 				position: absolute;
+				@include media(desktop-only){
+					position: relative;
+				}
 				top: 50px;
 				transition: transform 0.5s ease;
 				img{

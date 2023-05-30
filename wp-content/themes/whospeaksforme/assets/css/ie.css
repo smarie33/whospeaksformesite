@@ -1640,6 +1640,13 @@ p a {
 	top: 50px;
 	transition: transform 0.5s ease;
 }
+@media only screen and (max-width: 821px) {
+
+	.acf-two_columns .column.scroll-image figure,
+	.acf-two_columns .column.scroll-image p {
+		position: relative;
+	}
+}
 
 .acf-two_columns .column.scroll-image figure img,
 .acf-two_columns .column.scroll-image p img {
