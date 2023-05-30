@@ -621,6 +621,7 @@ section.acf-free_form_content{
 	    transition: transform .3s ease-in-out;
 	    height: 97px;
 	    width: 135px;
+	    pointer-events: none;
 	}
 	.rotated {
 	    transform: rotate(180deg);

@@ -1859,6 +1859,7 @@ p a {
 	transition: transform 0.3s ease-in-out;
 	height: 97px;
 	width: 135px;
+	pointer-events: none;
 }
 
 .acf-slider .rotated {

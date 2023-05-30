@@ -606,11 +606,20 @@ function runRevealsWithPeak(elements, type){
 		const body = document.getElementsByTagName('body');
 		const sliderAreas = document.querySelectorAll('.acf-slider');
 	    const customCursor = document.querySelectorAll('.custom-cursor');
-	    const aboveJump = jumpNav.previousSibling.previousSibling;
 	    const jumpLinks = document.querySelectorAll('.acf-jump_link');
-	    const spaceAboveJump = aboveJump.offsetHeight
 	    let halfPage = window.innerWidth / 2;
 	    let isPopupClosed = getCookie("popupClosed");
+
+	    if(jumpNav != null){
+	    	const aboveJump = jumpNav.previousSibling.previousSibling;
+	    	const spaceAboveJump = aboveJump.offsetHeight;
+	    	highlightNavLink(sections,navLinks);
+			if(window.pageYOffset > spaceAboveJump){
+				jumpNav.classList.add('fix');
+		    }else{
+		    	jumpNav.classList.remove('fix');
+		    }
+	    }
 		
 		let banners = document.querySelectorAll('h2');
 		let paragraphs = document.querySelectorAll('p');
@@ -656,42 +665,39 @@ function runRevealsWithPeak(elements, type){
 			})
 		}
 
-		if(jumpNav != null){
-			highlightNavLink(sections,navLinks);
-			if(window.pageYOffset > spaceAboveJump){
-				jumpNav.classList.add('fix');
-		    }else{
-		    	jumpNav.classList.remove('fix');
-		    }
-		}
 
 	updateScrollBarHeight(scrollBar);
 
 		if(sliderAreas.length > 0){
 			const offsetPadding = 150;
 			sliderAreas.forEach( (sliderArea,i) => {
+				let customCursor = sliderArea.querySelector('.custom-cursor');
+
 			    sliderArea.addEventListener('mousemove', function(e) {
-			    	let posY = e.clientY - offsetPadding;
-			        customCursor[i].style.display = 'block';
-			        customCursor[i].style.top = `${posY}px`;
-			        customCursor[i].style.left = `${e.clientX}px`;
+				    let rect = sliderArea.getBoundingClientRect();
+				    let	offsetX = e.clientX - rect.left;
+			        let offsetY = e.clientY - rect.top;
+
+			        customCursor.style.display = 'block';
+			        customCursor.style.top = `${offsetY-50}px`;
+			        customCursor.style.left = `${offsetX-50}px`;
 
 			        if (e.pageX > halfPage) {
-			            customCursor[i].classList.remove('rotated');
-			            customCursor[i].classList.remove('rotated-bounce');
+			            customCursor.classList.remove('rotated');
+			            customCursor.classList.remove('rotated-bounce');
 			        } else {
-			            if (!customCursor[i].classList.contains('rotated')) {
-			                customCursor[i].classList.add('rotated');
-			                customCursor[i].classList.add('rotated-bounce');
+			            if (!customCursor.classList.contains('rotated')) {
+			                customCursor.classList.add('rotated');
+			                customCursor.classList.add('rotated-bounce');
 			                setTimeout(function() {
-			                    customCursor[i].classList.remove('rotated-bounce');
+			                    customCursor.classList.remove('rotated-bounce');
 			                }, 500);
 			            }
 			        }
 			    })
 
 			    sliderArea.addEventListener('mouseleave', function() {
-			        customCursor[i].style.display = 'none';
+			        customCursor.style.display = 'none';
 			    });
 			})
 		}
@@ -736,7 +742,7 @@ function runRevealsWithPeak(elements, type){
 			})
 		}
 
-		//allJumpLinks.forEach( jump => {
+		if(jumpLinkNav != null){
 			jumpLinkNav.addEventListener('click', function (event) {
 				let targetId, jump;
 				if(event.target.tagName === 'SPAN'){
@@ -747,8 +753,6 @@ function runRevealsWithPeak(elements, type){
 					targetId = this.getAttribute('href'); 
 					jump = this;
 				}
-				//console.log(targetId);
-				//if(event.target.tagName === 'A'){
 			        event.preventDefault();
 
 			        highlightLinkOnClick(allJumpLinks, jump, 'at-section');
@@ -765,9 +769,8 @@ function runRevealsWithPeak(elements, type){
 			        };
 
 			        window.scrollTo(scrollOptions);
-			   // }
 			});
-		//})
+		}
 
 		window.addEventListener("resize", () => {
 			halfPage = window.innerWidth / 2;
