@@ -63,7 +63,7 @@ $styles_right = $style.implode('; ',$style_write_right).$end;
 
 ?>
 
-<section class="acf-two_columns alignfull">
+<section class="acf-two_columns alignfull<?php if(get_sub_field('align_top')):?> align-top<?php endif; ?>">
   <div class="column<?php if(get_sub_field('full_width_images_left')): ?> full-width-images<?php endif; ?><?php if(get_sub_field('scroll_image_left')): ?> scroll-image<?php endif; ?><?php if(get_sub_field('add_button_left')): ?> with-button<?php endif; ?>"<?php echo $styles_left; ?>>
     <?php the_sub_field('content_left'); ?>
         <?php if(get_sub_field('add_button_left')): ?>

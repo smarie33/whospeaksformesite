@@ -1457,6 +1457,10 @@ p a {
 
 .acf-two_columns {
 	justify-content: center;
+	align-items: stretch;
+}
+
+.acf-two_columns.align-top {
 	align-items: flex-start;
 }
 @media only screen and (max-width: 821px) {

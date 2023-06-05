@@ -291,7 +291,10 @@ section.acf-free_form_content{
 
 .acf-two_columns{
 	justify-content: center;
-	align-items: flex-start;
+	align-items: stretch;
+	&.align-top{
+		align-items: flex-start;
+	}
 	@include media(desktop-only){
 		flex-direction: column;
 	}
