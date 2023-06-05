@@ -18,12 +18,17 @@
 	justify-content: flex-end;
 	align-content: center;
 	font: 600 9px / 16px open-sans, sans-serif;
+	color: var(--global--color-lt-blue);
+	padding-right: 2%;
 	h2{
 		font: 600 9px / 16px open-sans, sans-serif;
 		margin: 0 $baseline-unit 0 0;
 	}
 	a{
 		margin: 0 $baseline-unit 0 0;
+		&:last-of-type{
+			margin: 0;
+		}
 	}
 }
 
@@ -286,6 +291,7 @@ section.acf-free_form_content{
 
 .acf-two_columns{
 	justify-content: center;
+	align-items: flex-start;
 	@include media(desktop-only){
 		flex-direction: column;
 	}
@@ -550,6 +556,13 @@ section.acf-free_form_content{
 		position: relative;
 		display: flex;
 		justify-content: center;
+		&.not-hidden{
+			width: auto;
+			overflow: visible;
+			@include media(laptop-only) {
+		    	width: auto;
+    		}
+		}
 		@include media(laptop-only) {
 		    width: 231px;
     		height: 245px;
@@ -593,15 +606,15 @@ section.acf-free_form_content{
 
 .acf-slider{
 	position: relative;
-	padding: 120px 0;
+	padding: 80px 0 120px 0;
 	cursor: none;
 	.title{
 		text-transform: uppercase;
 		color: var(--global--color-white);
 		text-align: center;
 		letter-spacing: .2em;
-		font-size: 13px;
-		padding: 20px 0;
+		font-size: 24px;
+		padding: 0 0 60px 0;
 	}
 	.control {
 		width: 25%;
@@ -640,7 +653,7 @@ section.acf-free_form_content{
 .acf-large_tooltip{
 	display: flex;
 	justify-content: center;
-	padding: 0 0 200px 0;
+	padding: 0 4% 200px 4%;
 	.big-words{
 		display: flex;
 		justify-content: space-between;
@@ -732,6 +745,7 @@ section.acf-free_form_content{
 		}
 	}
 	&.word-border{
+		padding: 0 0 200px 0;
 		.top,.left,.right{
 			display: none;
 		}
@@ -899,7 +913,7 @@ section.acf-free_form_content{
 	}
 	.popup-bg{
 		position: absolute;
-		background-color: #fff;
+		background-color: var(--global--color-white);
 		width: 50%;
 		height: 75%;
 		.popup-content{
@@ -911,7 +925,7 @@ section.acf-free_form_content{
 				text-align: right;
 				position: absolute;
 			    width: calc(100% - 60px);
-			    background-color: white;
+			    background-color: var(--global--color-white);
 			    top: 0;
 			    cursor: pointer;
 			    img{
@@ -945,6 +959,7 @@ p.no-reveal{
 }
 
 .fade-this-in{
+	opacity: 0;
 	animation: fadeIn 1s ease-in-out .5s forwards;
 }
 

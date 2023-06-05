@@ -1267,6 +1267,8 @@ p a {
 	display: inline-flex;
 	justify-content: flex-end;
 	align-content: center;
+	color: #353584;
+	padding-right: 2%;
 }
 
 .acf-social_media,
@@ -1277,6 +1279,10 @@ p a {
 .acf-social_media h2,
 .acf-social_media a {
 	margin: 0 10px 0 0;
+}
+
+.acf-social_media a:last-of-type {
+	margin: 0;
 }
 
 .fa {
@@ -1605,6 +1611,7 @@ p a {
 
 .acf-two_columns {
 	justify-content: center;
+	align-items: flex-start;
 }
 @media only screen and (max-width: 821px) {
 
@@ -1933,12 +1940,23 @@ p a {
 	display: flex;
 	justify-content: center;
 }
+
+.acf-slide .image .image-holder.not-hidden {
+	width: auto;
+	overflow: visible;
+}
 @media only screen and (max-width: 651px) {
+
+	.acf-slide .image .image-holder.not-hidden {
+		width: auto;
+	}
 
 	.acf-slide .image .image-holder {
 		width: 231px;
 		height: 245px;
 	}
+}
+@media only screen and (max-width: 651px) {
 }
 
 .acf-slide .image .image-holder.left-tilt {
@@ -1985,7 +2003,7 @@ p a {
 
 .acf-slider {
 	position: relative;
-	padding: 120px 0;
+	padding: 80px 0 120px 0;
 	cursor: none;
 }
 
@@ -1994,8 +2012,8 @@ p a {
 	color: #fff;
 	text-align: center;
 	letter-spacing: 0.2em;
-	font-size: 13px;
-	padding: 20px 0;
+	font-size: 24px;
+	padding: 0 0 60px 0;
 }
 
 .acf-slider .control {
@@ -2044,7 +2062,7 @@ p a {
 .acf-large_tooltip {
 	display: flex;
 	justify-content: center;
-	padding: 0 0 200px 0;
+	padding: 0 4% 200px 4%;
 }
 
 .acf-large_tooltip .big-words {
@@ -2155,6 +2173,10 @@ p a {
 
 .acf-large_tooltip .tooltip .button {
 	margin-top: 20px;
+}
+
+.acf-large_tooltip.word-border {
+	padding: 0 0 200px 0;
 }
 
 .acf-large_tooltip.word-border .top,
@@ -2378,7 +2400,7 @@ p a {
 	text-align: right;
 	position: absolute;
 	width: calc(100% - 60px);
-	background-color: white;
+	background-color: #fff;
 	top: 0;
 	cursor: pointer;
 }
@@ -2408,6 +2430,7 @@ p.no-reveal {
 }
 
 .fade-this-in {
+	opacity: 0;
 	animation: fadeIn 1s ease-in-out 0.5s forwards;
 }
 
@@ -3659,8 +3682,8 @@ input[type=reset]:disabled {
 	min-width: 190px;
 	height: 74px;
 	padding: 0;
-	border: 2px solid #1a1a18;
-	color: #1a1a18;
+	border: 2px solid #000;
+	color: #000;
 	line-height: 70px;
 	text-align: center;
 	text-transform: uppercase;
@@ -3669,6 +3692,32 @@ input[type=reset]:disabled {
 .button.no-hover-color:hover {
 	background-color: #c82262 !important;
 	color: #fff !important;
+}
+
+.button.hover-white {
+	background-color: transparent !important;
+	color: #fff !important;
+	font-weight: 700;
+	font-family: calluna, serif;
+	line-height: 1.125;
+	letter-spacing: 0.05em;
+	font-size: 25px;
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	min-width: 200px;
+	height: 74px;
+	padding: 0;
+	border: 2px solid #fff;
+	color: #fff;
+	line-height: 70px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.button.hover-white:hover {
+	background-color: #fff !important;
+	color: #c82262 !important;
 }
 
 .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(:hover):not(:active):not(.has-text-color) {

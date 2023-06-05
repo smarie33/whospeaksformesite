@@ -609,10 +609,11 @@ function runRevealsWithPeak(elements, type){
 	    const jumpLinks = document.querySelectorAll('.acf-jump_link');
 	    let halfPage = window.innerWidth / 2;
 	    let isPopupClosed = getCookie("popupClosed");
+	    let spaceAboveJump, aboveJump;
 
 	    if(jumpNav != null){
-	    	const aboveJump = jumpNav.previousSibling.previousSibling;
-	    	const spaceAboveJump = aboveJump.offsetHeight;
+	    	aboveJump = jumpNav.previousSibling.previousSibling;
+	    	spaceAboveJump = aboveJump.offsetHeight;
 	    	highlightNavLink(sections,navLinks);
 			if(window.pageYOffset > spaceAboveJump){
 				jumpNav.classList.add('fix');
