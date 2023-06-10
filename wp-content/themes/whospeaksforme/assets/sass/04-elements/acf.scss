@@ -257,6 +257,7 @@ section.acf-free_form_content{
 		figure,p{
 			position: relative;
 			top: 50px;
+			max-width: 100%;
 			transition: transform 0.5s ease;
 			@include media(desktop){
 				position: absolute;
@@ -317,6 +318,7 @@ section.acf-free_form_content{
 			flex-direction: row;
 			figure,p{
 				position: absolute;
+				max-width: 100%;
 				@include media(desktop-only){
 					position: relative;
 				}
@@ -623,7 +625,7 @@ section.acf-free_form_content{
 		padding: 0 0 60px 0;
 	}
 	.control {
-		width: 25%;
+		width: 40%;
 		height: 100%;
 		position: absolute;
 		cursor: none;

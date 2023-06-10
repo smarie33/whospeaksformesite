@@ -50,6 +50,7 @@
 	        arrows: false,
 	        centerMode: true,
 	        centerPadding: '0',
+	        dots: true,
 	        slidesToShow: 1
 	      }
 	    },
@@ -59,6 +60,7 @@
 	        arrows: false,
 	        centerMode: true,
 	        centerPadding: '40px',
+	        dots: true,
 	        slidesToShow: 1
 	      }
 	    }

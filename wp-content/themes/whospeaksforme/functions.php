@@ -799,5 +799,26 @@ function contact_form($atts) {
     return $form;
 }
 
+//new crop
+add_image_size( 'square-2000', 2000, 2000, array( 'center', 'top' ) );
+add_image_size( 'square-1000', 1000, 1000, array( 'center', 'top' ) );
+add_image_size( 'square-500', 500, 500, array( 'center', 'top' ) );
+add_image_size( 'square-400', 400, 400, array( 'center', 'top' ) );
+add_image_size( 'square-300', 300, 300, array( 'center', 'top' ) );
+add_image_size( 'square-200', 200, 200, array( 'center', 'top' ) );
+add_image_size( 'square-150', 150, 150, array( 'center', 'top' ) );
+
+add_filter( 'image_size_names_choose', 'crop_sizes' );
+function crop_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'square-2000' => __( 'X Large Square' ),
+        'square-1000' => __( 'Large Square' ),
+        'square-500' => __( 'Medium Square' ),
+        'square-400' => __( 'Small Square' ),
+        'square-300' => __( 'X Small Square' ),
+        'square-200' => __( 'XX Small Square' ),
+        'square-150' => __( 'Tiny Small Square' )
+    ) );
+}
 
 ?>
