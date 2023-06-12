@@ -821,4 +821,11 @@ function crop_sizes( $sizes ) {
     ) );
 }
 
+//add form query
+function wwp_custom_query_vars_filter($vars) {
+    $vars[] .= 'contformt';
+    return $vars;
+}
+add_filter( 'query_vars', 'wwp_custom_query_vars_filter' );
+
 ?>

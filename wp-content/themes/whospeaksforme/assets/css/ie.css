@@ -2335,6 +2335,26 @@ p a {
 	transform: translateY(-3px);
 }
 
+.contact-success {
+	background-color: rgba(209, 228, 221, 0.5);
+	border: 5px solid #d1e4dd;
+}
+
+.contact-success,
+.contact-error {
+	padding: 20px;
+	margin-bottom: 30px;
+	font-weight: bold;
+	text-align: center;
+	max-width: 355px;
+	margin: 0 auto 30px auto;
+}
+
+.contact-error {
+	background-color: rgba(228, 209, 209, 0.5);
+	border: 5px solid #e4d1d1;
+}
+
 #main-popup {
 	position: fixed;
 	width: 100%;
