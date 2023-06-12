@@ -526,6 +526,8 @@ function fadeThingsIn(item, type){
 	  default:
 	}
 
+	console.log(allInfo);
+
 	if(type == 'letter' || type == 'word'){
 		item.textContent = '';
 		item.setAttribute('aria-label', aria);
@@ -545,12 +547,17 @@ function fadeThingsIn(item, type){
 					}
 				})
 			}
+
 		}
 
 		let styles = getValuesByKey(allInfo, 'style');
 		let boldness = getValuesByKey(allInfo, 'tagName');
+
 		if(boldness.includes("STRONG")){
 			styles.push('font-weight:bold;');
+		}
+		if(boldness.includes("EM")){
+			styles.push('font-style: italic;');
 		}
 		styles.push('visibility: visible;');
 		item.setAttribute('style', styles.join(' '));
@@ -622,7 +629,7 @@ function runRevealsWithPeak(elements, type){
 		    }
 	    }
 		
-		let banners = document.querySelectorAll('h2');
+		let banners = document.querySelectorAll('h1, h2, h3');
 		let paragraphs = document.querySelectorAll('p');
 		let team = document.querySelectorAll('.member-info');
 		let reveals = [];

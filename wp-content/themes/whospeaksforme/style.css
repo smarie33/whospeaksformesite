@@ -143,7 +143,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 	--heading--line-height-h6: var(--global--line-height-heading);
 	--heading--line-height-h5: var(--global--line-height-heading);
 	--heading--line-height-h4: var(--global--line-height-heading);
-	--heading--line-height-h3: var(--global--line-height-heading);
+	--heading--line-height-h3: var(--global--line-height-body);
 	--heading--line-height-h2: var(--global--line-height-heading);
 	--heading--line-height-h1: var(--global--line-height-page-title);
 	--heading--font-weight: 300;
@@ -2260,7 +2260,6 @@ p a {
 .contact-success {
 	background-color: rgba(209, 228, 221, 0.5);
 	padding: 20px;
-	margin-bottom: 30px;
 	font-weight: bold;
 	text-align: center;
 	border: 5px solid var(--global--color-green);
@@ -2271,7 +2270,6 @@ p a {
 .contact-error {
 	background-color: rgba(228, 209, 209, 0.5);
 	padding: 20px;
-	margin-bottom: 30px;
 	font-weight: bold;
 	text-align: center;
 	border: 5px solid var(--global--color-red);
@@ -2326,12 +2324,16 @@ p a {
 	max-width: 500px;
 }
 
-h2 {
+h1,
+h2,
+h3 {
 	visibility: hidden;
 	min-height: 50px;
 }
 
-h2 span {
+h1 span,
+h2 span,
+h3 span {
 	opacity: 0;
 }
 

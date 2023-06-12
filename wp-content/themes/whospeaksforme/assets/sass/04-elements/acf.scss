@@ -951,7 +951,6 @@ section.acf-free_form_content{
 	&-success{
 		background-color: rgba(209,  228, 221, .5);
 		padding: 20px;
-		margin-bottom: 30px;
 		font-weight: bold;
 		text-align: center;
 		border: 5px solid var(--global--color-green);
@@ -961,7 +960,6 @@ section.acf-free_form_content{
 	&-error{
 		background-color: rgba(228, 209, 209, .5);
 		padding: 20px;
-		margin-bottom: 30px;
 		font-weight: bold;
 		text-align: center;
 		border: 5px solid var(--global--color-red);
@@ -1010,7 +1008,7 @@ section.acf-free_form_content{
 	}
 }
 
-h2{
+h1,h2,h3{
 	visibility: hidden;
 	min-height: 50px;
 	span{

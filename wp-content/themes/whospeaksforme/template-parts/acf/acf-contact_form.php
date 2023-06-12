@@ -38,7 +38,7 @@ if(!empty($_POST)){
        }
 
        if (empty($errors)) {
-        $to = 'shannon@mosleygraphics.com';
+        $to = 'info@whospeaks4me.org';
         $subject = "From the Who Speaks For Me Contact Form";
         $headers = 'From: The Who Speaks For Me Website <info@whospeaks4me.org>' . "\r\n";
         $name = htmlspecialchars($_POST['first_name']).' '.htmlspecialchars($_POST['last_name']);
