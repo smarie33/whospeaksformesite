@@ -605,7 +605,7 @@ function runRevealsWithPeak(elements, type){
 		const mainPopup = document.getElementById('main-popup');
 		const body = document.getElementsByTagName('body');
 		const sliderAreas = document.querySelectorAll('.acf-slider');
-	    const customCursor = document.querySelectorAll('.custom-cursor');
+	    //const customCursor = document.querySelectorAll('.custom-cursor');
 	    const jumpLinks = document.querySelectorAll('.acf-jump_link');
 	    let halfPage = window.innerWidth / 2;
 	    let isPopupClosed = getCookie("popupClosed");
@@ -669,39 +669,39 @@ function runRevealsWithPeak(elements, type){
 
 	updateScrollBarHeight(scrollBar);
 
-		if(sliderAreas.length > 0){
-			const offsetPadding = 150;
-			sliderAreas.forEach( (sliderArea,i) => {
-				let customCursor = sliderArea.querySelector('.custom-cursor');
+		// if(sliderAreas.length > 0){
+		// 	const offsetPadding = 150;
+		// 	sliderAreas.forEach( (sliderArea,i) => {
+		// 		let customCursor = sliderArea.querySelector('.custom-cursor');
 
-			    sliderArea.addEventListener('mousemove', function(e) {
-				    let rect = sliderArea.getBoundingClientRect();
-				    let	offsetX = e.clientX - rect.left;
-			        let offsetY = e.clientY - rect.top;
+		// 	    sliderArea.addEventListener('mousemove', function(e) {
+		// 		    let rect = sliderArea.getBoundingClientRect();
+		// 		    let	offsetX = e.clientX - rect.left;
+		// 	        let offsetY = e.clientY - rect.top;
 
-			        customCursor.style.display = 'block';
-			        customCursor.style.top = `${offsetY-50}px`;
-			        customCursor.style.left = `${offsetX-50}px`;
+		// 	        customCursor.style.display = 'block';
+		// 	        customCursor.style.top = `${offsetY-50}px`;
+		// 	        customCursor.style.left = `${offsetX-50}px`;
 
-			        if (e.pageX > halfPage) {
-			            customCursor.classList.remove('rotated');
-			            customCursor.classList.remove('rotated-bounce');
-			        } else {
-			            if (!customCursor.classList.contains('rotated')) {
-			                customCursor.classList.add('rotated');
-			                customCursor.classList.add('rotated-bounce');
-			                setTimeout(function() {
-			                    customCursor.classList.remove('rotated-bounce');
-			                }, 500);
-			            }
-			        }
-			    })
+		// 	        if (e.pageX > halfPage) {
+		// 	            customCursor.classList.remove('rotated');
+		// 	            customCursor.classList.remove('rotated-bounce');
+		// 	        } else {
+		// 	            if (!customCursor.classList.contains('rotated')) {
+		// 	                customCursor.classList.add('rotated');
+		// 	                customCursor.classList.add('rotated-bounce');
+		// 	                setTimeout(function() {
+		// 	                    customCursor.classList.remove('rotated-bounce');
+		// 	                }, 500);
+		// 	            }
+		// 	        }
+		// 	    })
 
-			    sliderArea.addEventListener('mouseleave', function() {
-			        customCursor.style.display = 'none';
-			    });
-			})
-		}
+		// 	    sliderArea.addEventListener('mouseleave', function() {
+		// 	        customCursor.style.display = 'none';
+		// 	    });
+		// 	})
+		// }
 
 		if(toolTipROs != null){
 			toolTipROs.forEach( toolTipRO => {

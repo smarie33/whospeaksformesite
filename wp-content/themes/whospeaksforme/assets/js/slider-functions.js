@@ -5,8 +5,7 @@
 	  centerMode: true,
 	  centerPadding: '400px',
 	  slidesToShow: 1,
-	 	prevArrow: '<div class="control left" id="acf-slide-prev"></div>',
-    	nextArrow: '<div class="control right" id="acf-slide-next"></div>',
+	  arrows: true,
 	  responsive: [
 	  	{
 	      breakpoint: 1490,

@@ -1844,10 +1844,65 @@ p a {
 	}
 }
 
+.slick-dots {
+	bottom: -100px !important;
+}
+
+.slick-dots li button:before {
+	color: #fff !important;
+	font-size: 18px !important;
+}
+
+.slick-prev,
+.slick-next {
+	z-index: 100;
+	line-height: 0 !important;
+	top: 25% !important;
+	font-family: system-ui !important;
+}
+
+.slick-prev {
+	right: 2% !important;
+	width: 0 !important;
+	height: 0 !important;
+}
+
+.slick-next {
+	left: 7% !important;
+	width: 0 !important;
+	height: 0 !important;
+}
+@media only screen and (max-width: 1250px) {
+
+	.slick-next {
+		left: 12% !important;
+	}
+}
+
+.slick-prev:before {
+	content: "‹" !important;
+	font-size: 220px !important;
+	text-shadow: -2px 5px 5px var(--global--color-gray);
+	opacity: 0.25 !important;
+}
+
+.slick-next:before {
+	content: "›" !important;
+	font-size: 220px !important;
+	text-shadow: -2px 5px 5px var(--global--color-gray);
+	opacity: 0.25 !important;
+}
+
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+	opacity: 0.5 !important;
+}
+
 .acf-slider {
 	position: relative;
 	padding: 80px 0 120px 0;
-	cursor: none;
 }
 
 .acf-slider .title {
