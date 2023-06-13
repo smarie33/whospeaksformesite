@@ -21,12 +21,12 @@
           $cnt = 1;
           if(count(get_sub_field('donut')) == 1){$the_width = 100;};
           if(count(get_sub_field('donut')) == 2){$the_width = 50;};
-          if(count(get_sub_field('donut')) == 3){$the_width = 33.25;};
+          if(count(get_sub_field('donut')) == 3){$the_width = 27;};
           foreach( $donuts as $a_nut ):
     ?>
             <div class="donut-column" style="width:<?php echo $the_width ?>%">
               <div class="container">
-                  <canvas id="donutGraph<?php echo $cnt; ?>" class="donut-graph" width="250" height="250"></canvas>
+                  <canvas id="donutGraph<?php echo $cnt; ?>" class="donut-graph" width="200" height="200"></canvas>
                   <div class="words">
                     <div id="percentage<?php echo $cnt; ?>" class="percentage" style="color:<?php the_sub_field('font_color') ?>"></div>
                     <div class="blurb" style="color:<?php the_sub_field('font_color') ?>"><?php echo $a_nut['blurb']; ?></div>
