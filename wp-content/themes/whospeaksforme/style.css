@@ -1474,7 +1474,7 @@ p a {
 
 .acf-two_columns .column:first-of-type {
 	padding: 0;
-	margin: 0 2%;
+	margin: 0 2% 0 0;
 }
 @media only screen and (max-width: 821px) {
 

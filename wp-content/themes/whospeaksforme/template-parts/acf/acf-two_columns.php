@@ -76,9 +76,9 @@ $styles_right = $style.implode('; ',$style_write_right).$end;
   <div class="column<?php if(get_sub_field('full_width_images_right')): ?> full-width-images<?php endif; ?><?php if(get_sub_field('scroll_image_right')): ?> scroll-image<?php endif; ?><?php if(get_sub_field('add_button_right')): ?> with-button<?php endif; ?>"<?php echo $styles_right; ?>>
     <?php the_sub_field('content_right'); ?>
     <?php if(get_sub_field('add_button_right')): ?>
-      <?php $open_newr = get_sub_field('link_right')['target'] ? get_field('link_right')['target'] : '_self'; ?>
+      <?php //$open_newr = get_sub_field('link_right')['target'] == '_blank' ? get_field('link_right')['target'] : '_self'; ?>
       <p class="button-paragraph">
-        <a class="button <?php the_sub_field('button_type_right') ?>" href="<?php echo get_sub_field('link_right')['url'] ?>" target="<?php echo $open_newr; ?>"><?php echo get_sub_field('link_right')['title'] ?></a>
+        <a class="button <?php the_sub_field('button_type_right') ?>" href="<?php echo get_sub_field('link_right')['url'] ?>" target="<?php echo get_sub_field('link_right')['target']; ?>"><?php echo get_sub_field('link_right')['title'] ?></a>
       </p>
     <?php endif; ?>
   </div>
