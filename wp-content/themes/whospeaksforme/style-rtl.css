@@ -1776,8 +1776,8 @@ p a {
 }
 
 .acf-slide .image .image-holder {
-	width: 331px;
-	height: 445px;
+	width: 230px;
+	height: 306px;
 	overflow: hidden;
 	position: relative;
 	display: flex;
@@ -1814,7 +1814,7 @@ p a {
 
 .acf-slide .image .image-holder img {
 	width: auto;
-	height: 443.5px;
+	height: 310px;
 	max-width: initial;
 }
 @media only screen and (max-width: 651px) {

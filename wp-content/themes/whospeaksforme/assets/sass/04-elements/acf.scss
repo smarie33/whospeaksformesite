@@ -558,8 +558,8 @@ section.acf-free_form_content{
 		}
 	}
 	.image-holder{
-		width: 331px;
-	    height: 445px;
+		width: 230px;
+    	height: 306px;
 		overflow: hidden;
 		position: relative;
 		display: flex;
@@ -586,7 +586,7 @@ section.acf-free_form_content{
 
 		img{
 	    	width: auto;
-    		height: 443.5px;
+    		height: 310px;
     		max-width: initial;
     		@include media(laptop-only) {
 		    	height: 243.5px;
