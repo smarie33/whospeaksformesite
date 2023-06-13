@@ -247,10 +247,10 @@ section.acf-free_form_content{
 .acf-three_columns{
 	> div{
 		width: 80%;
-		margin: 50px 10%;
+		margin: 0 10%;
 		@include media(desktop){
 			width: 29.5%;
-			margin: 100px 2%;
+			margin: 0 2%;
 		}
 	}
 	.column.scroll-image{

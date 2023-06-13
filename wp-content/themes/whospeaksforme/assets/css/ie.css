@@ -1478,13 +1478,13 @@ p a {
 
 .acf-three_columns > div {
 	width: 80%;
-	margin: 50px 10%;
+	margin: 0 10%;
 }
 @media only screen and (min-width: 822px) {
 
 	.acf-three_columns > div {
 		width: 29.5%;
-		margin: 100px 2%;
+		margin: 0 2%;
 	}
 }
 
