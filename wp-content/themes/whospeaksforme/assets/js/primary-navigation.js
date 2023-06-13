@@ -399,9 +399,9 @@ function resizeCanvas(canvas) {
 			    let left = 0;
 			    let top = 40;
 
-			    if (tooltipRect.left + tooltipRect.width > viewportWidth) {
-			    	left = rolloverRect.left - (tooltipRect.width / 2);
-			    }
+			    // if (tooltipRect.left + tooltipRect.width > viewportWidth) {
+			    // 	left = - (tooltipRect.width);
+			    // }
 
 			    if((rolloverRect.bottom + tooltipRect.height) >= (window.innerHeight || document.documentElement.clientHeight)){
 			    	top = -tooltipRect.height;
@@ -526,7 +526,7 @@ function fadeThingsIn(item, type){
 	  default:
 	}
 
-	console.log(allInfo);
+	//console.log(allInfo);
 
 	if(type == 'letter' || type == 'word'){
 		item.textContent = '';
@@ -674,41 +674,7 @@ function runRevealsWithPeak(elements, type){
 		}
 
 
-	updateScrollBarHeight(scrollBar);
-
-		// if(sliderAreas.length > 0){
-		// 	const offsetPadding = 150;
-		// 	sliderAreas.forEach( (sliderArea,i) => {
-		// 		let customCursor = sliderArea.querySelector('.custom-cursor');
-
-		// 	    sliderArea.addEventListener('mousemove', function(e) {
-		// 		    let rect = sliderArea.getBoundingClientRect();
-		// 		    let	offsetX = e.clientX - rect.left;
-		// 	        let offsetY = e.clientY - rect.top;
-
-		// 	        customCursor.style.display = 'block';
-		// 	        customCursor.style.top = `${offsetY-50}px`;
-		// 	        customCursor.style.left = `${offsetX-50}px`;
-
-		// 	        if (e.pageX > halfPage) {
-		// 	            customCursor.classList.remove('rotated');
-		// 	            customCursor.classList.remove('rotated-bounce');
-		// 	        } else {
-		// 	            if (!customCursor.classList.contains('rotated')) {
-		// 	                customCursor.classList.add('rotated');
-		// 	                customCursor.classList.add('rotated-bounce');
-		// 	                setTimeout(function() {
-		// 	                    customCursor.classList.remove('rotated-bounce');
-		// 	                }, 500);
-		// 	            }
-		// 	        }
-		// 	    })
-
-		// 	    sliderArea.addEventListener('mouseleave', function() {
-		// 	        customCursor.style.display = 'none';
-		// 	    });
-		// 	})
-		// }
+		 updateScrollBarHeight(scrollBar);
 
 		if(toolTipROs != null){
 			toolTipROs.forEach( toolTipRO => {
@@ -754,7 +720,7 @@ function runRevealsWithPeak(elements, type){
 			jumpLinkNav.addEventListener('click', function (event) {
 				let targetId, jump;
 				if(event.target.tagName === 'SPAN'){
-					console.log(event.target.dataset.target);
+					//console.log(event.target.dataset.target);
 					targetId = event.target.dataset.target;
 					jump = event.target.parentElement;
 				}else{

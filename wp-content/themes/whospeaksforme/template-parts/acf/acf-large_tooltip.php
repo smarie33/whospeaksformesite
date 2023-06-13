@@ -11,7 +11,8 @@
 $tooltips = get_sub_field('large_tooltip');
 $tothelast = count($tooltips);
 $cnt = 1;
-$dot = '<div class="dot"></div>';
+$color = get_sub_field('word_color') ? get_sub_field('word_color') : '#000';
+$dot = '<div class="dot" style="color:'.$color.'">&middot;</div>';
 ?>
 
 <section class="acf-large_tooltip alignfull<?php if(get_sub_field('word_border')): ?> word-border<?php endif; ?>" style="background-color:<?php the_sub_field('background_color') ?>">
@@ -24,8 +25,8 @@ $dot = '<div class="dot"></div>';
   <div class="big-words">
   <?php foreach($tooltips as $tooltip): ?>
     <?php if($cnt == $tothelast){$dot = '';} ?>
-      <div class="tooltip-hover">
-        <?php echo $tooltip['rollover_text']; ?>
+      <div class="tooltip-hover" style="color:<?php echo $color ?>;">
+       <?php echo $tooltip['rollover_text']; ?>
         <div class="tooltip" id="tooltip_<?php echo $cnt ?>">
           <?php echo $tooltip['tooltip_Info']; ?>
           <?php if($tooltip['add_button']): ?>
