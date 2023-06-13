@@ -367,7 +367,7 @@ section.acf-free_form_content{
 	.column{
 		width: 80%;
 		margin: 0 10%;
-		padding: calc($baseline-unit * 12) 0 0 0;
+		padding: 0 0 0 0;
 
 		@include media(desktop){
 			width: 42%;
@@ -375,7 +375,7 @@ section.acf-free_form_content{
 		}
 	}
 	.member{
-		padding: calc($baseline-unit * 12) 0 calc($baseline-unit * 10) 0;
+		padding: calc($baseline-unit * 6) 0 calc($baseline-unit * 6) 0;
 		p{
 			padding-top: calc($baseline-unit * 2);
 		}
@@ -404,7 +404,7 @@ section.acf-free_form_content{
 }
 
 .acf-jump_link{
-	padding-bottom: 100px;
+	padding-bottom: 60px;
 	hr{
 		border: none;
 	    width: 100%;

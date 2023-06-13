@@ -908,6 +908,7 @@ template,
 
 #main {
 	padding-top: 0;
+	padding-bottom: 0;
 }
 
 /**
@@ -1008,7 +1009,7 @@ template,
 
 .site-footer > *,
 .widget-area > * {
-	margin-top: 20px;
+	margin-top: 0;
 	margin-bottom: 20px;
 }
 @media only screen and (min-width: 482px) {
@@ -1133,7 +1134,7 @@ html {
 }
 
 body {
-	font-size: 1.25rem;
+	font-size: 1.125rem;
 	font-weight: normal;
 	color: #28303d;
 	text-align: left;
@@ -1637,7 +1638,7 @@ p a {
 .acf-team_members .column {
 	width: 80%;
 	margin: 0 10%;
-	padding: 120px 0 0 0;
+	padding: 0 0 0 0;
 }
 @media only screen and (min-width: 822px) {
 
@@ -1648,7 +1649,7 @@ p a {
 }
 
 .acf-team_members .member {
-	padding: 120px 0 100px 0;
+	padding: 60px 0 60px 0;
 }
 
 .acf-team_members .member p {
@@ -1677,7 +1678,7 @@ p a {
 }
 
 .acf-jump_link {
-	padding-bottom: 100px;
+	padding-bottom: 60px;
 }
 
 .acf-jump_link hr {
@@ -5154,16 +5155,13 @@ table.wp-calendar-table caption {
 }
 
 :root .is-small-text,
-:root .has-small-font-size {
-	font-size: 1.125rem;
-}
-
+:root .has-small-font-size,
 :root .is-regular-text,
 :root .has-regular-font-size,
 :root .is-normal-font-size,
 :root .has-normal-font-size,
 :root .has-medium-font-size {
-	font-size: 1.25rem;
+	font-size: 1.125rem;
 }
 
 :root .is-large-text,
@@ -5716,7 +5714,7 @@ table.wp-calendar-table caption {
 }
 
 .site-footer > .site-info {
-	padding-top: 30px;
+	padding-top: 0;
 	color: #28303d;
 	font-family: calluna, serif;
 	font-size: 1.125rem;

@@ -2120,16 +2120,13 @@ pre.wp-block-verse {
 }
 
 :root .is-small-text,
-:root .has-small-font-size {
-	font-size: 1.125rem;
-}
-
+:root .has-small-font-size,
 :root .is-regular-text,
 :root .has-regular-font-size,
 :root .is-normal-font-size,
 :root .has-normal-font-size,
 :root .has-medium-font-size {
-	font-size: 1.25rem;
+	font-size: 1.125rem;
 }
 
 :root .is-large-text,
@@ -2419,7 +2416,7 @@ body {
 body {
 	color: #28303d;
 	background-color: #fff;
-	font-size: 1.25rem;
+	font-size: 1.125rem;
 	font-weight: normal;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;

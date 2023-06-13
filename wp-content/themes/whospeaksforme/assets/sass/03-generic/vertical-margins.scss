@@ -33,6 +33,7 @@
 
 #main{
 	padding-top: 0;
+	padding-bottom: 0;
 }
 
 /**
@@ -119,7 +120,7 @@
 
 .site-footer > *,
 .widget-area > * {
-	margin-top: calc(0.666 * var(--global--spacing-vertical));
+	margin-top: 0;
 	margin-bottom: calc(0.666 * var(--global--spacing-vertical));
 
 	@include media(mobile) {
