@@ -937,7 +937,7 @@ template {
 
 	.site-footer > *,
 	.widget-area > * {
-		margin-top: var(--global--spacing-vertical);
+		margin-top: 0;
 		margin-bottom: var(--global--spacing-vertical);
 	}
 }
@@ -1838,7 +1838,7 @@ p a {
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	padding-left: 30px;
+	padding-right: 30px;
 }
 @media only screen and (max-width: 651px) {
 

@@ -1016,7 +1016,7 @@ template,
 
 	.site-footer > *,
 	.widget-area > * {
-		margin-top: 30px;
+		margin-top: 0;
 		margin-bottom: 30px;
 	}
 }
@@ -1914,7 +1914,7 @@ p a {
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	padding-left: 30px;
+	padding-right: 30px;
 }
 @media only screen and (max-width: 651px) {
 
