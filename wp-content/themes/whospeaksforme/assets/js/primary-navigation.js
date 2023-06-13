@@ -629,8 +629,8 @@ function runRevealsWithPeak(elements, type){
 		    }
 	    }
 		
-		let banners = document.querySelectorAll('h1, h2, h3');
-		let paragraphs = document.querySelectorAll('p');
+		let banners = document.querySelectorAll('h1, h2:not(.ctct-form-header), h3');
+		let paragraphs = document.querySelectorAll('p:not(.ctct-form-text):not(.ctct-gdpr-text)');
 		let team = document.querySelectorAll('.member-info');
 		let reveals = [];
 

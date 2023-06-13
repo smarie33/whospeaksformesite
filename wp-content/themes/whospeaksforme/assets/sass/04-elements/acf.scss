@@ -1010,7 +1010,7 @@ section.acf-free_form_content{
 	}
 }
 
-h1,h2,h3{
+h1,h2:not(.ctct-form-header),h3{
 	visibility: hidden;
 	min-height: 50px;
 	span{
@@ -1019,7 +1019,7 @@ h1,h2,h3{
 	}
 }
 
-p,.member-info{
+p:not(.ctct-form-text):not(.ctct-gdpr-text),.member-info{
     opacity: 0;
     //animation: fadeIn 1s ease-in-out forwards;
 }
