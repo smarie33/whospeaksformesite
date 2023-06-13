@@ -619,18 +619,21 @@ section.acf-free_form_content{
 	font-size: 18px !important;
 	}
 }
-.slick-prev, .slick-next{
+button:not(.ctct-form-button).slick-prev, button:not(.ctct-form-button).slick-next{
 	z-index: 100;
 	line-height: 0 !important;
-	top: 25% !important;
+	top: 0 !important;
 	font-family: system-ui !important;
+	font-size: 0;
+	border: none !important;
+	padding: 0;
 }
-.slick-prev {
+button:not(.ctct-form-button).slick-prev {
     left: 2% !important;
     width: 0 !important;
     height: 0 !important;
 }
-.slick-next {
+button:not(.ctct-form-button).slick-next {
     right: 7% !important;
     width: 0 !important;
     height: 0 !important;
@@ -638,20 +641,22 @@ section.acf-free_form_content{
     	right: 12% !important;
     }
 }
-.slick-prev:before {
+button:not(.ctct-form-button).slick-prev:before {
     content: "‹" !important;
     font-size: 220px !important;
     text-shadow: 2px 5px 5px var(--global--color-gray);
     opacity: .25 !important;
 }
-.slick-next:before{
+button:not(.ctct-form-button).slick-next:before{
     content: "›" !important;
     font-size: 220px !important;
     text-shadow: 2px 5px 5px var(--global--color-gray);
     opacity: .25 !important;
 }
-.slick-prev:hover:before, .slick-prev:focus:before, .slick-next:hover:before, .slick-next:focus:before {
+button:not(.ctct-form-button).slick-prev:hover:before, button:not(.ctct-form-button).slick-prev:focus:before, button:not(.ctct-form-button).slick-next:hover:before, button:not(.ctct-form-button).slick-next:focus:before {
     opacity: .5 !important;
+    font-size: 0;
+	border: none !important;
 }
 .acf-slider{
 	position: relative;
@@ -1025,7 +1030,7 @@ p:not(.ctct-form-text):not(.ctct-gdpr-text),.member-info{
 }
 
 p.no-reveal{
-	opacity: 1;
+	opacity: 1 !important;
 }
 
 .fade-this-in{
