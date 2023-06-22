@@ -16,7 +16,7 @@ $title_index = 0;
 ?>
 
 <nav class="acf-jump-link-nav alignfull">
-    <ul>
+    <ul style="grid-template-columns: repeat(<?php echo count($jump_nav) ?>, 1fr);">
     <?php foreach($jump_nav as $nav_item):
         $collapsed_title = str_replace(" ", "-", strtolower($nav_item['jump_title']));
         $modified_titles[] = $collapsed_title;

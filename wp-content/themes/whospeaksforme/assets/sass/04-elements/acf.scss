@@ -245,11 +245,18 @@ section.acf-free_form_content{
 }
 
 .acf-three_columns{
+	justify-content: center;
 	> div{
-		width: 80%;
-		margin: 0 10%;
+		width: 84%;
+		margin: 0 auto;
 		@include media(desktop){
-			width: 29.5%;
+			width: 28%;
+			margin: 0;
+		}
+	}
+	> div:nth-of-type(2){
+		margin: 0 auto;
+		@include media(desktop){
 			margin: 0 2%;
 		}
 	}
@@ -305,14 +312,15 @@ section.acf-free_form_content{
 		margin: 0 2% 0 0;
 
 		@include media(desktop-only){
-			width: 96% !important;
+			width: 84% !important;
 			padding: 50px 0;
-			margin: 30px 2%;
+			margin: 30px auto;
 
 		}
 	}
 
 	.column{
+		margin: 0 0 0 2%;
 		flex-direction: column;
 		&.scroll-image{
 			flex-direction: row;
@@ -321,6 +329,8 @@ section.acf-free_form_content{
 				max-width: 100%;
 				@include media(desktop-only){
 					position: relative;
+					padding: 50px 0;
+					margin: 30px 0;
 				}
 				top: 50px;
 				transition: transform 0.5s ease;
@@ -337,8 +347,8 @@ section.acf-free_form_content{
 			width: 100%;
 		}
 		@include media(desktop-only){
-			width: 96% !important;
-			margin: 5% 2%;
+			width: 84% !important;
+			margin: 5% auto;
 		}
 	}
 
