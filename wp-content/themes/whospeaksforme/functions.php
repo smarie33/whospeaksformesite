@@ -828,4 +828,22 @@ function wwp_custom_query_vars_filter($vars) {
 }
 add_filter( 'query_vars', 'wwp_custom_query_vars_filter' );
 
+//remove the word Archive from all archive pages
+add_filter('get_the_archive_title', function ($title) {
+    if(is_post_type_archive()) {
+       $title = post_type_archive_title('', false);
+    }
+    return $title;
+});
+
+//specific sort for events archive page
+add_action( 'pre_get_posts', 'my_change_sort_order'); 
+    function my_change_sort_order($query){
+        if(is_post_type_archive('event')):
+	        $query->set( 'meta_key','event_date');
+	    	$query->set( 'orderby', 'meta_value');
+	        $query->set( 'order', 'DSC' );
+        endif;    
+    };
+
 ?>

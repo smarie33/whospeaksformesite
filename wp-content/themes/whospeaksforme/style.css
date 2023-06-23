@@ -2390,6 +2390,28 @@ p.no-reveal {
 	}
 }
 
+.post-type-archive-event .page-header {
+	margin-top: 90px;
+}
+
+.single-event .entry-header {
+	margin-top: 90px !important;
+}
+
+.events {
+	padding-bottom: 150px;
+}
+
+.events h2,
+.events .entry-header {
+	margin-bottom: 0;
+}
+
+.events p {
+	padding: 0;
+	margin-top: 10px;
+}
+
 blockquote {
 	padding: 0;
 	position: relative;

@@ -1052,3 +1052,26 @@ p.no-reveal{
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+
+.post-type-archive-event{
+	.page-header{
+		margin-top: 90px;
+	}
+}
+
+.single-event{
+	.entry-header{
+		margin-top: 90px !important;
+	}
+}
+
+.events{
+	padding-bottom: 150px;
+	h2, .entry-header{
+		margin-bottom: 0;
+	}
+	p{
+		padding: 0;
+		margin-top: 10px;
+	}
+}

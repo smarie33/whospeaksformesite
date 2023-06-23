@@ -16,6 +16,11 @@
 	<header class="entry-header alignwide">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php twenty_twenty_one_post_thumbnail(); ?>
+		<?php 
+		if(get_post_type() == 'event'):
+			echo '<span>Event Date: '.get_field('event_date').'</span>';
+		endif;
+		?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
