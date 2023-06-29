@@ -22,6 +22,8 @@ $padding_array_left = [];
 $style_write_left = [];
 $style_write_left[] = 'width:'.$columnSize[0];
 
+$overall_bg_color = (get_sub_field('overall_background_color') == '') ? 'none' : get_sub_field('overall_background_color');
+
 if(get_sub_field('padding_left_left') != '' || get_sub_field('padding_top_left') != '' || get_sub_field('padding_right_left') != '' || get_sub_field('padding_bottom_left') != ''){
   $padding_array_left[] = get_sub_field('padding_top_left') == '' ? 0 : get_sub_field('padding_top_left').'px';
   $padding_array_left[] = get_sub_field('padding_right_left') == '' ? 0 : get_sub_field('padding_right_left').'px';
@@ -63,7 +65,7 @@ $styles_right = $style.implode('; ',$style_write_right).$end;
 
 ?>
 
-<section class="acf-two_columns alignfull<?php if(get_sub_field('align_top')):?> align-top<?php endif; ?>">
+<section class="acf-two_columns alignfull<?php if(get_sub_field('align_top')):?> align-top<?php endif; ?>" style="background-color:<?php echo $overall_bg_color; ?>">
   <div class="column<?php if(get_sub_field('full_width_images_left')): ?> full-width-images<?php endif; ?><?php if(get_sub_field('scroll_image_left')): ?> scroll-image<?php endif; ?><?php if(get_sub_field('add_button_left')): ?> with-button<?php endif; ?>"<?php echo $styles_left; ?>>
     <?php the_sub_field('content_left'); ?>
         <?php if(get_sub_field('add_button_left')): ?>
