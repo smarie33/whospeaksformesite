@@ -345,6 +345,7 @@ section.acf-free_form_content{
 		p{
 			position: relative;
 			width: 100%;
+			overflow: hidden;
 		}
 		@include media(desktop-only){
 			width: 84% !important;
