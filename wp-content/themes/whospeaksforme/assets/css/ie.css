@@ -1623,6 +1623,7 @@ p a {
 .acf-two_columns .column p {
 	position: relative;
 	width: 100%;
+	overflow: hidden;
 }
 @media only screen and (max-width: 821px) {
 
